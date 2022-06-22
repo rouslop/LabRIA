@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MateriaComponent } from './materia/materia.component';
 import { AltaMateriaComponent } from './alta-materia/alta-materia.component';
 import { ModificarMateriaComponent } from './modificar-materia/modificar-materia.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ModificarMateriaComponent } from './modificar-materia/modificar-materia
     HomeComponent,
     MateriaComponent,
     AltaMateriaComponent,
-    ModificarMateriaComponent
+    ModificarMateriaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
