@@ -11,7 +11,11 @@ export class GetNoticiasService {
   baseUrl = environment.apiUrl + "/api/Noticias/Activas";
   constructor(private http: HttpClient) { }
 
-  getNoticias(): Observable<Array<Noticia>>{
-    return this.http.get<Array<Noticia>>(this.baseUrl);
+  getNoticias(): Observable<Noticia[]>{
+    return this.http.get<Noticia[]>(this.baseUrl);
+  }
+
+  addNoticia(n:Noticia): Observable<Noticia>{
+    return this.http.post<Noticia>(environment.apiUrl+"/api/Noticias", n);
   }
 }

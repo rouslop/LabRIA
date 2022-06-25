@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://ria2022.test.softtero.com/swagger/index.html'
+  apiUrl: 'https://ria2022.test.softtero.com'
 }
 
 /*

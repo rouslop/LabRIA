@@ -10,6 +10,8 @@ import { ModificarMateriaComponent } from './modificar-materia/modificar-materia
 import { NoticiaComponent } from './noticia/noticia.component';
 import { ModificarNoticiaComponent } from './modificar-noticia/modificar-noticia.component';
 import { AltaNoticiaComponent } from './alta-noticia/alta-noticia.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './interceptors/httpInterceptor';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,13 @@ import { AltaNoticiaComponent } from './alta-noticia/alta-noticia.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+        // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
