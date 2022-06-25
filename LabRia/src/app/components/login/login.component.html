@@ -1,14 +1,14 @@
 <div class="content" >
-<form action="">
+<form [formGroup]="formlogin" methods="post" >
 <br>
 <p>Nombre :</p>
-<input type="text" name="username">
+<input type="text" formControlName="username">
 <br>
 <br>
 <p>Contraseña :</p>
-<input type="text" name="password">
+<input type="text" formControlName="password">
 <br>
 <br>
-<button type="submit">Login </button>
+<button type="submit" onclick="login()">Login </button>
 </form>
 </div>
