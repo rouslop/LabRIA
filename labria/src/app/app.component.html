@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -35,13 +26,8 @@
   }
 
   .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     background-color: #1976d2;
     color: white;
     font-weight: 600;
@@ -51,19 +37,15 @@
     margin: 0 16px;
   }
 
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 8px;
+  .toolbar a {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: black;
   }
-
-  .toolbar #youtube-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo:hover,
-  .toolbar #youtube-logo:hover {
-    opacity: 0.8;
+  .toolbar button {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: black;
   }
 
   .content {
@@ -73,6 +55,19 @@
     max-width: 960px;
     flex-direction: column;
     align-items: center;
+  }
+
+  .contentF {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: row;
+  }
+
+  .contentT {
+    display: flex;
+    flex-direction: row;
   }
 
   svg.material-icons {
@@ -201,7 +196,7 @@
   }
 
   .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     color: white;
     padding: 0 1rem 1rem;
     margin: 0;
@@ -228,12 +223,13 @@
   }
 
   footer {
-    justify-content: center;
-    width: 200%;
+    
+    position: left;
     display: flex;
+    align-items: center;
     background-color: #151d2f;
-    margin-top: 8px;
-    line-height: 20px;
+    color: white;
+    font-weight: 600;
   }
 
   footer a {
@@ -247,16 +243,16 @@
     align-items: center;
     font-size: 12px;
     padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
+    border: 1px solid rgba(27, 31, 35, .2);
     border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
     margin-left: 4px;
     font-weight: 600;
   }
 
   .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
+    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+    border-color: rgba(27, 31, 35, .35);
     background-position: -.5em;
   }
 
@@ -276,7 +272,8 @@
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
-    .card-container > *:not(.circle-link) ,
+
+    .card-container>*:not(.circle-link),
     .terminal {
       width: 100%;
     }
@@ -304,87 +301,98 @@
   }
 </style>
 
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <div class="spacer"></div>
-  <a routerLink="/"> <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" style=" height: 50px ;"></a>
-  <div class="spacer"></div>
-  <a routerLink="/documentos"> <img src="https://cdn-icons-png.flaticon.com/512/2991/2991112.png" style=" height: 50px ;"></a>
-  <div class="spacer"></div>
-  <a routerLink="/noticias"> <img src="https://cdn-icons.flaticon.com/png/512/2961/premium/2961545.png?token=exp=1655848321~hmac=171127609f9bacfe2a58fbd13e2832da" style=" height: 50px ;"></a>
-  <div class="spacer"></div>
-  <a routerLink="/materia"> <img src="https://cdn-icons-png.flaticon.com/512/7671/7671386.png" style=" height: 50px ;"></a>
-  <div class="spacer"></div>
-  <a routerLink="/unidadews"> <img src="https://cdn-icons.flaticon.com/png/512/2953/premium/2953966.png?token=exp=1655848426~hmac=c8a2524781022e8612460d03e9dbc932" style=" height: 50px ;"></a>
-  <div class="spacer"></div>
-  <a routerLink="/informacion"> <img src="https://cdn-icons-png.flaticon.com/512/545/545684.png" style=" height: 50px ;"></a>
-  <div class="spacer"></div>
-  <a routerLink="/datos"> <img src="https://cdn-icons-png.flaticon.com/512/864/864685.png" style=" height: 50px ;"></a>
-  <div class="spacer"></div>
-  <a routerLink="/oportunidades"> <img src="https://cdn-icons.flaticon.com/png/512/869/premium/869687.png?token=exp=1655848604~hmac=e9609426f13ea7ad1fd3b57928d43a46" style=" height: 50px ;"></a>
-  <div class="spacer"></div>
-  <a routerLink="/noticia" style="color:black">Noticias</a>
-  <div class="spacer"></div>
-  
+<body id="body-pd">
+<header class="header" id="header">
+  <div class="header_toggle"> 
+  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+  </svg> </div>
+  <div class="header_img">  </div>
+</header>
+
+<div class="l-navbar" id="nav-bar">
+  <nav class="nav">
+      <div> <a routerLink="/" class="nav_link active"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door"viewBox="0 0 16 16"> <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" /></svg> <span class="nav_name">Inicio</span> </a> 
+          <div class="nav_list"> 
+          <a routerLink="/documentos" class="nav_link"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-text"viewBox="0 0 16 16"> <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" /><path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" /></svg> <span class="nav_name">Documents</span> </a> 
+          <a routerLink="/noticia" class="nav_link"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lightbulb"viewBox="0 0 16 16"><path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z" /></svg> <span class="nav_name">noticias</span> </a>
+          <a routerLink="/materia" class="nav_link"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list"viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" /></svg> <span class="nav_name">Materias</span> </a> 
+          <a routerLink="/unidades" class="nav_link"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clipboard2"viewBox="0 0 16 16"><path d="M3.5 2a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5H12a.5.5 0 0 1 0-1h.5A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-12A1.5 1.5 0 0 1 3.5 1H4a.5.5 0 0 1 0 1h-.5Z" /><path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z" /></svg> <span class="nav_name">Unidades</span> </a> 
+          <a routerLink="/informacion" class="nav_link"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"class="bi bi-exclamation-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" /><path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" /></svg><span class="nav_name">Indormacion</span> </a> 
+          <a routerLink="/datos" class="nav_link"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-book"viewBox="0 0 16 16"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" /></svg> <span class="nav_name">Datos</span> </a>
+          <a routerLink="/oportunidades" class="nav_link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-shop"viewBox="0 0 16 16"><path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" /></svg> <span class="nav_name">oportunidades</span> </a>
+          <a routerLink="/login" class="nav_link"><span class="nav_name">login</span> </a>
+        </div>
+                
+        </div> <a routerLink = "/loginOut" class="nav_link"><span class="nav_name">loginOut</span> </a>
+  </nav>
 </div>
 
-<div class="content" role="main">
 
-
-
-  <div class="card-container">
-    
-
-  </div>
-  
-
-  <div class="card-container">
-    
+  <div class="content" role="main">
+    <router-outlet></router-outlet> 
   </div>
 
-  <!-- Terminal -->
-  <!-- <div class="terminal" [ngSwitch]="selection.value">
-      <pre *ngSwitchDefault>ng generate component xyz</pre>
-      <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
-      <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
-      <pre *ngSwitchCase="'dependency'">ng add _____</pre>
-      <pre *ngSwitchCase="'test'">ng test</pre>
-      <pre *ngSwitchCase="'build'">ng build</pre>
-  </div> -->
 
-  <!-- Links -->
-  <div class="card-container">
+<!-- Footer -->
+ <footer>
+  <div class="contentF">
+    <p style="color: white;">
+      Coordinador<br>
+      Cristian Bauza: cristian.bauza@utec.edu.uy
+      <br><br>
+      Encargado de Laboratorios y Webmaster<br>
+      Eduardo Calandria: ecalandria@fing.edu.uy<br>
+      <br>
+      Teléfono: 434 22743
+      <br>
+      Dirección: UTEC San José, Calle Dr Evaristo Ciganda 461
+    </p>
+    <img src="../assets/log_utu2.png" alt="log_utu" style="max-height: 60px ; color : white ;">
+    <img src="../assets/logo_fing1.gif" alt="logo_fing" style="max-height: 60px ; color : white ;">
+    <img src="../assets/logotisj.png" alt="logotisj" style="max-height: 60px ; color : white ;">
+  </div>
+
+
+</footer>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
    
-  </div>
-
-  
-<router-outlet></router-outlet>
-
-
-  <!-- Footer -->
-  <footer>
-      <p style="color: white;">
-        Coordinador<br>
-        Cristian Bauza: cristian.bauza@utec.edu.uy
-          <br><br>
-        Encargado de Laboratorios y Webmaster<br>
-        Eduardo Calandria: ecalandria@fing.edu.uy<br>
-          <br>
-        Teléfono: 434 22743
-        <br>
-        Dirección: UTEC San José, Calle Dr Evaristo Ciganda 461
-      </p>
-      <img src="../assets/log_utu2.png" alt="log_utu" style="max-height: 60px ; color : white ;">
-      <img src="../assets/logo_fing1.gif" alt="logo_fing" style="max-height: 60px ; color : white ;" >
-      <img src="../assets/logotisj.png" alt="logotisj" style="max-height: 60px ; color : white ;" >
-  </footer>
-
-</div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+   const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+   const toggle = document.getElementById(toggleId),
+   nav = document.getElementById(navId),
+   bodypd = document.getElementById(bodyId),
+   headerpd = document.getElementById(headerId)
+   
+   // Validate that all variables exist
+   if(toggle && nav && bodypd && headerpd){
+   toggle.addEventListener('click', ()=>{
+   // show navbar
+   nav.classList.toggle('show')
+   // change icon
+   toggle.classList.toggle('bx-x')
+   // add padding to body
+   bodypd.classList.toggle('body-pd')
+   // add padding to header
+   headerpd.classList.toggle('body-pd')
+   })
+   }
+   }
+   
+   showNavbar('header-toggle','nav-bar','body-pd','header')
+   
+   /*===== LINK ACTIVE =====*/
+   const linkColor = document.querySelectorAll('.nav_link')
+   
+   function colorLink(){
+   if(linkColor){
+   linkColor.forEach(l=> l.classList.remove('active'))
+   this.classList.add('active')
+   }
+   }
+   linkColor.forEach(l=> l.addEventListener('click', colorLink))
+   
+    // Your code to run since DOM is loaded and ready
+   });
+</script>
