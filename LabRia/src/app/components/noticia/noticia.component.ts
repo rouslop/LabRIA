@@ -8,20 +8,37 @@ import { Noticia } from '../../models/noticia';
   styleUrls: ['./noticia.component.css']
 })
 export class NoticiaComponent implements OnInit {
-  noticias: Array<Noticia> = [];
+  noticias: Noticia[] = [];
 
   constructor(private getNoticias: GetNoticiasService) { }
 
   ngOnInit(): void {
+    // this.getListNoticias();
+    this.addNoticia();
+
   }
 
-  getListNoticias(){
-    this.getNoticias.getNoticias().subscribe((noticiasFromApi) => {
-      this.noticias = noticiasFromApi;
-      console.log(this.noticias);
-    }, (err: any) => {
-      console.error(err);
+  getListNoticias() {
+    this.getNoticias.getNoticias().subscribe({
+      next: value => this.noticias = value,
+      error: err => { alert('Error al cargar las noticias: ' + err) }
+    }
+    );
+  }
+
+  addNoticia() {
+    let n: Noticia = {
+      id: 0,
+      descripcion: "asdfghjkl",
+      fechaCaducidad: "2022-06-24T22:32:09.807Z",
+      imagen: "",
+      titulo: "Romina",
+    };
+    this.getNoticias.addNoticia(n).subscribe({
+      next: value => console.log(value),
+      error: err => { alert('Error al cargar las noticias: ' + err) }
     });
-  }
 
+
+  }
 }
