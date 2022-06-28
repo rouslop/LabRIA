@@ -13,8 +13,7 @@ export class NoticiaComponent implements OnInit {
   constructor(private getNoticias: GetNoticiasService) { }
 
   ngOnInit(): void {
-    // this.getListNoticias();
-    this.addNoticia();
+    this.getListNoticias();
 
   }
 
@@ -36,7 +35,7 @@ export class NoticiaComponent implements OnInit {
     };
     this.getNoticias.addNoticia(n).subscribe({
       next: value => console.log(value),
-      error: err => { alert('Error al cargar las noticias: ' + err) }
+      error: err => { alert('Error al agregar las noticias: ' + err) }
     });
 
 
