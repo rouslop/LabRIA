@@ -1,14 +1,15 @@
-<div class="content" >
-<form [formGroup]="formlogin">
-<form>
-<br>
-<p>Nombre :</p>
-<input type="text" formControlName="username">
-<br>
-<br>
-<p>Contraseña :</p>
-<input type="text" formControlName="password">
-<br>
-<br>
-<button type="submit" onclick="login()">Login </button>
-</form>
+<div class="content">
+    <h2 class="tit">Inicio de sesión</h2>
+    <form [formGroup]="formlogin">
+            <br>
+            <p>Nombre :</p>
+            <input type="text" formControlName="username" class="inputs">
+            <br>
+            <br>
+            <p>Contraseña :</p>
+            <input type="text" formControlName="password" class="inputs">
+            <br>
+            <br>
+            <button type="submit" onclick="login()" class="btn btn-dark btnconf col-10">Login </button>
+    </form>
+</div>
