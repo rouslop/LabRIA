@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Play&family=Poppins:wght@300&family=Press+Start+2P&family=Source+Code+Pro&display=swap');
+
+
 
 :root {
     --header-height: 3rem;
@@ -9,6 +12,11 @@
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
     --z-fixed: 100
+}
+
+.tit{
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
 }
 
 *,

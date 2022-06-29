@@ -1,19 +1,20 @@
 <div class="col-11">
+    <b><u><h2 class="noticiaTitulo">NOTICIAS</h2></u></b>
     <tr class="tabla">
-        <td style="color: white; padding: 10px; margin: 3%; border-top-left-radius: 10px;">Titulo</td>
-        <td style="color: white; padding: 10px; margin: 3%;">Descripcion</td>
-        <td style="color: white; padding: 10px; margin: 3%;">Fecha de caducidad</td>
-        <td style="color: white; padding: 10px; margin: 3%;">Imagen</td>
-        <td style="padding: 10px; margin: 3%; display: flex; border-top-right-radius: 10px;">
-            <button routerLink="/" class="btn btn-secondary" style="margin: 5px;">+</button>
+        <td class="tdbase1">Titulo</td>
+        <td class="tdbase">Descripcion</td>
+        <td class="tdbase">Fecha de caducidad</td>
+        <td class="tdbase">Imagen</td>
+        <td class="tdbtn">
+            <button routerLink="/altaNoticia" class="btn btn-secondary" style="margin: 5px;">+</button>
             <button class="btn btn-secondary" style="margin: 5px;">d</button>
         </td>
     </tr>
     <tr class="tabla" *ngFor="let x of noticias">
-        <td style="color: white; padding: 10px; margin: 3%;">{{x.titulo}}</td>
-        <td style="color: white; padding: 10px; margin: 3%;">{{x.descripcion}}</td>
-        <td style="color: white; padding: 10px; margin: 3%;">{{x.fechaCaducidad}}</td>
-        <td style="color: white; padding: 10px; margin: 3%;">{{x.imagen}}</td>
+        <td class="tdbase">{{x.titulo}}</td>
+        <td class="tdbase">{{x.descripcion}}</td>
+        <td class="tdbase">{{x.fechaCaducidad}}</td>
+        <td class="tdbase">img</td>
         <td></td>
     </tr>
 </div>

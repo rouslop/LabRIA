@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Play&family=Poppins:wght@300&family=Press+Start+2P&family=Source+Code+Pro&display=swap');
+
 .tabla{
     background-color: #151d2f; 
     text-align: center; 
@@ -6,6 +8,26 @@
 
 table { 
     border-collapse: separate; 
+}
+
+.tdbase{
+    color: white; 
+    padding: 10px; 
+    margin: 3%;
+}
+
+.tdbase1{
+    color: white; 
+    padding: 10px; 
+    margin: 3%;
+    border-top-left-radius: 10px;
+}
+
+.tdbtn{
+    padding: 10px; 
+    margin: 3%; 
+    display: flex; 
+    border-top-right-radius: 10px;
 }
 
 tr td, th { 
@@ -25,4 +47,9 @@ tr:last-child td:first-child {
 }
 tr:last-child td:last-child { 
     border-bottom-right-radius: 10px; 
+}
+
+.noticiaTitulo{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }

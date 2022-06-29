@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Play&family=Poppins:wght@300&family=Press+Start+2P&family=Source+Code+Pro&display=swap');
+
+.btnconf {
+    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+}
+
+.divP {
+    text-align: left;
+    justify-content: center;
+}
+
+.divInput {
+    margin: 15px;
+    justify-content: space-between;
+}
+
+.inputs {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(7, 7, 31, 0.452);
+}
+
+.lab {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+}
