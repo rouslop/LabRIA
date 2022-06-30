@@ -2,14 +2,14 @@
     <h2 class="tit">Inicio de sesión</h2>
     <form [formGroup]="formlogin">
             <br>
-            <p>Nombre :</p>
+            <p>Username :</p>
             <input type="text" formControlName="username" class="inputs">
             <br>
             <br>
             <p>Contraseña :</p>
-            <input type="text" formControlName="password" class="inputs">
+            <input type="password" formControlName="password" class="inputs">
             <br>
             <br>
-            <button type="submit" onclick="login()" class="btn btn-dark btnconf col-10">Login </button>
+            <button onclick="login()" class="btn btn-dark btnconf col-10">Login </button>
     </form>
 </div>

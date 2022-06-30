@@ -19,6 +19,7 @@ export class AltaNoticiaComponent implements OnInit {
   constructor(private service: GetNoticiasService) { }
 
   ngOnInit(): void {
+    this.agregarNoticia();
   }
 
   agregarNoticia(){
@@ -27,7 +28,11 @@ export class AltaNoticiaComponent implements OnInit {
     n.descripcion = this.formNoticia.controls["descripcion"].value;
     n.fechaCaducidad =  this.formNoticia.controls["fechaCaducidad"].value;
     n.imagen = this.formNoticia.controls["imagen"].value;
-    this.service.addNoticia(n).subscribe(res => {console.log(res)});
+    this.service.addNoticia(n).subscribe({
+      next: value => console.log(value),
+      error: err => { alert('Error al agregar las noticias: ' + err) }
+    });
+
 
   }
 

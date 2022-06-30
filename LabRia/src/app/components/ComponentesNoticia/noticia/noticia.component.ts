@@ -24,20 +24,4 @@ export class NoticiaComponent implements OnInit {
     }
     );
   }
-
-  addNoticia() {
-    let n: Noticia = {
-      id: 0,
-      descripcion: "asdfghjkl",
-      fechaCaducidad: "2022-06-24T22:32:09.807Z",
-      imagen: "",
-      titulo: "Romina",
-    };
-    this.getNoticias.addNoticia(n).subscribe({
-      next: value => console.log(value),
-      error: err => { alert('Error al agregar las noticias: ' + err) }
-    });
-
-
   }
-}
