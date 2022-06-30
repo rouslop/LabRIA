@@ -1,28 +1,35 @@
-<div class="col-10 divP">
+<div class="col-7">
     <b><u>
-            <h2 class="lab">Nueva noticia</h2>
+            <h3 class="tit">Nueva noticia</h3>
         </u></b>
-    <form>
-        <div>
+</div>
+<div class="divP">
+    <form [formGroup]="formNoticia">
+        <div class="col-10">
             <div class="divInput">
                 <label class="lab">Titulo: </label>
                 <br>
-                <input type="text" class="inputs">
+                <input type="text" class="inputs" formControlName="titulo">
             </div>
             <div class="divInput">
                 <label class="lab">Descripción: </label>
-                <input type="text" class="inputs">
+                <br>
+                <input type="text" class="inputs" formControlName="descripcion">
             </div>
             <div class="divInput">
                 <label class="lab">Fecha de caducidad: </label>
-                <input type="date" class="inputs">
+                <br>
+                <input type="date" class="inputs" formControlName="fechaCaducidad">
             </div>
             <div class="divInput">
                 <label class="lab">Imagen: </label>
-                <button class="btn btn-dark" style="width: 200px; border-radius: 10px;">Agregar imagen</button>
-                <input type="image" src="" alt="" class="d-none">
+                <input type="file" src="" alt="" formControlName="imagen" class="inputs img" style="size:200px;"
+                    accept="image/gif, image/jpeg, image/png">
             </div>
-            <button class="btn btn-dark btnconf col-8"> Confirmar</button>
+        </div>
+
+        <div class="d-flex justify-center justify-items-center">
+            <button class="btn btn-dark btnconf" onclick="agregarNoticia()"> Confirmar</button>
+            <button type="reset" class="btn btncancel">Cancelar</button>
         </div>
     </form>
-</div>

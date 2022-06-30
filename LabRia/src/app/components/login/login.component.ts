@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   constructor( private api:LoginService) { }
 
   ngOnInit(): void {
+    // this.login();
   }
 
   login() {
