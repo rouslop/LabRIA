@@ -19,7 +19,6 @@ export class AltaNoticiaComponent implements OnInit {
   constructor(private service: GetNoticiasService) { }
 
   ngOnInit(): void {
-    this.agregarNoticia();
   }
 
   agregarNoticia(){

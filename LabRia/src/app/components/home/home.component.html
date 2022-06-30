@@ -7,58 +7,13 @@
 <h1 class="tit"> UTEC - Tecnólogo en Informática </h1>
 
 <ngb-carousel>
-<ng-template ngbSlide>
+<ng-template ngbSlide *ngFor="let n of noticias">
     <div class="picsum-img-wrapper">
-      <img src="../../assets/121162630_10224588913051770_6528556765048266689_o.webp" alt="Random first slide" style="height: 500px ;">
+      <img src={{n.imagen}} alt="Random first slide" style="height: 500px ;">
     </div>
     <div class="carousel-caption">
       <h3></h3>
       <p></p>
     </div>
   </ng-template>
-  <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
-        <img src="../../assets/7e7267cfd92709f1a47c85329e98b534a59d234e.jpg" alt="Random first slide" style="height: 500px ;">
-      </div>
-      <div class="carousel-caption">
-        <h3></h3>
-        <p></p>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img src="../../assets/d23c653ff7ea1522b4be6e9a8cfce1aef20561e7.jpg" alt="Random first slide" style="height: 500px ;">
-        </div>
-        <div class="carousel-caption">
-          <h3>*</h3>
-          <p></p>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img src="../../assets/Otro-espacio-del-salon-multiuso-768x576.jpg" alt="Random first slide" style="height: 500px ;">
-          </div>
-          <div class="carousel-caption">
-            <h3></h3>
-            <p></p>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-              <img src="../../assets/UTEC-computadoras.webp" alt="Random first slide" style="height: 500px ;">
-            </div>
-            <div class="carousel-caption">
-              <h3></h3>
-              <p></p>
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-              <div class="picsum-img-wrapper">
-                <img src="../../assets/Salon-multiuso-y-biblioteca-virtual-de-UTEC-768x484.jpg" alt="Random first slide" style="height: 500px ;">
-              </div>
-              <div class="carousel-caption">
-                <h3></h3>
-                <p></p>
-              </div>
-            </ng-template>
 </ngb-carousel>
