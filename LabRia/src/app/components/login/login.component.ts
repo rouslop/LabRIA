@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import {Login} from '../../models/login'
+import {reslogin} from '../../models/reslogin'
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('',Validators.required)
   });
 
-  constructor( private api:LoginService) { }
+  constructor( private api:LoginService,private router:Router ) { }
 
   ngOnInit(): void {
     // this.login();
@@ -28,7 +30,11 @@ export class LoginComponent implements OnInit {
     }
     console.log(this.formlogin.value.username);
     this.api.Login(x).subscribe(data => {
-      console.log(data);
+      console.log(data.token);
+      console.log(data.expiration);
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('token_expiration', data.expiration);
+      this.router.navigate(['/']);
     });
   }
 

@@ -1,6 +1,6 @@
 <div class="col-12 justify-center">
     <h2 class="tit">Inicio de sesión</h2>
-    <form [formGroup]="formlogin">
+    <form [formGroup]="formlogin" (submit)="login()">
             <br>
             <p>Username :</p>
             <input type="text" formControlName="username" class="inputs">
@@ -10,6 +10,6 @@
             <input type="password" formControlName="password" class="inputs">
             <br>
             <br>
-            <button onclick="login()" class="btn btn-dark btnconf col-10">Login </button>
+            <button type="submit" class="btn btn-dark btnconf col-10">Login </button>
     </form>
 </div>
