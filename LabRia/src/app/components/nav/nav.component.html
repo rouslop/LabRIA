@@ -1,0 +1,57 @@
+<div *ngIf="token!=null; then thenBlock else elseBlock"></div>
+<!-- ESTA LOGEADO -->
+<ng-template #thenBlock>
+  <div>
+    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-start"
+      style="background-color: white ; margin-bottom: 2%;">
+      <li ngbDropdown class="nav-item" style="width: 100%;">
+        <a href (click)="false" class="nav-link" ngbDropdownToggle><img src="../../assets/Isotipo-utec.png"
+            style="width: 30px;"> Menu</a>
+        <div ngbDropdownMenu style="padding: 5px;">
+          <a routerLink="/"> <i class="bi bi-house"></i> Home</a>
+          <br><br>
+          <a routerLink="/noticia"> <i class="bi bi-lightbulb"></i> Noticias</a>
+          <br><br>
+          <a routerLink="/unidades"> <i class="bi bi-clipboard2-check"></i> Unidades Curriculares</a>
+          <br><br>
+          <a routerLink="/informacion"> <i class="bi bi-exclamation-circle"></i> Informacion de carrera</a>
+          <br><br>
+          <a routerLink="/datos"> <i class="bi bi-book"></i> Datos de interes</a>
+          <br><br>
+          <a routerLink="/oportunidades"> <i class="bi bi-shop"></i> Oportunidades laborables</a>
+          <br><br>
+          <a routerLink="/login"> <i class="bi bi-door-open"></i> login</a>
+          <br>
+        </div>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+<ng-template #elseBlock>
+  <!-- NO ESTA LOGEADO -->
+  <div> 
+    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-start"
+      style="background-color: white ; margin-bottom: 2%;">
+      <li ngbDropdown class="nav-item" style="width: 100%;">
+        <a href (click)="false" class="nav-link" ngbDropdownToggle><img src="../../assets/Isotipo-utec.png"
+            style="width: 30px;"> Menu</a>
+        <div ngbDropdownMenu style="padding: 5px;">
+          <a routerLink="/"> <i class="bi bi-house"></i> Home</a>
+          <br><br>
+          <a routerLink="/noticia"> <i class="bi bi-lightbulb"></i> Noticias</a>
+          <br><br>
+          <a routerLink="/unidades"> <i class="bi bi-clipboard2-check"></i> Unidades Curriculares</a>
+          <br><br>
+          <a routerLink="/informacion"> <i class="bi bi-exclamation-circle"></i> Informacion de carrera</a>
+          <br><br>
+          <a routerLink="/datos"> <i class="bi bi-book"></i> Datos de interes</a>
+          <br><br>
+          <a routerLink="/oportunidades"> <i class="bi bi-shop"></i> Oportunidades laborables</a>
+          <br><br>
+          <a routerLink="/login"> <i class="bi bi-door-open"></i> login</a>
+          <br>
+        </div>
+      </li>
+    </ul>
+  </div>
+</ng-template>
