@@ -1,17 +1,71 @@
-
-<table class="default">
-
-    <tr style="background-color: #151d2f ;">
-  
-      <td style="color: white ;" scope="column" >Nombre</td>
-  
-      <td style="color: white ;">Descripsion</td>
-  
-      <td style="color: white ;">Creditos</td>
-  
-      <td><button routerLink="/altaMateria">+</button></td>
-    </tr>
-    <tr>
-        <!-- for de materias -->
-    </tr>
-</table>
+<div *ngIf="token!=null; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+    <!-- ESTA LOGEADPO -->
+    <div>
+        <div class="row justify-content-center" style="margin-bottom: 20px;">
+            <div class="col-11">
+                <b style="color: white ;"><u>
+                        <h2 class="noticiaTitulo" style="color:white;">Materias</h2>
+                    </u></b>
+                <div class="row justify-content-center">
+                    <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
+                        <thead
+                            style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
+                            <tr class="tabla" style="margin-bottom: 20px; border-color: none;">
+                                <td class="tdbase1">Nombre</td>
+                                <td class="tdbase">Descripcion</td>
+                                <td class="tdbase">Creditos Minimos</td>
+                                <td class="tdbtn" style="border-radius : 20px;">
+                                    <button routerLink="/altaMateria" class="btn btn-secondary"
+                                        style="margin: 5px;">+</button>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tabla" *ngFor="let x of materias" style="margin-bottom: 20px;">
+                                <td class="tdbase">{{x.nombre}}</td>
+                                <td class="tdbase">{{x.descripcion}}</td>
+                                <td class="tdbase">{{x.creditosMinimos}}</td>
+                                <td>
+                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-trash"></i></button>
+                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-pencil"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #elseBlock>
+    <!-- NO ESTA LOGEADPO -->
+    <div>
+        <div class="row justify-content-center">
+            <div class="col-11">
+                <b style="color: white ;"><u>
+                        <h2 class="noticiaTitulo" style="color:white;">Materias</h2>
+                    </u></b>
+                <div class="row justify-content-center">
+                    <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
+                        <thead
+                            style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
+                            <tr class="tabla" style=" border-color: none;">
+                                <td class="tdbase1">Nombre</td>
+                                <td class="tdbase">Descripcion</td>
+                                <td class="tdbase">Creditos Minimos</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tabla" *ngFor="let x of materias">
+                                <td class="tdbase">{{x.nombre}}</td>
+                                <td class="tdbase">{{x.descripcion}}</td>
+                                <td class="tdbase">{{x.creditosMinimos}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

@@ -34,7 +34,7 @@
 <ng-template #elseBlock>
   <!-- NO ESTA LOGEADO -->
   <div> 
-    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-center" style="background-color: white ; margin-bottom: 2%;">
+    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-between" style="background-color: white ; margin-bottom: 2%;">
       <li ngbDropdown class="nav-item">
         <a href (click)="false" class="nav-link" ngbDropdownToggle><img src="../../assets/Isotipo-utec.png"
             style="width: 30px;"> Menu</a>
@@ -53,8 +53,8 @@
           <br><br>
         </div>
       </li>
-      <li [ngbNavItem]="1" >
-        <a routerLink="/login" style="padding: 5px; margin-top: 5px;"> <i class="bi bi-door-open"></i> login</a>
+      <li [ngbNavItem]="1" style="padding: 5px; margin-top: 5px;">
+        <a routerLink="/login"> <i class="bi bi-door-open"></i> login</a>
       </li>
     </ul>
   </div>

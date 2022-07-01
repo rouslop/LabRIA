@@ -1,15 +1,7 @@
-export class materia {
-    public id: string;
-    public nombre: string;
-    public descripcion: string;
-    public creditos: string;
-    public creditosMinimos: string;
+export class Materia {
+    id: string | undefined;
+    nombre: string | undefined;
+    descripcion: string | undefined;
+    creditosMinimos: string | undefined;
   
-    constructor(id: string, nombre: string, descripcion: string, creditos: string, creditosMinimos: string) {
-      this.id = id;
-      this.nombre = nombre;
-      this.descripcion = descripcion;
-      this.creditos = creditos;
-      this.creditosMinimos = creditosMinimos;
-    }
   }
