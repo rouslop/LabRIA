@@ -3,6 +3,10 @@ p{
     font-family: 'Poppins', sans-serif;
     text-align: left;
     text-decoration-line: underline;
+    color: wheat;
+}
+h2{
+    color : white ;
 }
 
 .inputs {
