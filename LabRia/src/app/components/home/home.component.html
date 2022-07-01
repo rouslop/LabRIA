@@ -1,21 +1,10 @@
-
-<header > 
-  <img src="../../../assets/logo-footer-lite.png" style="height: 200px;"> 
-</header>
-<br>
-<br>
-<br>
-<br>
-<div>
+  <div class="row justify-content-center"> 
+    <img src="../../../assets/logo-footer-lite.png" style=" width: 30%;" > 
+  </div>
 <ngb-carousel>
-<ng-template ngbSlide *ngFor="let n of noticias">
+  <ng-template ngbSlide *ngFor="let n of noticias">
     <div class="picsum-img-wrapper">
-      <img src={{n.imagen}} alt="Random first slide" style="height: 500px ;">
-    </div>
-    <div class="carousel-caption">
-      <h3></h3>
-      <p></p>
+      <img src={{n.imagen}} alt="IMG">
     </div>
   </ng-template>
-</ngb-carousel>
-</div>
+  <ng-template ngbSlide>
