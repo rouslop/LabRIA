@@ -27,7 +27,7 @@
                                 <td class="tdbase">{{x.descripcion}}</td>
                                 <td class="tdbase">{{x.creditosMinimos}}</td>
                                 <td>
-                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-trash"></i></button>
+                                  <button class="btn btn-secondary" style="margin: 5px;" (click)="eliminarMateria(x.id)"><i class="bi bi-trash"></i></button>
                                   <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-pencil"></i></button>
                                 </td>
                             </tr>
