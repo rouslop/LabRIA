@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
-import {Login} from '../../models/login'
+import {Login} from '../../models/login';
 import {Router} from '@angular/router';
 
 @Component({
@@ -11,6 +11,8 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  token = localStorage.getItem('token');
+
   formlogin = new FormGroup({
     username: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required)
@@ -19,9 +21,9 @@ export class LoginComponent implements OnInit {
   constructor( private api:LoginService,private router:Router ) { }
 
   ngOnInit(): void {
-    // this.login();
+    
   }
-
+  
   login() {
     let x: Login={
       password: this.formlogin.controls["password"].value,

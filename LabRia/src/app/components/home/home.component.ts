@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
   noticias: Noticia[] = [];
   constructor(private servicioNoticia: GetNoticiasService) { }
 
+
+
   ngOnInit(): void {
     this.getListNoticias();
   }

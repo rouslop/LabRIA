@@ -9,7 +9,7 @@ import { Noticia } from '../../../models/noticia';
 })
 export class NoticiaComponent implements OnInit {
   noticias: Noticia[] = [];
-
+  token = localStorage.getItem('token');
   constructor(private getNoticias: GetNoticiasService) { }
 
   ngOnInit(): void {

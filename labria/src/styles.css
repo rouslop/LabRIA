@@ -1,1 +1,12 @@
+<<<<<<< HEAD
 /* You can add global styles to this file, and also import other style files */
+=======
+body {
+    height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-image: url("./assets/FondoBody.jpg");
+}
+>>>>>>> 2b165b682ed772fefd2b972ba897fa5f2a9037a0

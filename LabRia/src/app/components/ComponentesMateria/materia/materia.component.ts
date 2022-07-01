@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Materia } from 'src/app/models/materia';
+import { MateriaService } from 'src/app/services/materia.service';
 
 @Component({
   selector: 'app-materia',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MateriaComponent implements OnInit {
 
-  constructor() { }
+  materias: Materia[] = [];
+  token = localStorage.getItem('token');
+  constructor(private MateriaService: MateriaService) { }
 
   ngOnInit(): void {
+    this.getListMaterias();
+  }
+  
+  eliminarMateria(x: any){ 
+     console.log(this.MateriaService.eliminarMateria(x));
+  }
+
+  getListMaterias() {
+    this.MateriaService.getMaterias().subscribe({
+      next: value => this.materias = value,
+      error: err => { alert('Error al cargar las materias: ' + err) }
+    }
+    );
   }
 
 }
