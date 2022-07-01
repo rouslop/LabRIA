@@ -12,7 +12,6 @@ import{InformacionComponent} from './components/informacion/informacion.componen
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'materia', component: MateriaComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'altaMateria', component: AltaMateriaComponent },
   { path: 'noticia', component: NoticiaComponent},
   { path: 'login', component: LoginComponent},
