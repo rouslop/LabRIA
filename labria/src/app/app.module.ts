@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { InformacionComponent } from './components/informacion/informacion.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ModificarNoticiaComponent,
     AltaNoticiaComponent,
     LoginComponent,
+    InformacionComponent,
+    NavComponent,
   ],
   imports: [
     ReactiveFormsModule,

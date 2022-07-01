@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
 :root {
@@ -20,6 +21,9 @@
 }
 
 body {
+    background-image: url('./assets/FondoBody.jpg');
+    background-repeat:no-repeat;
+    background-size: 100%;
     position: relative;
     margin: var(--header-height) 0 0 0;
     padding: 0 1rem;
@@ -69,7 +73,6 @@ a {
 .l-navbar {
     position: fixed;
     top: 0;
-    left: -30%;
     width: var(--nav-width);
     height: 100vh;
     background-color: var(--first-color);
