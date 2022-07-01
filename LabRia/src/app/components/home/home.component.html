@@ -1,10 +1,17 @@
   <div class="row justify-content-center"> 
-    <img src="../../../assets/logo-footer-lite.png" style=" width: 30%;" > 
-  </div>
-<ngb-carousel>
-  <ng-template ngbSlide *ngFor="let n of noticias">
-    <div class="picsum-img-wrapper">
-      <img src={{n.imagen}} alt="IMG">
+    <div class="row justify-content-center">
+      <img src="../../../assets/logo-footer-lite.png" style=" width: 20%;"> 
     </div>
-  </ng-template>
-  <ng-template ngbSlide>
+    <div class="row justify-content-center" style= " width:80% ; margin-top: 50px; margin-bottom: 100px;">
+      <ngb-carousel [showNavigationIndicators]="false" >
+        <ng-template ngbSlide *ngFor="let n of noticias">
+          <div class="picsum-img-wrapper">
+            <div>
+              <img src={{n.imagen}} alt="IMG" class="img-fluid" >
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  
+  </div>
