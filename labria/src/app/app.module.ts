@@ -13,8 +13,6 @@ import { NoticiaComponent } from './components/ComponentesNoticia/noticia/notici
 import { ModificarNoticiaComponent } from './components/ComponentesNoticia/modificar-noticia/modificar-noticia.component';
 import { AltaNoticiaComponent } from './components/ComponentesNoticia/alta-noticia/alta-noticia.component';
 import { LoginComponent } from './components/login/login.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { InformacionComponent } from './components/informacion/informacion.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -26,16 +24,12 @@ import { NavComponent } from './components/nav/nav.component';
     MateriaComponent,
     AltaMateriaComponent,
     ModificarMateriaComponent,
-<<<<<<< HEAD
-    LoginComponent
-=======
     NoticiaComponent,
     ModificarNoticiaComponent,
     AltaNoticiaComponent,
     LoginComponent,
     InformacionComponent,
     NavComponent,
->>>>>>> 2b165b682ed772fefd2b972ba897fa5f2a9037a0
   ],
   imports: [
     BrowserModule,
