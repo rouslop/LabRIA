@@ -2,15 +2,18 @@
 <!-- ESTA LOGEADO -->
 <ng-template #thenBlock>
   <div>
-    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-start"
-      style="background-color: white ; margin-bottom: 2%;">
-      <li ngbDropdown class="nav-item" style="width: 100%;">
+    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-between" style="background-color: white ; margin-bottom: 2%;">
+      <li ngbDropdown class="nav-item">
         <a href (click)="false" class="nav-link" ngbDropdownToggle><img src="../../assets/Isotipo-utec.png"
             style="width: 30px;"> Menu</a>
-        <div ngbDropdownMenu style="padding: 5px;">
+        <div ngbDropdownMenu style="padding: 5px; width: 230px;">
           <a routerLink="/"> <i class="bi bi-house"></i> Home</a>
           <br><br>
+          <a routerLink="/documentos"> <i class="bi bi-file-earmark"></i> Documentos de interes</a>
+          <br><br>
           <a routerLink="/noticia"> <i class="bi bi-lightbulb"></i> Noticias</a>
+          <br><br>
+          <a routerLink="/materia"> <i class="bi bi-list"></i> Materias</a>
           <br><br>
           <a routerLink="/unidades"> <i class="bi bi-clipboard2-check"></i> Unidades Curriculares</a>
           <br><br>
@@ -19,10 +22,11 @@
           <a routerLink="/datos"> <i class="bi bi-book"></i> Datos de interes</a>
           <br><br>
           <a routerLink="/oportunidades"> <i class="bi bi-shop"></i> Oportunidades laborables</a>
-          <br><br>
-          <a routerLink="/login"> <i class="bi bi-door-open"></i> login</a>
           <br>
         </div>
+      </li>
+      <li [ngbNavItem]="1">
+        <button (ng-click)="logout()" style="padding: 5px; margin: 5px;" class =" btn btn-secundary" > <i class="bi bi-door-open"></i> Log Out</button>
       </li>
     </ul>
   </div>
@@ -30,12 +34,11 @@
 <ng-template #elseBlock>
   <!-- NO ESTA LOGEADO -->
   <div> 
-    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-start"
-      style="background-color: white ; margin-bottom: 2%;">
-      <li ngbDropdown class="nav-item" style="width: 100%;">
+    <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-center" style="background-color: white ; margin-bottom: 2%;">
+      <li ngbDropdown class="nav-item">
         <a href (click)="false" class="nav-link" ngbDropdownToggle><img src="../../assets/Isotipo-utec.png"
             style="width: 30px;"> Menu</a>
-        <div ngbDropdownMenu style="padding: 5px;">
+        <div ngbDropdownMenu style="padding: 5px; width: 230px;">
           <a routerLink="/"> <i class="bi bi-house"></i> Home</a>
           <br><br>
           <a routerLink="/noticia"> <i class="bi bi-lightbulb"></i> Noticias</a>
@@ -48,9 +51,10 @@
           <br><br>
           <a routerLink="/oportunidades"> <i class="bi bi-shop"></i> Oportunidades laborables</a>
           <br><br>
-          <a routerLink="/login"> <i class="bi bi-door-open"></i> login</a>
-          <br>
         </div>
+      </li>
+      <li [ngbNavItem]="1" >
+        <a routerLink="/login" style="padding: 5px; margin-top: 5px;"> <i class="bi bi-door-open"></i> login</a>
       </li>
     </ul>
   </div>
