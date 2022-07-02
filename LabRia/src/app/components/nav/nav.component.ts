@@ -15,7 +15,9 @@ export class NavComponent implements OnInit {
   
    logout(){
       localStorage.clear();
-      this.router.navigate(['/']);
+      // this.router.navigate(['/']);
+      // location.reload();
+      console.log(this.token);
     }
 
 }

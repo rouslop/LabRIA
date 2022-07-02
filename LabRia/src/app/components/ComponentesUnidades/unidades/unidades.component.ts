@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Unidades} from 'src/app/models/unidades';
 
 @Component({
   selector: 'app-unidades',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnidadesComponent implements OnInit {
 
+  Unidades: Unidades[] = [];
   token = localStorage.getItem('token');
 
   constructor() { }

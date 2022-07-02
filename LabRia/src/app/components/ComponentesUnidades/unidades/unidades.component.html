@@ -1,4 +1,4 @@
-<div *ngIf="token!=null; then thenBlock else elseBlock"></div>
+<div *ngIf="token!=null then thenBlock else elseBlock"></div>
 <ng-template #thenBlock>
     <!-- ESTA LOGEADPO -->
     <div>
@@ -13,24 +13,15 @@
                             style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
                             <tr class="tabla" style="margin-bottom: 20px; border-color: none;">
                                 <td class="tdbase1">Nombre</td>
-                                <td class="tdbase">Descripcion</td>
-                                <td class="tdbase">Creditos Minimos</td>
+                                <td class="tdbase">Creditos</td>
                                 <td class="tdbtn" style="border-radius : 20px;">
-                                    <button routerLink="/altaMateria" class="btn btn-secondary"
+                                    <button routerLink="/AltaUnidades" class="btn btn-secondary"
                                         style="margin: 5px;">+</button>
                                 </td>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- <tr class="tabla" *ngFor="let x of materias" style="margin-bottom: 20px;">
-                                <td class="tdbase">{{x.nombre}}</td>
-                                <td class="tdbase">{{x.descripcion}}</td>
-                                <td class="tdbase">{{x.creditosMinimos}}</td>
-                                <td>
-                                  <button class="btn btn-secondary" style="margin: 5px;" (click)="eliminarMateria(x.id)"><i class="bi bi-trash"></i></button>
-                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-pencil"></i></button>
-                                </td>
-                            </tr> -->
+                            <!-- aca va toda la lista  -->
                         </tbody>
                     </table>
                 </div>
@@ -57,11 +48,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- <tr class="tabla" *ngFor="let x of materias">
-                                <td class="tdbase">{{x.nombre}}</td>
-                                <td class="tdbase">{{x.descripcion}}</td>
-                                <td class="tdbase">{{x.creditosMinimos}}</td>
-                            </tr> -->
+                            <!-- aca falta toda la lista  -->
                         </tbody>
                     </table>
                 </div>

@@ -7,9 +7,9 @@ import { NoticiaComponent } from './components/ComponentesNoticia/noticia/notici
 import { LoginComponent } from './components/login/login.component'
 import { AltaNoticiaComponent } from './components/ComponentesNoticia/alta-noticia/alta-noticia.component';
 import{InformacionComponent} from './components/informacion/informacion.component';
-import {UnidadComponent}from './components/unidades-curiculares/unidad/unidad.component';
-import {UnidadesComponent}from './components/unidades-curiculares/unidades/unidades.component';
-import {AltaUnidadesComponent}from './components/unidades-curiculares/alta-unidades/alta-unidades.component';
+import {UnidadComponent}from './components/ComponentesUnidades/unidad/unidad.component';
+import {UnidadesComponent}from './components/ComponentesUnidades/unidades/unidades.component';
+import { AltaUnidadesComponent } from './components/ComponentesUnidades/alta-unidades/alta-unidades.component';
 
 
 
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'altaMateria', component: AltaMateriaComponent},
   { path: 'unidades', component: UnidadesComponent},
   { path: 'unidad', component: UnidadComponent},
-  { path: 'AltaUnidadesComponent', component: AltaUnidadesComponent},
+  { path: 'AltaUnidades', component: AltaUnidadesComponent},
 
 ];
 

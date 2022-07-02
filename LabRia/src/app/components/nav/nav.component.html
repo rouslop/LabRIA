@@ -1,4 +1,4 @@
-<div *ngIf="token!=null; then thenBlock else elseBlock"></div>
+<div *ngIf="token != null then thenBlock else elseBlock"></div>
 <!-- ESTA LOGEADO -->
 <ng-template #thenBlock>
   <div>
@@ -26,7 +26,7 @@
         </div>
       </li>
       <li [ngbNavItem]="1">
-        <button (ng-click)="logout()" style="padding: 5px; margin: 5px;" class =" btn btn-secundary" > <i class="bi bi-door-open"></i> Log Out</button>
+        <button (click)="logout()" style="padding: 5px; margin: 5px;" class =" btn btn-secundary" > <i class="bi bi-door-open"></i> Log Out</button>
       </li>
     </ul>
   </div>
