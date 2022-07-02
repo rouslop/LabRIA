@@ -7,7 +7,7 @@ import { JwtInterceptor } from './interceptors/httpInterceptor';
 import { HomeComponent } from './components/home/home.component';
 import { MateriaComponent } from './components/ComponentesMateria/materia/materia.component';
 import { AltaMateriaComponent } from './components/ComponentesMateria/alta-materia/alta-materia.component';
-import { ModificarMateriaComponent } from './components/ComponentesMateria/modificar-materia/modificar-materia.component';
+import { ModificarMateriaComponent } from './components/ComponentesMateria/materia/modificar-materia/modificar-materia.component';
 import { NoticiaComponent } from './components/ComponentesNoticia/noticia/noticia.component';
 import { ModificarNoticiaComponent } from './components/ComponentesNoticia/modificar-noticia/modificar-noticia.component';
 import { AltaNoticiaComponent } from './components/ComponentesNoticia/alta-noticia/alta-noticia.component';
