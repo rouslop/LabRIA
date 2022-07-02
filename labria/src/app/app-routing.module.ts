@@ -7,6 +7,13 @@ import { NoticiaComponent } from './components/ComponentesNoticia/noticia/notici
 import { LoginComponent } from './components/login/login.component'
 import { AltaNoticiaComponent } from './components/ComponentesNoticia/alta-noticia/alta-noticia.component';
 import{InformacionComponent} from './components/informacion/informacion.component';
+import {UnidadComponent}from './components/unidades-curiculares/unidad/unidad.component';
+import {UnidadesComponent}from './components/unidades-curiculares/unidades/unidades.component';
+import {AltaUnidadesComponent}from './components/unidades-curiculares/alta-unidades/alta-unidades.component';
+
+
+
+
 
 
 const routes: Routes = [
@@ -18,6 +25,10 @@ const routes: Routes = [
   { path: 'altaNoticia', component: AltaNoticiaComponent},
   { path: 'informacion', component: InformacionComponent},
   { path: 'altaMateria', component: AltaMateriaComponent},
+  { path: 'unidades', component: UnidadesComponent},
+  { path: 'unidad', component: UnidadComponent},
+  { path: 'AltaUnidadesComponent', component: AltaUnidadesComponent},
+
 ];
 
 @NgModule({

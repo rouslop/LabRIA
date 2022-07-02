@@ -18,7 +18,8 @@ export class MateriaComponent implements OnInit {
   }
   
   eliminarMateria(x: any){ 
-     console.log(this.MateriaService.eliminarMateria(x));
+    //console.log(x);
+    console.log(this.MateriaService.eliminarMateria(x));
   }
 
   getListMaterias() {

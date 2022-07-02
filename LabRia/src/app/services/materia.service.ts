@@ -23,6 +23,7 @@ export class MateriaService {
   }
 
   eliminarMateria(m:String):Observable<Res>{
+    console.log(m);
     return this.http.delete<Res>(environment.apiUrl+"/api/Materias/"+m);
   }
 

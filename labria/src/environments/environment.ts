@@ -8,6 +8,7 @@ export const environment = {
 }
 
 /*
+'https://ria2022.test.softtero.com'// Deveriamos usar ese pero sin datos de pruevass no se ve na jajjaja
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
  *
