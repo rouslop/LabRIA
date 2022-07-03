@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {Login} from '../../models/login';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,16 +10,25 @@ import {Router} from '@angular/router';
 })
 export class NavComponent implements OnInit {
   token = localStorage.getItem('token');
-  constructor( private router:Router ) { }
+  constructor( private api:LoginService ,private router:Router ) { }
 
   ngOnInit(): void {
   }
   
    logout(){
       localStorage.clear();
-      // this.router.navigate(['/']);
-      // location.reload();
+      this.token = localStorage.getItem('token');
       console.log(this.token);
+    }
+    
+    public login(x:Login) {
+      this.api.Login(x).subscribe(data => {
+        console.log(data.token);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('token_expiration', data.expiration);
+        location.reload();
+      });
+      this.router.navigate(['/']);
     }
 
 }

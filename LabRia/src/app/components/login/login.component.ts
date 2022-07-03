@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import {Login} from '../../models/login';
 import {Router} from '@angular/router';
+import { ResourceLoader } from '@angular/compiler';
+import {NavComponent} from '../nav/nav.component';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  nanv:NavComponent = new NavComponent (this.api , this.router);
   token = localStorage.getItem('token');
 
   formlogin = new FormGroup({
@@ -29,14 +31,15 @@ export class LoginComponent implements OnInit {
       password: this.formlogin.controls["password"].value,
       username: this.formlogin.controls["username"].value
     }
-    console.log(this.formlogin.value.username);
-    this.api.Login(x).subscribe(data => {
-      console.log(data.token);
-      console.log(data.expiration);
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('token_expiration', data.expiration);
-      this.router.navigate(['/']);
-    });
+    this.nanv.login(x);
+    // console.log(this.formlogin.value.username);
+    // this.api.Login(x).subscribe(data => {
+    //   console.log(data.token);
+    //   console.log(data.expiration);
+    //   localStorage.setItem('token', data.token);
+    //   localStorage.setItem('token_expiration', data.expiration);
+    //   this.router.navigate(['/']);
+    // });
   }
 
 }
