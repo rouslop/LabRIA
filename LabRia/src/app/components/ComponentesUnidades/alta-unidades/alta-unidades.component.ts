@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Unidades } from 'src/app/models/unidades';
+import { UnidadesService } from 'src/app/services/unidades.service';
 
 @Component({
   selector: 'app-alta-unidades',
@@ -15,16 +16,24 @@ export class AltaUnidadesComponent implements OnInit {
     creditos: new FormControl('', Validators.required),
     });
 
-  constructor() { }
+  constructor( public service: UnidadesService) { }
 
   ngOnInit(): void {
   }
 
   agregarUnidad(){
-    let U = new Unidades();
-    U.nombre =  this.formUnidades.controls["nombre"].value;
-    U.nombre =  this.formUnidades.controls["destination"].value;
-    U.nombre =  this.formUnidades.controls["creditos"].value;
+    let u = new Unidades();
+    u.nombre =  this.formUnidades.controls["nombre"].value;
+    u.descripcion =  this.formUnidades.controls["destination"].value;
+    u.creditos =  this.formUnidades.controls["creditos"].value;
+    u.previas = [];
+    u.materia = [];
+    u.semestre = "";
+    u.documento = "";
+    this.service.addUnidades(u).subscribe({
+      next: value => console.log(value),
+      error: err => { alert('Error al agregar las noticias: ' + err) }
+    });
   }
 
 }

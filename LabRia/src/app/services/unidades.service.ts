@@ -13,10 +13,14 @@ export class UnidadesService {
 
   
   getUnidades(): Observable<Unidades[]>{
-    return this.http.get<Unidades[]>(this.baseUrl);
+    return this.http.get<Unidades[]>(environment.apiUrl+"/api/UnidadesCurriculares");
   }
   
-  addUnidades(n:Unidades): Observable<Unidades>{
-    return this.http.post<Unidades>(environment.apiUrl+"/api/Noticias", n);
+  addUnidades(U:Unidades): Observable<Unidades>{
+    return this.http.post<Unidades>(environment.apiUrl+"/api/UnidadesCurriculares", U);
+  }
+  
+  getUnidad(U:Unidades): Observable<Unidades>{
+    return this.http.get<Unidades>(environment.apiUrl+"/api/UnidadesCurriculares/"+U);
   }
 }
