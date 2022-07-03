@@ -18,4 +18,11 @@ export class GetNoticiasService {
   addNoticia(n:Noticia): Observable<Noticia>{
     return this.http.post<Noticia>(environment.apiUrl+"/api/Noticias", n);
   }
+
+  
+  eliminarNoticia(n:String){
+    console.log(n);
+    let url = environment.apiUrl + "/api/Noticias/" + n
+    return this.http.delete(url);
+  }
 }

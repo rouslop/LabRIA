@@ -19,7 +19,9 @@
             <input type="text" class="inputs" formControlName="creditos">
         </div>
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
-            <button type="button" class="btn btn-secondary">Agregar Documento</button> <!-- esto no se hacerlo jeje  -->
+            <label class="lab">Documento: </label>
+                <input type="file" formControlName="imagen" class="btn btn-secondary"
+                    accept="pdf" /> <!-- esto no se hacerlo jeje  -->
         </div>
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
             <button type="submit" class="btn btn-dark btnconf">Confirmar</button>

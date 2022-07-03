@@ -14,7 +14,6 @@ export class NoticiaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getListNoticias();
-
   }
 
   getListNoticias() {
@@ -23,5 +22,13 @@ export class NoticiaComponent implements OnInit {
       error: err => { alert('Error al cargar las noticias: ' + err) }
     }
     );
+  }
+
+  eliminarNoticia(x: any){ 
+    this.ngOnInit();
+    this.getNoticias.eliminarNoticia(x).subscribe(data => {
+        console.log(data);
+      });
+    this.ngOnInit();
   }
   }
