@@ -34,7 +34,7 @@ export class NoticiaComponent implements OnInit {
     n.fechaCaducidad = f;
     n.imagen = im;
     this.getNoticias.editarNoticiaGuardar(n);
-    this.router.navigate(['/editarMateria']);
+    this.router.navigate(['/modificarNoticia']);
 }
 
   eliminarNoticia(x: any){ 

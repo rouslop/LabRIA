@@ -6,27 +6,27 @@
     </div>
     <div class="row justify-content-center" style="margin-left: 30% ;"></div>
 <div class="divP">
-    <form [formGroup]="formNoticia">
+    <form [formGroup]="formNoticia" (submit)="editarNoticia()">
         <div class="col-10">
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
                 <label class="lab">Titulo: </label>
                 <br>
-                <input type="text" class="inputs" formControlName="titulo" >
+                <input type="text" class="inputs" formControlName="titulo" [ngModel]="Noticia.titulo">
             </div>
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
                 <label class="lab">Descripción: </label>
                 <br>
-                <input type="text" class="inputs" formControlName="descripcion">
+                <input type="text" class="inputs" formControlName="descripcion" [ngModel]="Noticia.descripcion">
             </div>
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
                 <label class="lab">Fecha de caducidad: </label>
                 <br>
-                <input type="date" class="inputs" formControlName="fechaCaducidad">
+                <input type="date" class="inputs" formControlName="fechaCaducidad" [ngModel]="Noticia.fechaCaducidad">
             </div>
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
                 <label class="lab">Imagen: </label>
                 <input type="file" src="" alt="" formControlName="imagen" class="inputs img" style="size:200px;"
-                    accept="image/gif, image/jpeg, image/png">
+                    accept="image/gif, image/jpeg, image/png" [ngModel]="Noticia.imagen" />
             </div>
         </div>
 

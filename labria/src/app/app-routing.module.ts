@@ -11,7 +11,7 @@ import {UnidadComponent}from './components/ComponentesUnidades/unidad/unidad.com
 import {UnidadesComponent}from './components/ComponentesUnidades/unidades/unidades.component';
 import { AltaUnidadesComponent } from './components/ComponentesUnidades/alta-unidades/alta-unidades.component';
 import {ModificarMateriaComponent} from './components/ComponentesMateria/modificar-materia/modificar-materia.component';
-
+import{ModificarNoticiaComponent} from'./components/ComponentesNoticia/modificar-noticia/modificar-noticia.component';
 
 
 
@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'unidades', component: UnidadesComponent},
   { path: 'unidad', component: UnidadComponent},
   { path: 'AltaUnidades', component: AltaUnidadesComponent},
+  { path: 'modificarNoticia' , component: ModificarNoticiaComponent}
 
 ];
 
