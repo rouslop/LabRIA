@@ -36,7 +36,7 @@ export class GetNoticiasService {
     }
     
     editarMateria(m:Noticia): Observable<Noticia>{
-     let url = environment.apiUrl + "/api/Materias/" + m.id
+     let url = environment.apiUrl + "/api/Noticias/" + m.id
      return this.http.put<Noticia>(url, m)
     }
 }

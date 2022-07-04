@@ -35,7 +35,7 @@ export class ModificarNoticiaComponent implements OnInit {
       next: value => console.log(value),
       error: err => { alert('Error al agregar las noticias: ' + err) }
     });
-    this.router.navigate(['/materia']);
+    //this.router.navigate(['/noticia']);
   }
 
 

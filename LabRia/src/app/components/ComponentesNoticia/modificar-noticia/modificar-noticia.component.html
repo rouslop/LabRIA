@@ -21,7 +21,7 @@
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
                 <label class="lab">Fecha de caducidad: </label>
                 <br>
-                <input type="date" class="inputs" formControlName="fechaCaducidad" [ngModel]="Noticia.fechaCaducidad">
+                <input type="date" class="inputs" formControlName="fechaCaducidad"  [ngModel]='Noticia.fechaCaducidad | date:"yyyy-MM-dd" '>
             </div>
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
                 <label class="lab">Imagen: </label>
