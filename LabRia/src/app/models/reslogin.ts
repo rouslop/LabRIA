@@ -1,4 +1,4 @@
 export interface reslogin{
-    token:string;
+    notisias:string;
     expiration:string;
 }

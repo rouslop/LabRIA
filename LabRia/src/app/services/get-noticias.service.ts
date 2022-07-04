@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Noticia } from '../models/noticia';
+import {RespagNoticia } from '../models/retpagNoticia';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,10 @@ export class GetNoticiasService {
 
   getNoticias(): Observable<Noticia[]>{
     return this.http.get<Noticia[]>(this.baseUrl);
+  }
+  getNoticiaspaginadas(o: number): Observable<RespagNoticia>{
+    let url = environment.apiUrl + "/api/Noticias/Paged/"+o+"/5";
+    return this.http.get<RespagNoticia>(url);
   }
 
   addNoticia(n:Noticia): Observable<Noticia>{
