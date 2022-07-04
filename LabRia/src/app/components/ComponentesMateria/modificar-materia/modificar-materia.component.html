@@ -8,17 +8,17 @@
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
             <label class="lab">Nombre :</label>
             <br>
-            <input type="text" class="inputs" formControlName="nombre">
+            <input type="text" class="inputs" formControlName="nombre" [ngModel]="materia.nombre">
         </div>
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
             <label class="lab">Descripsion :</label>
             <br>
-            <input type="text" class="inputs" formControlName="descripcion">
+            <input type="text" class="inputs" formControlName="descripcion" [ngModel]="materia.descripcion">
         </div>
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
             <label class="lab">Creditos :</label>
             <br>
-            <input type="text" class="inputs" formControlName="creditos">
+            <input type="text" class="inputs" formControlName="creditos" [ngModel]="materia.creditosMinimos">
         </div>
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
             <button type="submit" class="btn btn-dark btnconf">Editar Materia</button>

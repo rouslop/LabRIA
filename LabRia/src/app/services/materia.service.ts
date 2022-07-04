@@ -23,21 +23,24 @@ export class MateriaService {
     return this.http.post<Materia>(environment.apiUrl+"/api/Materias", m);
   }
   
+
+  eliminarMateria(m:String){
+    let url = environment.apiUrl + "/api/Materias/" + m
+    return this.http.delete(url);
+  }
+
+
   editarMateriaGuardar(m:Materia){
-   this.materiaAeditar = m;   
+   this.materiaAeditar = m;
   }
   editarMateriaObtener():Materia{
     return this.materiaAeditar;
    }
-   editarMateria(m:Materia){
-    return this.http.put(environment.apiUrl+"/api/Materiaa", m);
+   
+   editarMateria(m:Materia): Observable<Materia>{
+    let url = environment.apiUrl + "/api/Materias/" + m.id
+    return this.http.put<Materia>(url, m)
    }
    
-
-  eliminarMateria(m:String){
-    console.log(m);
-    let url = environment.apiUrl + "/api/Materias/" + m
-    return this.http.delete(url);
-  }
 
 }

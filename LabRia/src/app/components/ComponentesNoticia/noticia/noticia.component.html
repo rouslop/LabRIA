@@ -30,7 +30,7 @@
                                 <td class="tdbase"><img src={{x.imagen}} alt="img" style="height: 100px;"></td>
                                 <td>
                                   <button (click)="eliminarNoticia(x.id)" class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-trash" ></i></button>
-                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-pencil"></i></button>
+                                  <button class="btn btn-secondary" style="margin: 5px;" (click)="editarNoticia(x.id,x.titulo,x.descripcion,x.fechaCaducidad,x.imagen)"><i class="bi bi-pencil"></i></button>
                                 </td>
                             </tr>
                         </tbody>

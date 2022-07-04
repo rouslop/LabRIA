@@ -10,7 +10,7 @@ import{InformacionComponent} from './components/informacion/informacion.componen
 import {UnidadComponent}from './components/ComponentesUnidades/unidad/unidad.component';
 import {UnidadesComponent}from './components/ComponentesUnidades/unidades/unidades.component';
 import { AltaUnidadesComponent } from './components/ComponentesUnidades/alta-unidades/alta-unidades.component';
-
+import {ModificarMateriaComponent} from './components/ComponentesMateria/modificar-materia/modificar-materia.component';
 
 
 
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'altaNoticia', component: AltaNoticiaComponent},
   { path: 'informacion', component: InformacionComponent},
-  { path: 'altaMateria', component: AltaMateriaComponent},
+  { path: 'editarMateria', component:ModificarMateriaComponent},
   { path: 'unidades', component: UnidadesComponent},
   { path: 'unidad', component: UnidadComponent},
   { path: 'AltaUnidades', component: AltaUnidadesComponent},

@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./modificar-materia.component.css']
 })
 export class ModificarMateriaComponent implements OnInit {
-
+  materia: Materia = new Materia();
   formMateria = new FormGroup ({
     nombre: new FormControl('',Validators.required),
     descripcion: new FormControl('',Validators.required),
@@ -18,13 +18,13 @@ export class ModificarMateriaComponent implements OnInit {
     });
 
   constructor(private service: MateriaService,private router:Router ) { }
-    materia: Materia = new Materia();
   ngOnInit(): void {
     this.materia = this.service.editarMateriaObtener();
   }
 
   editarMateria(){
     let n = new Materia();
+    n.id = this.materia.id;
     n.nombre = this.formMateria.controls["nombre"].value;
     n.descripcion = this.formMateria.controls["descripcion"].value;
     n.creditosMinimos = this.formMateria.controls["creditos"].value;

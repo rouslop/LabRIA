@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetNoticiasService } from '../../../services/get-noticias.service';
 import { Noticia } from '../../../models/noticia';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-noticia',
@@ -10,7 +11,7 @@ import { Noticia } from '../../../models/noticia';
 export class NoticiaComponent implements OnInit {
   noticias: Noticia[] = [];
   token = localStorage.getItem('token');
-  constructor(private getNoticias: GetNoticiasService) { }
+  constructor(private getNoticias: GetNoticiasService,private router:Router) { }
 
   ngOnInit(): void {
     this.getListNoticias();
@@ -23,6 +24,18 @@ export class NoticiaComponent implements OnInit {
     }
     );
   }
+
+  
+  editarNoticia(i: any ,t: any ,d: any ,f: any, im: any){
+    let n = new Noticia();
+    n.id = i;
+    n.titulo = t;
+    n.descripcion = d;
+    n.fechaCaducidad = f;
+    n.imagen = im;
+    this.getNoticias.editarNoticiaGuardar(n);
+    this.router.navigate(['/editarMateria']);
+}
 
   eliminarNoticia(x: any){ 
     this.ngOnInit();

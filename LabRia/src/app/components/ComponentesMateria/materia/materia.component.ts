@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Materia } from 'src/app/models/materia';
 import { MateriaService } from 'src/app/services/materia.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-materia',
@@ -11,7 +12,7 @@ export class MateriaComponent implements OnInit {
 
   materias: Materia[] = [];
   token = localStorage.getItem('token');
-  constructor(private MateriaService: MateriaService) { }
+  constructor(private MateriaService: MateriaService,private router:Router) { }
 
   ngOnInit(): void {
     this.getListMaterias();
@@ -31,7 +32,8 @@ export class MateriaComponent implements OnInit {
       mat.nombre = n;
       mat.descripcion = d;
       mat.creditosMinimos = c;
-      this.MateriaService.eliminarMateriaGuardar(mat);
+      this.MateriaService.editarMateriaGuardar(mat);
+      this.router.navigate(['/editarMateria']);
   }
 
   getListMaterias() {

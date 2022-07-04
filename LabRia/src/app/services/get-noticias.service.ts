@@ -8,6 +8,9 @@ import { Noticia } from '../models/noticia';
   providedIn: 'root'
 })
 export class GetNoticiasService {
+
+  noticiaAeditar:Noticia = new Noticia()
+
   baseUrl = environment.apiUrl + "/api/Noticias/Activas";
   constructor(private http: HttpClient) { }
 
@@ -19,10 +22,21 @@ export class GetNoticiasService {
     return this.http.post<Noticia>(environment.apiUrl+"/api/Noticias", n);
   }
 
-  
   eliminarNoticia(n:String){
     console.log(n);
     let url = environment.apiUrl + "/api/Noticias/" + n
     return this.http.delete(url);
   }
+
+  editarNoticiaGuardar(n:Noticia){
+    this.noticiaAeditar = n;
+   }
+   editarNoticiaObtener():Noticia{
+     return this.noticiaAeditar;
+    }
+    
+    editarMateria(m:Noticia): Observable<Noticia>{
+     let url = environment.apiUrl + "/api/Materias/" + m.id
+     return this.http.put<Noticia>(url, m)
+    }
 }
