@@ -25,8 +25,13 @@
             </div>
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
                 <label class="lab">Imagen: </label>
-                <input type="file" src="" alt="" formControlName="imagen" class="inputs img" style="size:200px;"
-                    accept="image/gif, image/jpeg, image/png">
+                <div>
+                    <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                    <input hidden (change)="onFileSelected($event)" #fileInput type="file" formControlName="imagen">
+                    <span class="file-name">{{selectedFile?.name}}</span>
+                </div>
+                <!-- <input type="file" src="" alt="" formControlName="imagen" class="inputs img" style="size:200px;"
+                    accept="image/gif, image/jpeg, image/png"> -->
             </div>
         </div>
 
