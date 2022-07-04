@@ -12,7 +12,8 @@ import {UnidadesComponent}from './components/ComponentesUnidades/unidades/unidad
 import { AltaUnidadesComponent } from './components/ComponentesUnidades/alta-unidades/alta-unidades.component';
 import {ModificarMateriaComponent} from './components/ComponentesMateria/modificar-materia/modificar-materia.component';
 import{ModificarNoticiaComponent} from'./components/ComponentesNoticia/modificar-noticia/modificar-noticia.component';
-
+import { DocumentosComponent } from './components/ComponentesDocumento/documentos/documentos.component';
+import { AltaDocumentosComponent } from './components/ComponentesDocumento/alta-documentos/alta-documentos.component';
 
 
 
@@ -28,7 +29,9 @@ const routes: Routes = [
   { path: 'unidades', component: UnidadesComponent},
   { path: 'unidad', component: UnidadComponent},
   { path: 'AltaUnidades', component: AltaUnidadesComponent},
-  { path: 'modificarNoticia' , component: ModificarNoticiaComponent}
+  { path: 'modificarNoticia' , component: ModificarNoticiaComponent},
+  { path: 'documentos' , component: DocumentosComponent},
+  { path: 'altaDocumentos', component: AltaDocumentosComponent}
 
 ];
 

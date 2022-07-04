@@ -20,6 +20,9 @@ import { NavComponent } from './components/nav/nav.component';
 import { UnidadesComponent } from './components/ComponentesUnidades/unidades/unidades.component';
 import { AltaUnidadesComponent } from './components/ComponentesUnidades/alta-unidades/alta-unidades.component';
 import { UnidadComponent } from './components/ComponentesUnidades/unidad/unidad.component';
+import { DocumentosComponent } from './components/ComponentesDocumento/documentos/documentos.component';
+import { AltaDocumentosComponent } from './components/ComponentesDocumento/alta-documentos/alta-documentos.component';
+import { ModificarDocumentosComponent } from './components/ComponentesDocumento/modificar-documentos/modificar-documentos.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { UnidadComponent } from './components/ComponentesUnidades/unidad/unidad.
     UnidadesComponent,
     AltaUnidadesComponent,
     UnidadComponent,
+    DocumentosComponent,
+    AltaDocumentosComponent,
+    ModificarDocumentosComponent,
   ],
   imports: [
     ReactiveFormsModule,
