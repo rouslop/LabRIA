@@ -25,6 +25,15 @@ export class MateriaComponent implements OnInit {
     this.ngOnInit();
   }
 
+  editarMateria(i: any ,n: any ,d: any ,c: any){
+      let mat = new Materia();
+      mat.id = i;
+      mat.nombre = n;
+      mat.descripcion = d;
+      mat.creditosMinimos = c;
+      this.MateriaService.eliminarMateriaGuardar(mat);
+  }
+
   getListMaterias() {
     this.MateriaService.getMaterias().subscribe({
       next: value => this.materias = value,

@@ -10,7 +10,8 @@ import{Res} from'../models/res';
 })
 export class MateriaService {
 
-  
+  materiaAeditar:Materia = new Materia()
+
   constructor(private http: HttpClient) { }
 
   
@@ -21,6 +22,17 @@ export class MateriaService {
   addMaterias(m:Materia): Observable<Materia>{
     return this.http.post<Materia>(environment.apiUrl+"/api/Materias", m);
   }
+  
+  editarMateriaGuardar(m:Materia){
+   this.materiaAeditar = m;   
+  }
+  editarMateriaObtener():Materia{
+    return this.materiaAeditar;
+   }
+   editarMateria(m:Materia){
+    return this.http.put(environment.apiUrl+"/api/Materiaa", m);
+   }
+   
 
   eliminarMateria(m:String){
     console.log(m);

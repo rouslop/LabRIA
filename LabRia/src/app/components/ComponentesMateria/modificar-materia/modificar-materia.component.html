@@ -1,1 +1,27 @@
-<p>modificar-materia works!</p>
+<div class="row justify-content-center" style="margin-left: 30% ;">
+    <div style="margin-left: 3% ;">
+        <b style="color : white ;"><u>
+                <h3 style="color: white ;">Editar Materia</h3>
+            </u></b>
+    </div>
+    <form [formGroup]="formMateria" (submit)="editarMateria()">
+        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+            <label class="lab">Nombre :</label>
+            <br>
+            <input type="text" class="inputs" formControlName="nombre">
+        </div>
+        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+            <label class="lab">Descripsion :</label>
+            <br>
+            <input type="text" class="inputs" formControlName="descripcion">
+        </div>
+        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+            <label class="lab">Creditos :</label>
+            <br>
+            <input type="text" class="inputs" formControlName="creditos">
+        </div>
+        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+            <button type="submit" class="btn btn-dark btnconf">Editar Materia</button>
+        </div>
+    </form>
+</div>

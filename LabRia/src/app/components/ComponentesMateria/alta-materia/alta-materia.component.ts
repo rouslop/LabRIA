@@ -30,7 +30,7 @@ export class AltaMateriaComponent implements OnInit {
       next: value => console.log(value),
       error: err => { alert('Error al agregar las noticias: ' + err) }
     });
-    this.router.navigate(['/']);
+    this.router.navigate(['/materia']);
   }
 
 }
