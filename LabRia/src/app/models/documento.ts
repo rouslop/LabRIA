@@ -3,5 +3,5 @@ export class Documento{
     titulo: string | undefined;
     tipo: string | undefined;
     activo: boolean | undefined;
-    documento: string | undefined;
+    documentoPDF: string | undefined;
 }

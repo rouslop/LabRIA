@@ -13,6 +13,7 @@ documentos: Documento[] = [];
   constructor(private servicio: DocumentosService) { }
 
   ngOnInit(): void {
+    this.getDocumentosActivos();
   }
 
   eliminarDcoumento(){
@@ -23,7 +24,7 @@ documentos: Documento[] = [];
 
   }
 
-  getDcoumentosActivos(){
+  getDocumentosActivos(){
     this.servicio.getDocsActivos().subscribe({
       next: value => this.documentos = value,
       error: err => { alert('Error al cargar los documentos: ' + err) }

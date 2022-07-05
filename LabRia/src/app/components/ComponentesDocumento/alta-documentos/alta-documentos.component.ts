@@ -57,8 +57,8 @@ export class AltaDocumentosComponent implements OnInit {
     let d = new Documento();
     d.titulo =  this.formDocumento.controls["titulo"].value;
     d.tipo = this.formDocumento.controls["tipo"].value;
-    d.activo = this.formDocumento.controls["activo"].value;
-    d.documento = this.Imagebase64 ? this.Imagebase64 : " ";
+    d.activo = true;//this.formDocumento.controls["activo"].value;
+    d.documentoPDF = this.Imagebase64 ? this.Imagebase64 : " ";
     this.servicio.agregarDoc(d).subscribe({
       next: value => console.log(value),
       error: err => { alert('Error al agregar el documento: ' + err) }
