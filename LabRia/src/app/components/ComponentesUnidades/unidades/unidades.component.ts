@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Unidades} from 'src/app/models/unidades';
+import { UnidadesService } from 'src/app/services/unidades.service';
 
 @Component({
   selector: 'app-unidades',
@@ -8,12 +9,26 @@ import {Unidades} from 'src/app/models/unidades';
 })
 export class UnidadesComponent implements OnInit {
 
-  Unidades: Unidades[] = [];
+  unidades: Unidades[] = [];
   token = localStorage.getItem('token');
 
-  constructor() { }
+  constructor(public UnidadesSvc:UnidadesService) { }
 
   ngOnInit(): void {
+  }
+
+  editarUnidad(x:any){
+
+  }
+  verUnidad(x:any){
+    
+  }
+  getListMaterias() {
+    this.UnidadesSvc.getUnidades().subscribe({
+      next: value => this.unidades = value,
+      error: err => { alert('Error al cargar las materias: ' + err) }
+    }
+    );
   }
 
 }

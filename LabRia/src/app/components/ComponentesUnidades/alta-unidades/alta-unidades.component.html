@@ -19,10 +19,34 @@
             <input type="text" class="inputs" formControlName="creditos">
         </div>
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
-            <label class="lab">Documento: </label>
-                <input type="file" formControlName="imagen" class="btn btn-secondary"
-                    accept="pdf" /> <!-- esto no se hacerlo jeje  -->
+            <label class="lab">Semestre :</label>
+            <br>
+            <input type="number" class="inputs" formControlName="semestre">
         </div>
+        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+            <label class="lab">Documento: </label>
+            <div>
+                <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                <input hidden (change)="onFileSelected($event)" #fileInput type="file" formControlName="imagen">
+                <span class="file-name">{{selectedFile}}</span>
+            </div>
+        </div>
+
+        <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
+            <thead
+                style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
+                <tr class="tabla" style=" border-color: none;">
+                    <td class="tdbase1">Nombre</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tabla" *ngFor="let x of materias">
+                    <td class="tdbase">{{x.nombre}}</td>
+                    <button type="button" class="btn btn-secundary" (click)="selecsionarMateria(x.id , x.nombre, x.descripcion, x.creditosMinimos)">Selecsionar Materia</button>    
+                </tr>
+            </tbody>
+        </table>
+
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
             <button type="submit" class="btn btn-dark btnconf">Confirmar</button>
         </div>

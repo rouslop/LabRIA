@@ -7,6 +7,6 @@ export class Unidades{
    creditos: string | undefined;
    documento: string | undefined;
    semestre: string | undefined;
-   materia: Materia[] | undefined;
+   materia: Materia | undefined;
    previas: Previa[] | undefined;
 }

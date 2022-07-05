@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { finalize, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { SpinnerService } from '../services/spinner.service';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
-    constructor() { }
-
+    constructor(private spinnerSvc: SpinnerService) { }
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        this.spinnerSvc.show();
         const isLoggedIn = "Bearer "+localStorage.getItem('token');
-        // const isApiUrl = request.url.startsWith(environment.apiUrl);
         if (isLoggedIn!=null) {
             request = request.clone({
                 setHeaders: { Authorization: isLoggedIn}
             });
         }
 
-        return next.handle(request);
+        return next.handle(request).pipe(finalize(()=>this.spinnerSvc.hide()));
     }
 }

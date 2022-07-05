@@ -22,6 +22,7 @@ export class AltaNoticiaComponent implements OnInit {
   constructor(private service: GetNoticiasService,private router:Router) { }
 
   public Imagebase64: any;
+  
 
   ngOnInit(): void {
   }

@@ -21,7 +21,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- aca va toda la lista  -->
+                            <tr class="tabla" *ngFor="let x of unidades" style="margin-bottom: 20px;">
+                                <td class="tdbase">{{x.nombre}}</td>
+                                <td class="tdbase">{{x.creditos}}</td>
+                                <td>
+                                  <button class="btn btn-secondary" style="margin: 5px;" (click)="verUnidad(x.id)"><i class="bi bi-eye"></i></button>
+                                  <button class="btn btn-secondary" style="margin: 5px;"(click)="editarUnidad(x.id)"><i class="bi bi-pencil"></i></button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

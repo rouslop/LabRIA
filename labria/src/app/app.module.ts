@@ -23,6 +23,7 @@ import { UnidadComponent } from './components/ComponentesUnidades/unidad/unidad.
 import { DocumentosComponent } from './components/ComponentesDocumento/documentos/documentos.component';
 import { AltaDocumentosComponent } from './components/ComponentesDocumento/alta-documentos/alta-documentos.component';
 import { ModificarDocumentosComponent } from './components/ComponentesDocumento/modificar-documentos/modificar-documentos.component';
+import {SpinnerComponent} from './components/spinner/spinner.component'
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ModificarDocumentosComponent } from './components/ComponentesDocumento/
     DocumentosComponent,
     AltaDocumentosComponent,
     ModificarDocumentosComponent,
+    SpinnerComponent
   ],
   imports: [
     ReactiveFormsModule,

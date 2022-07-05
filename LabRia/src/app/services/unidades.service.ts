@@ -9,8 +9,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UnidadesService {
 
+  unidad: string ="";
+
   constructor(private http: HttpClient) { }
 
+  guardarUnidad(x: any){
+    this.unidad=x;
+  }
   
   getUnidades(): Observable<Unidades[]>{
     return this.http.get<Unidades[]>(environment.apiUrl+"/api/UnidadesCurriculares");
@@ -21,6 +26,7 @@ export class UnidadesService {
   }
   
   getUnidad(U:Unidades): Observable<Unidades>{
-    return this.http.get<Unidades>(environment.apiUrl+"/api/UnidadesCurriculares/"+U);
+    let url = environment.apiUrl+"/api/UnidadesCurriculares/"+this.unidad;
+    return this.http.get<Unidades>(url);
   }
 }
