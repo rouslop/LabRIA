@@ -1,1 +1,22 @@
-<p>unidad works!</p>
+<div style="margin-left: 30%;">
+    <div style="align-items: center;">
+        <h1>Nombre: {{unidad.nombre}}</h1>
+    </div>
+    <div style="align-items: center;">
+        <p>Creditos: {{unidad.creditos}}</p>
+    </div>
+    <div style="align-items: center;">
+        <p>Descripcion {{unidad.descripcion}}</p>
+    </div>
+    <div style="align-items: center;">
+        <p>Materia</p>
+        <div style="margin-left: 30px;">
+            <p>Nombre:  {{unidad.materia?.nombre}}</p>
+            <p>Descripcion:  {{unidad.materia?.descripcion}}</p>
+            <p>Creditos Minimos  {{unidad.materia?.creditosMinimos}}</p>
+        </div>
+    </div>
+    <div>
+        <button (click)="eliminarUnidad(unidad.id)"> </button>
+    </div>
+</div>

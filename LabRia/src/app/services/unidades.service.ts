@@ -25,8 +25,18 @@ export class UnidadesService {
     return this.http.post<Unidades>(environment.apiUrl+"/api/UnidadesCurriculares", U);
   }
   
-  getUnidad(U:Unidades): Observable<Unidades>{
+  getUnidad(): Observable<Unidades>{
     let url = environment.apiUrl+"/api/UnidadesCurriculares/"+this.unidad;
     return this.http.get<Unidades>(url);
+  }
+
+  eliminarUnidad(): Observable<Unidades>{
+    let url = environment.apiUrl+"/api/UnidadesCurriculares/"+this.unidad;
+    return this.http.delete<Unidades>(url);
+  }
+
+  editarUnidad(U:any): Observable<Unidades>{
+    let url = environment.apiUrl+"/api/UnidadesCurriculares/"+this.unidad;
+    return this.http.put<Unidades>(url,U);
   }
 }

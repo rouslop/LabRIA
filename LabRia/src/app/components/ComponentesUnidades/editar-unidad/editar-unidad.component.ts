@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subscriber } from 'rxjs';
 import { Materia } from 'src/app/models/materia';
 import { Unidades } from 'src/app/models/unidades';
-import { MateriaService } from 'src/app/services/materia.service';
 import { UnidadesService } from 'src/app/services/unidades.service';
+import { MateriaService } from 'src/app/services/materia.service';
 
 @Component({
-  selector: 'app-alta-unidades',
-  templateUrl: './alta-unidades.component.html',
-  styleUrls: ['./alta-unidades.component.css']
+  selector: 'app-editar-unidad',
+  templateUrl: './editar-unidad.component.html',
+  styleUrls: ['./editar-unidad.component.css']
 })
-export class AltaUnidadesComponent implements OnInit {
-  materia = new Materia();
-  materias: Materia[] = [];
+export class EditarUnidadComponent implements OnInit {
+  previa = new Unidades();
+  previas: Unidades[] = [];
   u = new Unidades();
   documento:any;
   selectedFile: string="";
@@ -25,41 +25,36 @@ export class AltaUnidadesComponent implements OnInit {
     creditos: new FormControl('', Validators.required),
     semestre: new FormControl('', Validators.required),
     });
+  constructor(public service: UnidadesService,private router:Router) { }
 
-  constructor( public service: UnidadesService,public MateriaService:MateriaService,private router:Router ) { }
-
-  ngOnInit(): void {
-    this.getListMaterias();
-  }
-
-  agregarUnidad(){
+  editarUnidad(){
     this.u.nombre =  this.formUnidades.controls["nombre"].value;
     this.u.descripcion =  this.formUnidades.controls["descripcion"].value;
     this.u.creditos =  this.formUnidades.controls["creditos"].value;
-    this.u.materia = this.materia;
     this.u.previas = [];
-    this.u.semestre = this.formUnidades.controls["semestre"].value;
     this.u.documento =this.documento ? this.documento : " ";
-    this.service.addUnidades(this.u).subscribe({
+    this.service.editarUnidad(this.u).subscribe({
       next: value => console.log(value),
       error: err => { alert('Error al agregar las noticias: ' + err) }
     });
     this.router.navigate(['/unidades']);
   }
 
-  getListMaterias() {
-    this.MateriaService.getMaterias().subscribe({
-      next: value => this.materias = value,
+  
+  getListPrevias() {
+    this.service.getUnidades().subscribe({
+      next: value => this.previas = value,
       error: err => { alert('Error al cargar las materias: ' + err) }
     }
     );
   }
 
-  selecsionarMateria(i:any,n:any,d:any,c: any) {
-    this.materia.id=i;
-    this.materia.nombre=n;
-    this.materia.descripcion=d;
-    this.materia.creditosMinimos=c;
+  selecsionarPrevia(i:any) {
+    this.previa.id=i;
+  }
+
+  ngOnInit(): void {
+    this.getListPrevias();
   }
 
   onFileSelected(event: any): void {

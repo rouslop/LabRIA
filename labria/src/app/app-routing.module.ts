@@ -14,7 +14,7 @@ import {ModificarMateriaComponent} from './components/ComponentesMateria/modific
 import{ModificarNoticiaComponent} from'./components/ComponentesNoticia/modificar-noticia/modificar-noticia.component';
 import { DocumentosComponent } from './components/ComponentesDocumento/documentos/documentos.component';
 import { AltaDocumentosComponent } from './components/ComponentesDocumento/alta-documentos/alta-documentos.component';
-
+import {EditarUnidadComponent} from'./components/ComponentesUnidades/editar-unidad/editar-unidad.component';
 
 
 const routes: Routes = [
@@ -27,11 +27,12 @@ const routes: Routes = [
   { path: 'informacion', component: InformacionComponent},
   { path: 'editarMateria', component:ModificarMateriaComponent},
   { path: 'unidades', component: UnidadesComponent},
-  { path: 'unidad', component: UnidadComponent},
+  { path: 'verunidad', component: UnidadComponent},
   { path: 'AltaUnidades', component: AltaUnidadesComponent},
   { path: 'modificarNoticia' , component: ModificarNoticiaComponent},
   { path: 'documentos' , component: DocumentosComponent},
-  { path: 'altaDocumentos', component: AltaDocumentosComponent}
+  { path: 'altaDocumentos', component: AltaDocumentosComponent},
+  { path:'editarunidad' , component: EditarUnidadComponent}
 
 ];
 
