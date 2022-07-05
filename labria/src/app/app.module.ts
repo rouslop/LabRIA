@@ -25,6 +25,7 @@ import { AltaDocumentosComponent } from './components/ComponentesDocumento/alta-
 import { ModificarDocumentosComponent } from './components/ComponentesDocumento/modificar-documentos/modificar-documentos.component';
 import {SpinnerComponent} from './components/spinner/spinner.component';
 import { EditarUnidadComponent } from './components/ComponentesUnidades/editar-unidad/editar-unidad.component'
+import {Spinerinterceptor} from './interceptors/spinerinterceptor'
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { EditarUnidadComponent } from './components/ComponentesUnidades/editar-u
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-        // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: Spinerinterceptor ,multi: true },
     NgbModule,
     NgbPaginationModule, 
     NgbAlertModule,
