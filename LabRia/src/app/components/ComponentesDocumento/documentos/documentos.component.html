@@ -25,10 +25,12 @@
                             <tr class="tabla" *ngFor="let x of documentos" style="margin-bottom: 20px;">
                                 <td class="tdbase">{{x.titulo}}</td>
                                 <td class="tdbase">{{x.tipo}}</td>
-                                <td class="tdbase">{{x.documentoPDF}}</td>
+                                <td class="tdbase"><a>PDF</a></td>
                                 <td>
-                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-trash" ></i></button> 
-                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn btn-secondary" style="margin: 5px;"><i
+                                            class="bi bi-trash"></i></button>
+                                    <button class="btn btn-secondary" style="margin: 5px;"><i
+                                            class="bi bi-pencil"></i></button>
                                 </td>
                             </tr>
                         </tbody>

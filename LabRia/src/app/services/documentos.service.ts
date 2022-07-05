@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Documento } from '../models/documento';
+import { ResDocumento } from '../models/resDocumentos';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,11 @@ export class DocumentosService {
   getDocsActivos(): Observable<Documento[]>{
     let url = this.baseUrl + "/Activos";
     return this.http.get<Documento[]>(url);
+  }
+
+  getDocsPaginados(n:number): Observable<ResDocumento>{
+    let url = this.baseUrl + "/Paged/"+n+"/5";
+    return this.http.get<ResDocumento>(url);
   }
 
   agregarDoc(doc: Documento) : Observable<Documento>{

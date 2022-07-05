@@ -24,7 +24,9 @@ import { DocumentosComponent } from './components/ComponentesDocumento/documento
 import { AltaDocumentosComponent } from './components/ComponentesDocumento/alta-documentos/alta-documentos.component';
 import { ModificarDocumentosComponent } from './components/ComponentesDocumento/modificar-documentos/modificar-documentos.component';
 import {SpinnerComponent} from './components/spinner/spinner.component';
-import { EditarUnidadComponent } from './components/ComponentesUnidades/editar-unidad/editar-unidad.component'
+import { EditarUnidadComponent } from './components/ComponentesUnidades/editar-unidad/editar-unidad.component';
+import  {  PdfViewerModule  }  from  'ng2-pdf-viewer';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,7 @@ import { EditarUnidadComponent } from './components/ComponentesUnidades/editar-u
     AltaDocumentosComponent,
     ModificarDocumentosComponent,
     SpinnerComponent,
-    EditarUnidadComponent
+    EditarUnidadComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -55,6 +57,8 @@ import { EditarUnidadComponent } from './components/ComponentesUnidades/editar-u
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    PdfViewerModule,
+    NgxExtendedPdfViewerModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
