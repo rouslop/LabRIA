@@ -25,8 +25,6 @@ import { AltaDocumentosComponent } from './components/ComponentesDocumento/alta-
 import { ModificarDocumentosComponent } from './components/ComponentesDocumento/modificar-documentos/modificar-documentos.component';
 import {SpinnerComponent} from './components/spinner/spinner.component';
 import { EditarUnidadComponent } from './components/ComponentesUnidades/editar-unidad/editar-unidad.component';
-import  {  PdfViewerModule  }  from  'ng2-pdf-viewer';
-import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import {Spinerinterceptor} from './interceptors/spinerinterceptor';
 
 @NgModule({
@@ -58,8 +56,6 @@ import {Spinerinterceptor} from './interceptors/spinerinterceptor';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    PdfViewerModule,
-    NgxExtendedPdfViewerModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

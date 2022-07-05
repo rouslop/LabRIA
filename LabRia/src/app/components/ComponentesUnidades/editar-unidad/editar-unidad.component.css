@@ -1,3 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Play&family=Poppins:wght@300&family=Press+Start+2P&family=Source+Code+Pro&display=swap');
+
 label{
-    color: white; 
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    text-decoration-line: underline;
+    color: wheat;
+}
+h3{
+    color : white ;
+}
+
+.btnconf {
+    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+}
+
+.btncancel{
+    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(64, 70, 75, 0.664);
+}
+
+.divP {
+    text-align: center;
+    justify-content: center;
+}
+
+.divInput {
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.inputs {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    border-radius: 10px;
+    color: white;
+    border-color: none;
+    background-color: rgba(7, 7, 31, 0.452);
+}
+
+.lab {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.img{
+    font-size: small;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    border-color: none;
+}
+
+.tit {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: x-large;
 }

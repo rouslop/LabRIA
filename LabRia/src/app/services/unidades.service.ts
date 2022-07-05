@@ -30,6 +30,11 @@ export class UnidadesService {
     return this.http.get<Unidades>(url);
   }
 
+  getunaUnidad(x:any){
+    let url = environment.apiUrl+"/api/UnidadesCurriculares/"+x;
+    return this.http.get<Unidades>(url);
+  }
+
   eliminarUnidad(): Observable<Unidades>{
     let url = environment.apiUrl+"/api/UnidadesCurriculares/"+this.unidad;
     return this.http.delete<Unidades>(url);

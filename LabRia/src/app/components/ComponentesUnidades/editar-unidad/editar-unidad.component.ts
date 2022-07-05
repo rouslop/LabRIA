@@ -15,9 +15,11 @@ import { MateriaService } from 'src/app/services/materia.service';
 export class EditarUnidadComponent implements OnInit {
   previa = new Unidades();
   previas: Unidades[] = [];
+  previascargadas: Unidades[] = [];
   u = new Unidades();
   documento:any;
   selectedFile: string="";
+  UP = new Unidades();
 
   formUnidades = new FormGroup ({
     nombre: new FormControl('',Validators.required),
@@ -31,7 +33,7 @@ export class EditarUnidadComponent implements OnInit {
     this.u.nombre =  this.formUnidades.controls["nombre"].value;
     this.u.descripcion =  this.formUnidades.controls["descripcion"].value;
     this.u.creditos =  this.formUnidades.controls["creditos"].value;
-    this.u.previas = [];
+    this.u.previas =this.previascargadas;
     this.u.documento =this.documento ? this.documento : " ";
     this.service.editarUnidad(this.u).subscribe({
       next: value => console.log(value),
@@ -50,10 +52,25 @@ export class EditarUnidadComponent implements OnInit {
   }
 
   selecsionarPrevia(i:any) {
-    this.previa.id=i;
+    this.service.getUnidad().subscribe({
+      next: value => this.UP = value,
+      error: err => { alert('Error al cargar las materias: ' + err) }
+    }
+    );
+    console.log(this.UP);
+    this.previascargadas.push(this.UP);
+  }
+
+  getUnidad(){
+    this.service.getUnidad().subscribe({
+      next: value => this.u = value,
+      error: err => { alert('Error al cargar las materias: ' + err) }
+    }
+    );
   }
 
   ngOnInit(): void {
+    this.getUnidad();
     this.getListPrevias();
   }
 
@@ -62,7 +79,6 @@ export class EditarUnidadComponent implements OnInit {
   }
 
   convertToBase64(file: File) {
-    console.log(file);
     const observable = new Observable((subscriber: Subscriber<any>) => {
       this.readFile(file, subscriber);
     })
