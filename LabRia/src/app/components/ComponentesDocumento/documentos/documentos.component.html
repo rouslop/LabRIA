@@ -15,7 +15,7 @@
                                 <td class="tdbase1">Titulo</td>
                                 <td class="tdbase">Tipo</td>
                                 <td class="tdbase">Documento PDF</td>
-                                <td class="tdbtn" style="border-radius : 20px;">
+                                <td>
                                     <button routerLink="/altaDocumentos" class="btn btn-secondary"
                                         style="margin: 5px;">+</button>
                                 </td>
@@ -26,12 +26,9 @@
                                 <td class="tdbase">{{x.titulo}}</td>
                                 <td class="tdbase">{{x.tipo}}</td>
                                 <td class="tdbase">
-                                    <button (click)="onClickDownloadPdf(x.documentoPDF)">
-                                    Download PDF
-                                  </button>
-                                <td>
-                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-trash" ></i></button> 
-                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-pencil"></i></button>
+                                    <button class="button" download='Documento' (click)="descargarpdf(x.documentoPDF)" title='Descargar'>Descargar</button>
+                                <td class="tdbase">
+                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-pencil" (click)="editarDocumento(x.id,x.titulo,x.tipo,x.documentoPDF)"></i></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -43,32 +40,5 @@
 </ng-template>
 <ng-template #elseBlock>
     <!-- NO ESTA LOGEADPO -->
-    <div>
-        <div class="row justify-content-center">
-            <div class="col-11">
-                <b style="color: white ;"><u>
-                        <h2 class="noticiaTitulo" style="color:white;">DOCUMENTOS</h2>
-                    </u></b>
-                <div class="row justify-content-center">
-                    <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                        <thead
-                            style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                            <tr class="tabla" style=" border-color: none;">
-                                <td class="tdbase1">Titulo</td>
-                                <td class="tdbase">Tipo</td>
-                                <td class="tdbase">Documento PDF</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="tabla" *ngFor="let x of documentos" style="margin-bottom: 20px;">
-                                <td class="tdbase">{{x.titulo}}</td>
-                                <td class="tdbase">{{x.tipo}}</td>
-                                <td class="tdbase">{{x.documentoPDF}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </ng-template>

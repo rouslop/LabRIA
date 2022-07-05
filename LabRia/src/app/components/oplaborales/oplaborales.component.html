@@ -1,0 +1,26 @@
+
+    <div class="row justify-content-center">
+        <div class="col-11">
+            <b style="color: white ;"><u>
+                    <h2 class="noticiaTitulo" style="color:white;">OPORTUNIDADES LABORALES</h2>
+                </u></b>
+            <div class="row justify-content-center">
+                <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
+                    <thead
+                        style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
+                        <tr class="tabla" style=" border-color: none;">
+                            <td class="tdbase1">Titulo</td>
+                            <td class="tdbase">Documento PDF</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tabla" *ngFor="let x of documentos" style="margin-bottom: 20px;">
+                            <td class="tdbase">{{x.titulo}}</td>
+                            <td class="tdbase">
+                                <button class="button" download='Documento' (click)="descargarpdf(x.documentoPDF)" title='Descargar'>Descargar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

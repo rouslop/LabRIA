@@ -26,6 +26,9 @@ import { ModificarDocumentosComponent } from './components/ComponentesDocumento/
 import {SpinnerComponent} from './components/spinner/spinner.component';
 import { EditarUnidadComponent } from './components/ComponentesUnidades/editar-unidad/editar-unidad.component';
 import {Spinerinterceptor} from './interceptors/spinerinterceptor';
+import { InfocarreraComponent } from './components/infocarrera/infocarrera.component';
+import { OplaboralesComponent } from './components/oplaborales/oplaborales.component';
+import { DatosinteresComponent } from './components/datosinteres/datosinteres.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import {Spinerinterceptor} from './interceptors/spinerinterceptor';
     ModificarDocumentosComponent,
     SpinnerComponent,
     EditarUnidadComponent,
+    InfocarreraComponent,
+    OplaboralesComponent,
+    DatosinteresComponent,
   ],
   imports: [
     ReactiveFormsModule,
