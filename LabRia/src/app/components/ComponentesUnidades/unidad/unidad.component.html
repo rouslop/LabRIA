@@ -16,7 +16,24 @@
             <p>Creditos Minimos  {{unidad.materia?.creditosMinimos}}</p>
         </div>
     </div>
-    <div>
-        <button (click)="eliminarUnidad(unidad.id)"> </button>
+    
+    <div style="align-items: center;">
+        <p>Previas</p>
+        <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
+            <thead
+                style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
+                <tr class="tabla" style=" border-color: none;">
+                    <td class="tdbase1">Nombre</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tabla" *ngFor="let x of previas">
+                    <td class="tdbase">{{x.nombre}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="token!=null; ">
+        <button (click)="eliminarUnidad(unidad.id)"> Eliminar Unidad</button>
     </div>
 </div>

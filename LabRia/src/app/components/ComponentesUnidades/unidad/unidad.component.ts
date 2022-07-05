@@ -10,7 +10,8 @@ import { UnidadesService } from 'src/app/services/unidades.service';
 })
 export class UnidadComponent implements OnInit {
   unidad: Unidades= new Unidades;
-  
+  token = localStorage.getItem('token');
+  previas: Unidades []= [];
   constructor(public UnidadesSvc:UnidadesService,private router:Router ) { }
 
   ngOnInit(): void {
@@ -23,11 +24,15 @@ export class UnidadComponent implements OnInit {
       error: err => { alert('Error al cargar las materias: ' + err) }
     }
     );
+    this.previas = this.unidad.previas;
   }
 
   eliminarUnidad(id:any){
-    this.UnidadesSvc.guardarUnidad(id);
-    this.UnidadesSvc.eliminarUnidad();
+    this.UnidadesSvc.eliminarUnidad(id).subscribe({
+      next: value => console.log(value),
+      error: err => { alert('Error al cargar las materias: ' + err) }
+      
+    });
     this.router.navigate(['/unidades']);
   }
 

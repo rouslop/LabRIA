@@ -21,7 +21,7 @@ export class UnidadesComponent implements OnInit {
 
   editarUnidad(x:any){
     this.UnidadesSvc.guardarUnidad(x);
-    this.router.navigate(['/editarunidad']);
+    this.router.navigate(['/editarUnidad']);
   }
   verUnidad(x:any){
     this.UnidadesSvc.guardarUnidad(x);
@@ -33,6 +33,11 @@ export class UnidadesComponent implements OnInit {
       error: err => { alert('Error al cargar las materias: ' + err) }
     }
     );
+  }
+  
+  agregarPrevia(x: any){
+    this.UnidadesSvc.guardarUnidad(x);
+    this.router.navigate(['/agregarPrevia']);
   }
 
 }
