@@ -25,10 +25,10 @@ export class DocumentosComponent implements OnInit {
 
   }
 
-  getDocumentosPaginados(n:number){
+  getDocumentosPaginados(n: number) {
     this.servicio.getDocsPaginados(n).subscribe({
       next: value => this.documentos = value.list,
-      error: err => {alert('Error al cargar documentos paginados: ' + err)}
+      error: err => { alert('Error al cargar documentos paginados: ' + err) }
     });
     console.log(this.documentos);
   }
@@ -40,5 +40,17 @@ export class DocumentosComponent implements OnInit {
     }
     );
 
+  }
+
+  downloadPdf(base64String: any, fileName: any) {
+    const source = `data:application/pdf;base64,${base64String}`;
+    const link = document.createElement("a");
+    link.href = source;
+    link.download = `${fileName}.pdf`
+    link.click();
+  }
+  onClickDownloadPdf(x:any){
+    let base64String = x;
+    this.downloadPdf(base64String,"sample");
   }
 }
