@@ -15,6 +15,7 @@ import{ModificarNoticiaComponent} from'./components/ComponentesNoticia/modificar
 import { DocumentosComponent } from './components/ComponentesDocumento/documentos/documentos.component';
 import { AltaDocumentosComponent } from './components/ComponentesDocumento/alta-documentos/alta-documentos.component';
 import {EditarUnidadComponent} from'./components/ComponentesUnidades/editar-unidad/editar-unidad.component';
+import { ModificarDocumentosComponent } from './components/ComponentesDocumento/modificar-documentos/modificar-documentos.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'modificarNoticia' , component: ModificarNoticiaComponent},
   { path: 'documentos' , component: DocumentosComponent},
   { path: 'altaDocumentos', component: AltaDocumentosComponent},
-  { path:'editarunidad' , component: EditarUnidadComponent}
+  { path:'editarunidad' , component: EditarUnidadComponent},
+  { path: 'editarDocumento' , component: ModificarDocumentosComponent}
 
 ];
 

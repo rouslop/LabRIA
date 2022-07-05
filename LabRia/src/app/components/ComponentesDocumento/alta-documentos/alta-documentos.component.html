@@ -16,7 +16,11 @@
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
                 <label class="lab">Tipo: </label>
                 <br>
-                <input type="text" class="inputs" formControlName="tipo">
+                <select class="inputs" formControlName="tipo">
+                    <option value="INFORMACION_DE_CARRERA">INFORMACION_DE_CARRERA</option>
+                    <option value="OPORTUNIDADES_LABORALES">OPORTUNIDADES_LABORALES</option>
+                    <option value="DATOS_DE_INTERES">DATOS_DE_INTERES</option>
+                </select>
             </div>
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
                 <button type="button" class="btn btn-dark" mat-raised-button (click)="fileInput.click()">Choose File</button>

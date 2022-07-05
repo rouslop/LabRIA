@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Documento } from 'src/app/models/documento';
+import {Router} from '@angular/router';
 import { DocumentosService } from 'src/app/services/documentos.service';
 
 @Component({
@@ -10,19 +11,22 @@ import { DocumentosService } from 'src/app/services/documentos.service';
 export class DocumentosComponent implements OnInit {
   token = localStorage.getItem('token');
   documentos: Documento[] = [];
-  constructor(private servicio: DocumentosService) { }
+  constructor(private servicio: DocumentosService,private router:Router) { }
 
   ngOnInit(): void {
     // this.getDocumentosActivos();
     this.getDocumentosPaginados(0);
   }
 
-  eliminarDcoumento() {
-
-  }
-
-  editarDcoumento() {
-
+  editarDocumento(id:any, titulo:any, tipo:any, doc: any) {
+    let d = new Documento();
+    d.activo = true;
+    d.documentoPDF = doc;
+    d.id = id;
+    d.tipo = tipo;
+    d.titulo = titulo;
+    this.servicio.guardarDoc(d);
+    this.router.navigate(['/editarDocumento']);
   }
 
   getDocumentosPaginados(n: number) {
@@ -42,15 +46,15 @@ export class DocumentosComponent implements OnInit {
 
   }
 
-  downloadPdf(base64String: any, fileName: any) {
-    const source = `data:application/pdf;base64,${base64String}`;
+  descargarpdf(x: any){
+    let aux = x.substring(28)
+    const source = `data:application/pdf;base64,${aux}`;
     const link = document.createElement("a");
     link.href = source;
-    link.download = `${fileName}.pdf`
+    link.download = `Documento.pdf`
     link.click();
-  }
-  onClickDownloadPdf(x:any){
-    let base64String = x;
-    this.downloadPdf(base64String,"sample");
-  }
+   return aux;
+   }
 }
+
+

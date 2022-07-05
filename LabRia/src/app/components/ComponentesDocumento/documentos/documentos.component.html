@@ -15,7 +15,7 @@
                                 <td class="tdbase1">Titulo</td>
                                 <td class="tdbase">Tipo</td>
                                 <td class="tdbase">Documento PDF</td>
-                                <td class="tdbtn" style="border-radius : 20px;">
+                                <td>
                                     <button routerLink="/altaDocumentos" class="btn btn-secondary"
                                         style="margin: 5px;">+</button>
                                 </td>
@@ -26,12 +26,9 @@
                                 <td class="tdbase">{{x.titulo}}</td>
                                 <td class="tdbase">{{x.tipo}}</td>
                                 <td class="tdbase">
-                                    <button (click)="onClickDownloadPdf(x.documentoPDF)">
-                                    Download PDF
-                                  </button>
-                                <td>
-                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-trash" ></i></button> 
-                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-pencil"></i></button>
+                                    <button class="button" download='Documento' (click)="descargarpdf(x.documentoPDF)" title='Descargar'>Descargar</button>
+                                <td class="tdbase">
+                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-pencil" (click)="editarDocumento(x.id,x.titulo,x.tipo,x.documentoPDF)"></i></button>
                                 </td>
                             </tr>
                         </tbody>
