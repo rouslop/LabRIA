@@ -27,6 +27,7 @@ import {SpinnerComponent} from './components/spinner/spinner.component';
 import { EditarUnidadComponent } from './components/ComponentesUnidades/editar-unidad/editar-unidad.component';
 import  {  PdfViewerModule  }  from  'ng2-pdf-viewer';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import {Spinerinterceptor} from './interceptors/spinerinterceptor';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-        // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: Spinerinterceptor ,multi: true },
     NgbModule,
     NgbPaginationModule, 
     NgbAlertModule,
