@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Documento } from 'src/app/models/documento';
+import { Observable, subscribeOn, Subscriber } from 'rxjs';
 import { DocumentosService } from 'src/app/services/documentos.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-alta-documentos',
@@ -16,9 +18,39 @@ export class AltaDocumentosComponent implements OnInit {
     activo: new FormControl('', Validators.required)
   });
 
-  constructor(private servicio: DocumentosService) { }
+  public Imagebase64: any;
+  selectedFile: any = null;
+
+  constructor(private servicio: DocumentosService,private router:Router) { }
 
   ngOnInit(): void {
+  }
+  onFileSelected(event: any): void {
+    this.convertToBase64(event.target.files[0]);
+  }
+
+  convertToBase64(file: File) {
+    console.log(file);
+    const observable = new Observable((subscriber: Subscriber<any>) => {
+      this.readFile(file, subscriber);
+    })
+
+    observable.subscribe((d) => {
+      this.Imagebase64 = d;
+    })
+  }
+
+  readFile(file: File, subscriber: Subscriber<any>) {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file)
+
+    fileReader.onload = () => {
+      subscriber.next(fileReader.result)
+      subscriber.complete()
+    }
+    fileReader.onerror = () => {
+      subscriber.error()
+    }
   }
 
   agregarDocumento(){
@@ -26,7 +58,13 @@ export class AltaDocumentosComponent implements OnInit {
     d.titulo =  this.formDocumento.controls["titulo"].value;
     d.tipo = this.formDocumento.controls["tipo"].value;
     d.activo = this.formDocumento.controls["activo"].value;
-    //agregar el documento en base64
+    d.documento = this.Imagebase64 ? this.Imagebase64 : " ";
+    this.servicio.agregarDoc(d).subscribe({
+      next: value => console.log(value),
+      error: err => { alert('Error al agregar el documento: ' + err) }
+    });
+    
+    this.router.navigate(['/documentos']);
   }
 
 }

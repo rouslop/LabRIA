@@ -8,7 +8,7 @@ import { Documento } from '../models/documento';
   providedIn: 'root'
 })
 export class DocumentosService {
-  baseUrl = environment.apiUrl + "/api/Documentos/";
+  baseUrl = environment.apiUrl + "/api/Documentos";
   constructor(private http: HttpClient) { }
 
   getDocsActivos(): Observable<Documento[]>{
