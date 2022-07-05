@@ -13,8 +13,8 @@ export class DocumentosService {
   documento: Documento = new Documento;
   constructor(private http: HttpClient) { }
 
-  getDocsActivos(): Observable<Documento[]>{
-    let url = this.baseUrl + "/Activos";
+  getDocsActivos(tipo:string): Observable<Documento[]>{
+    let url = this.baseUrl + "/Activos?tipo="+tipo;
     return this.http.get<Documento[]>(url);
   }
 

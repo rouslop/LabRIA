@@ -37,15 +37,6 @@ export class DocumentosComponent implements OnInit {
     console.log(this.documentos);
   }
 
-  getDocumentosActivos() {
-    this.servicio.getDocsActivos().subscribe({
-      next: value => this.documentos = value,
-      error: err => { alert('Error al cargar los documentos: ' + err) }
-    }
-    );
-
-  }
-
   descargarpdf(x: any){
     let aux = x.substring(28)
     const source = `data:application/pdf;base64,${aux}`;
