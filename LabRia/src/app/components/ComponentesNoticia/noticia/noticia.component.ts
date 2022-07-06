@@ -18,10 +18,24 @@ export class NoticiaComponent implements OnInit {
   constructor(private getNoticias: GetNoticiasService,private router:Router) { }
 
   ngOnInit(): void {
-    this.page = 1;
-    this.offset = 0; 
-    this.getListNoticias();
-    console.log(this.noticias);
+    if(this.token!="" && this.token!=null){
+      this.page = 1;
+      this.offset = 0; 
+      this.getListNoticias();
+      console.log(this.noticias);
+    }
+    else{
+      this.getActivas();
+    }
+    
+  }
+
+  getActivas(){
+    this.getNoticias.getNoticias().subscribe({
+      next: value => {this.noticias = value},
+      error: err => { alert('Error al cargar las noticias: ' + err) }
+    }
+    );
   }
 
   siguientePag() {

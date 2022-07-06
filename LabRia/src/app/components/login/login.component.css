@@ -28,4 +28,14 @@ h2{
 .tit{
     font-family: 'Poppins', sans-serif;
     text-decoration: underline;
+    margin-left: 75px;
+}
+
+.div1{
+    margin-left: 30%;
+}
+
+.div2{
+    width: 30%;
+    margin-left: 1%;
 }
