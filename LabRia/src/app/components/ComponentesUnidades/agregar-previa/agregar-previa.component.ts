@@ -86,6 +86,7 @@ export class AgregarPreviaComponent implements OnInit {
   }
 
   cargarunidad(x:Unidades) {
+    let error:string = "";
     let esta: boolean = false;
     let auxP: Previa= new Previa;
     if (x.id != this.u.id) {
@@ -93,15 +94,18 @@ export class AgregarPreviaComponent implements OnInit {
         const element = this.u.previas[i];
         if(element.previa.id == x.id){
           esta = true;
+          error="esta unidad ya tiene esta previa";
         }
       }if(esta==false){
       for (let i = 0; i < this.previascargadas.length; i++) {
         const element = this.previascargadas[i];
         if (element.id == x.id) {
           esta = true;
+          error="ya agregaste esta unidad"
         }}}
       } else {
       esta = true;
+      error="Estas intentando agregar la misma unidad como previa";
     }
     if ((esta == false && x.id != undefined && this.u.id != undefined)) {
       this.previascargadas.push(x);
@@ -109,6 +113,8 @@ export class AgregarPreviaComponent implements OnInit {
       auxP.unidadCurricular=this.u.id;
       auxP.tipo=this.formUnidades.controls["tipo"].value;
       this.previa.push(auxP);
+    }else{
+      alert(error);
     }
   }
 
