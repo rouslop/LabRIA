@@ -1,6 +1,6 @@
 <div class="row justify-content-center" style="margin-left: 30% ;">
     <div >
-        <b style="color : white ;"><u> <h3 style="color: white ;"> Nueva Unidad Curicular </h3> </u></b>
+        <h3 class="tit"> Nueva Unidad Curicular </h3>
     </div>
     <form [formGroup]="formUnidades" (submit)="agregarUnidad()">
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
@@ -9,12 +9,12 @@
             <input type="text" class="inputs" formControlName="nombre">
         </div>
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
-            <label class="lab">Descripsion :</label>
+            <label class="lab">Descripción :</label>
             <br>
             <input type="text" class="inputs" formControlName="descripcion">
         </div>
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
-            <label class="lab">Creditos :</label>
+            <label class="lab">Créditos :</label>
             <br>
             <input type="text" class="inputs" formControlName="creditos">
         </div>
@@ -25,14 +25,14 @@
         </div>
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
             <label class="lab">Documento: </label>
-            <div>
-                <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+            <div class="divImg">
+                <button type="button" mat-raised-button (click)="fileInput.click()" class="btn btn-secondary">Choose File</button>
                 <input hidden (change)="onFileSelected($event)" #fileInput type="file" formControlName="imagen">
                 <span class="file-name">{{selectedFile}}</span>
             </div>
         </div>
 
-        <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
+        <table class="table-dark" cellspacing="0" style="margin-left: 3%; padding: 0% ; border-radius : 20px;">
             <thead
                 style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
                 <tr class="tabla" style=" border-color: none;">
@@ -42,7 +42,7 @@
             <tbody>
                 <tr class="tabla" *ngFor="let x of materias">
                     <td class="tdbase">{{x.nombre}}</td>
-                    <button type="button" class="btn btn-secundary" (click)="selecsionarMateria(x.id , x.nombre, x.descripcion, x.creditosMinimos)">Selecsionar Materia</button>    
+                    <button type="button" class="btn btn-secondary" (click)="selecsionarMateria(x.id , x.nombre, x.descripcion, x.creditosMinimos)">Seleccionar Materia</button>    
                 </tr>
             </tbody>
         </table>

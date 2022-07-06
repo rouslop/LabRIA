@@ -58,6 +58,13 @@ h3{
 
 .tit {
     font-family: 'Poppins', sans-serif;
-    text-align: center;
     font-size: x-large;
+    margin-left: 30px;
+    text-decoration: underline;
+    color: white;
+}
+
+.divImg{
+    margin-left: 55%; 
+    margin-bottom: 2%;
 }

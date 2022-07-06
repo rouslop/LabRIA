@@ -1,32 +1,32 @@
 <div class="row justify-content-center" style="margin-left: 30% ;">
     <div style="margin-left: 3% ;">
     <b style="color : white ;"><u>
-            <h3 >Nueva noticia</h3>
+            <h3 class="noticiaTitulo">Nueva noticia</h3>
         </u></b>
     </div>
     <div class="row justify-content-center" style="margin-left: 30% ;"></div>
 <div class="divP">
     <form [formGroup]="formNoticia" (submit)="agregarNoticia()">
         <div class="col-10">
-            <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
+            <div class="row justify-content-center divInput">
                 <label class="lab">Titulo: </label>
                 <br>
                 <input type="text" class="inputs" formControlName="titulo">
             </div>
-            <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
+            <div class="row justify-content-center divInput">
                 <label class="lab">Descripción: </label>
                 <br>
                 <input type="text" class="inputs" formControlName="descripcion">
             </div>
-            <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
+            <div class="row justify-content-center divInput">
                 <label class="lab">Fecha de caducidad: </label>
                 <br>
                 <input type="date" class="inputs" formControlName="fechaCaducidad">
             </div>
-            <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
+            <div class="row justify-content-center divImg">
                 <label class="lab">Imagen: </label>
                 <div>
-                    <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                    <button type="button" mat-raised-button (click)="fileInput.click()" class="btn btn-secondary">Choose File</button>
                     <input hidden (change)="onFileSelected($event)" #fileInput type="file" formControlName="imagen">
                     <span class="file-name">{{selectedFile?.name}}</span>
                 </div>
