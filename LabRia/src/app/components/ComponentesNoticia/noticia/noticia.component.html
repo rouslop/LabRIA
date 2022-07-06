@@ -2,43 +2,44 @@
 <ng-template #thenBlock>
     <!-- ESTA LOGEADPO -->
     <div>
-        <div class="row justify-content-center" style="margin-bottom: 20px;">
+        <div class="row justify-content-center div1">
             <div class="col-11">
-                <b style="color: white ;"><u>
-                        <h2 class="noticiaTitulo" style="color:white;">NOTICIAS</h2>
-                    </u></b>
+                <h2 class="noticiaTitulo">NOTICIAS</h2>
                 <div class="row justify-content-center">
-                    <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                        <thead
-                            style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                            <tr class="tabla" style="margin-bottom: 20px; border-color: none;">
-                                <td class="tdbase1">Titulo</td>
-                                <td class="tdbase">Descripcion</td>
-                                <td class="tdbase">Fecha de caducidad</td>
-                                <td class="tdbase">Imagen</td>
+                    <table class="table-dark table1" cellspacing="0">
+                        <thead class="thead1">
+                            <tr class="tabla table1">
+                                <td class="tdbase1">Tíulo</td>
+                                <td class="tdbase1">Descripción</td>
+                                <td class="tdbase1">Fecha de caducidad</td>
+                                <td class="tdbase1">Imagen</td>
                                 <td class="tdbtn" style="border-radius : 20px;">
-                                    <button routerLink="/altaNoticia" class="btn btn-secondary"
-                                        style="margin: 5px;">+</button>
+                                    <button routerLink="/altaNoticia" class="btn btn-secondary plus">+</button>
                                 </td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="tabla" *ngFor="let x of noticias" style="margin-bottom: 20px;">
+                            <tr class="tabla table1" *ngFor="let x of noticias">
                                 <td class="tdbase">{{x.titulo}}</td>
                                 <td class="tdbase">{{x.descripcion}}</td>
                                 <td class="tdbase">{{x.fechaCaducidad}}</td>
                                 <td class="tdbase"><img src={{x.imagen}} alt="img" style="height: 100px;"></td>
                                 <td>
-                                  <button (click)="eliminarNoticia(x.id)" class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-trash" ></i></button>
-                                  <button class="btn btn-secondary" style="margin: 5px;" (click)="editarNoticia(x.id,x.titulo,x.descripcion,x.fechaCaducidad,x.imagen)"><i class="bi bi-pencil"></i></button>
+                                    <button (click)="eliminarNoticia(x.id)" class="btn btn-secondary"
+                                        style="margin: 5px;"><i class="bi bi-trash"></i></button>
+                                    <button class="btn btn-secondary" style="margin: 5px;"
+                                        (click)="editarNoticia(x.id,x.titulo,x.descripcion,x.fechaCaducidad,x.imagen)"><i
+                                            class="bi bi-pencil"></i></button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div>
-                    <button  (click)="anteriorPag()"class="btn btn-secondary" style="margin: 5px;">Pagina Anterior</button>
-                    <button (click)="siguientePag()"class="btn btn-secondary" style="margin: 5px;">Pagina Siguiente</button>
+                    <button (click)="anteriorPag()" class="btn btn-secondary" style="margin: 5px;">Pagina
+                        Anterior</button>
+                    <button (click)="siguientePag()" class="btn btn-secondary" style="margin: 5px;">Pagina
+                        Siguiente</button>
                 </div>
             </div>
         </div>
@@ -49,18 +50,15 @@
     <div>
         <div class="row justify-content-center">
             <div class="col-11">
-                <b style="color: white ;"><u>
-                        <h2 class="noticiaTitulo" style="color:white;">NOTICIAS</h2>
-                    </u></b>
+                <h2 class="noticiaTitulo">NOTICIAS</h2>
                 <div class="row justify-content-center">
-                    <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                        <thead
-                            style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                            <tr class="tabla" style=" border-color: none;">
-                                <td class="tdbase1">Titulo</td>
-                                <td class="tdbase">Descripcion</td>
-                                <td class="tdbase">Fecha de caducidad</td>
-                                <td class="tdbase">Imagen</td>
+                    <table class="table-dark table1" cellspacing="0">
+                        <thead class="thead1">
+                            <tr class="tabla table1">
+                                <td class="tdbase1">Título</td>
+                                <td class="tdbase1">Descripción</td>
+                                <td class="tdbase1">Fecha de caducidad</td>
+                                <td class="tdbase1">Imagen</td>
                             </tr>
                         </thead>
                         <tbody>

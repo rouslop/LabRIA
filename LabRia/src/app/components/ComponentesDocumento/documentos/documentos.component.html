@@ -2,37 +2,43 @@
 <ng-template #thenBlock>
     <!-- ESTA LOGEADPO -->
     <div>
-        <div class="row justify-content-center" style="margin-bottom: 20px;">
+        <div class="row justify-content-center div1">
             <div class="col-11">
                 <b style="color: white ;"><u>
-                        <h2 class="noticiaTitulo" style="color:white;">DOCUMENTOS</h2>
+                        <h2 class="noticiaTitulo">DOCUMENTOS</h2>
                     </u></b>
                 <div class="row justify-content-center">
-                    <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                        <thead
-                            style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                            <tr class="tabla" style="margin-bottom: 20px; border-color: none;">
+                    <table class="table-dark table1" cellspacing="0">
+                        <thead class="thead1">
+                            <tr class="tabla">
                                 <td class="tdbase1">Titulo</td>
-                                <td class="tdbase">Tipo</td>
-                                <td class="tdbase">Documento PDF</td>
+                                <td class="tdbase1">Tipo</td>
+                                <td class="tdbase1">Documento PDF</td>
                                 <td>
-                                    <button routerLink="/altaDocumentos" class="btn btn-secondary"
-                                        style="margin: 5px;">+</button>
+                                    <button routerLink="/altaDocumentos" class="btn btn-secondary plus">+</button>
                                 </td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="tabla" *ngFor="let x of documentos" style="margin-bottom: 20px;">
+                            <tr class="tabla" *ngFor="let x of documentos">
                                 <td class="tdbase">{{x.titulo}}</td>
                                 <td class="tdbase">{{x.tipo}}</td>
                                 <td class="tdbase">
-                                    <button class="button" download='Documento' (click)="descargarpdf(x.documentoPDF)" title='Descargar'>Descargar</button>
+                                    <button class="btn btn-secondary" download='Documento' (click)="descargarpdf(x.documentoPDF)"
+                                        title='Descargar'>Descargar</button>
                                 <td class="tdbase">
-                                  <button class="btn btn-secondary" style="margin: 5px;"><i class="bi bi-pencil" (click)="editarDocumento(x.id,x.titulo,x.tipo,x.documentoPDF)"></i></button>
+                                    <button class="btn btn-secondary pen"><i class="bi bi-pencil"
+                                            (click)="editarDocumento(x.id,x.titulo,x.tipo,x.documentoPDF)"></i></button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                <div>
+                    <button (click)="anteriorPag()" class="btn btn-secondary" style="margin: 5px;">Pagina
+                        Anterior</button>
+                    <button (click)="siguientePag()" class="btn btn-secondary" style="margin: 5px;">Pagina
+                        Siguiente</button>
                 </div>
             </div>
         </div>
@@ -40,5 +46,5 @@
 </ng-template>
 <ng-template #elseBlock>
     <!-- NO ESTA LOGEADPO -->
-    
+
 </ng-template>

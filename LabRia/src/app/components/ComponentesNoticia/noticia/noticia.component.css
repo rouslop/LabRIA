@@ -7,6 +7,7 @@ tr .tdbtn {
     background-color: #151d2f; 
     text-align: center; 
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 table { 
@@ -26,6 +27,7 @@ table {
     margin: 3%;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    text-decoration: underline;
 }
 
 .tdbtn{
@@ -59,4 +61,38 @@ tbody tr:last-child td:last-child {
 .noticiaTitulo{
     font-family: 'Poppins', sans-serif;
     text-align: center;
+    color:white;
+    text-decoration: underline;
+}
+
+.pen{
+    margin:15px;
+}
+
+.plus{
+    margin: 5px;
+    padding: 5%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    text-align: center;
+}
+
+.thead1{
+    border-color: none; 
+    background-color: #151d2f; 
+    border-radius: 20px; 
+    margin: 0%; 
+    padding: 0%;
+}
+
+.table1{
+    margin: 0%; 
+    padding: 0%; 
+    border-radius : 20px;
+    margin-bottom: 20px; 
+    border-color: none;
+}
+
+.div1{
+    margin-bottom: 20px;
 }

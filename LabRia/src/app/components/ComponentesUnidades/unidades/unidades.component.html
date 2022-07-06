@@ -4,24 +4,20 @@
     <div>
         <div class="row justify-content-center" style="margin-bottom: 20px;">
             <div class="col-11">
-                <b style="color: white ;"><u>
-                        <h2 class="noticiaTitulo" style="color:white;">Unidades Curiculares</h2>
-                    </u></b>
+                <h2 class="noticiaTitulo">UNIDADES CURRICULARES</h2>
                 <div class="row justify-content-center">
-                    <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                        <thead
-                            style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                            <tr class="tabla" style="margin-bottom: 20px; border-color: none;">
+                    <table class="table-dark table1" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
+                        <thead class="thead1">
+                            <tr class="tabla">
                                 <td class="tdbase1">Nombre</td>
-                                <td class="tdbase">Creditos</td>
-                                <td class="tdbtn" style="border-radius : 20px;">
-                                    <button routerLink="/AltaUnidades" class="btn btn-secondary"
-                                        style="margin: 5px;">+</button>
+                                <td class="tdbase1">Créditos</td>
+                                <td class="tdbase1">
+                                    <button routerLink="/AltaUnidades" class="btn btn-secondary plus">+</button>
                                 </td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="tabla" *ngFor="let x of unidades" style="margin-bottom: 20px;">
+                            <tr class="tabla table1" *ngFor="let x of unidades" style="margin-bottom: 20px;">
                                 <td class="tdbase">{{x.nombre}}</td>
                                 <td class="tdbase">{{x.creditos}}</td>
                                 <td>
@@ -42,7 +38,7 @@
         <div class="row justify-content-center">
             <div class="col-11">
                 <b style="color: white ;"><u>
-                        <h2 class="noticiaTitulo" style="color:white;">Materias</h2>
+                        <h2 class="noticiaTitulo" style="color:white;">UNIDADES CURRICULARES</h2>
                     </u></b>
                 <div class="row justify-content-center">
                     <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
@@ -50,8 +46,8 @@
                             style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
                             <tr class="tabla" style=" border-color: none;">
                                 <td class="tdbase1">Nombre</td>
-                                <td class="tdbase">Descripcion</td>
-                                <td class="tdbase">Creditos Minimos</td>
+                                <td class="tdbase">Descripción</td>
+                                <td class="tdbase">Créditos mínimos</td>
                             </tr>
                         </thead>
                         <tbody>

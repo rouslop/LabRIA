@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Play&family=Poppins:wght@300&family=Press+Start+2P&family=Source+Code+Pro&display=swap');
+
+tr .tdbtn {
+    border-radius: 20px;
+}
+.tabla{
+    background-color: #151d2f; 
+    text-align: center; 
+    border-radius: 20px;
+}
+
+table { 
+    border-radius: 20px;
+    border-collapse: separate; 
+}
+
+.tdbase{
+    border-color: none;
+    color: white; 
+    margin: 3%;
+}
+
+.tdbase1{
+    border-color: none;
+    color: white; 
+    margin: 3%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    text-decoration: underline;
+}
+
+.tdbtn{
+    padding: 10px; 
+    margin: 3%; 
+    display: flex; 
+    border-radius: 20px;
+}
+
+tr td, th { 
+    border-top-right-radius: 0;               
+    border-top-left-radius: 0; 
+    border-bottom-left-radius: 0; 
+    border-bottom-right-radius: 0; 
+}
+
+thead tr:last-child td:first-child { 
+    border-top-left-radius: 20px ; 
+}
+thead tr:last-child td:last-child { 
+    border-top-right-radius: 20px; 
+}
+
+tbody tr:last-child td:first-child { 
+    border-bottom-left-radius: 20px ; 
+}
+tbody tr:last-child td:last-child { 
+    border-bottom-right-radius: 20px; 
+}
+
+.noticiaTitulo{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color:white;
+    text-decoration: underline;
+}
+
+.pen{
+    margin:15px;
+}
+
+.plus{
+    margin: 5px;
+    padding: 5%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    text-align: center;
+}
+
+.thead1{
+    border-color: none; 
+    background-color: #151d2f; 
+    border-radius: 20px; 
+    margin: 0%; 
+    padding: 0%;
+}
+
+.noticiaTitulo{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+}
+
+.table1{
+    margin: 0%; 
+    padding: 0%; 
+    border-radius : 20px;
+    margin-bottom: 20px; 
+    border-color: none;
+}

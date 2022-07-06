@@ -11,6 +11,10 @@ import { DocumentosService } from 'src/app/services/documentos.service';
 export class DocumentosComponent implements OnInit {
   token = localStorage.getItem('token');
   documentos: Documento[] = [];
+  limit = 5;
+  page = 1;
+  offset = 0; 
+  cantidadPag = 0;
   constructor(private servicio: DocumentosService,private router:Router) { }
 
   ngOnInit(): void {
@@ -46,6 +50,25 @@ export class DocumentosComponent implements OnInit {
     link.click();
    return aux;
    }
+
+   siguientePag() {
+    if (this.page < this.cantidadPag) {
+      this.offset += 5;
+      this.getDocumentosPaginados(this.offset);
+      this.page += 1;
+    }
+    console.log(this.documentos);
+  }
+
+  anteriorPag() {
+    if (this.page > 1) {
+      if(this.offset >= 0){
+        this.offset -= 5;
+        this.getDocumentosPaginados(this.offset);
+        this.page -= 1;
+      }
+    }
+  }
 }
 
 
