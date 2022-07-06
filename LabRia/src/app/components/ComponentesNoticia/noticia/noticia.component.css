@@ -71,6 +71,7 @@ tbody tr:last-child td:last-child {
 
 .plus{
     margin: 5px;
+    margin-left: 3%;
     padding: 5%;
     padding-top: 0%;
     padding-bottom: 0%;
@@ -95,4 +96,12 @@ tbody tr:last-child td:last-child {
 
 .div1{
     margin-bottom: 20px;
+}
+
+.img{
+    height: 100px;
+}
+
+.btnpag{
+    margin: 5px;
 }

@@ -13,7 +13,7 @@
                                 <td class="tdbase1">Descripción</td>
                                 <td class="tdbase1">Fecha de caducidad</td>
                                 <td class="tdbase1">Imagen</td>
-                                <td class="tdbtn" style="border-radius : 20px;">
+                                <td class="plus">
                                     <button routerLink="/altaNoticia" class="btn btn-secondary plus">+</button>
                                 </td>
                             </tr>
@@ -23,22 +23,23 @@
                                 <td class="tdbase">{{x.titulo}}</td>
                                 <td class="tdbase">{{x.descripcion}}</td>
                                 <td class="tdbase">{{x.fechaCaducidad}}</td>
-                                <td class="tdbase"><img src={{x.imagen}} alt="img" style="height: 100px;"></td>
+                                <td class="tdbase"><img class="img" src={{x.imagen}} alt="img"></td>
                                 <td>
-                                    <button (click)="eliminarNoticia(x.id)" class="btn btn-secondary"
-                                        style="margin: 5px;"><i class="bi bi-trash"></i></button>
-                                    <button class="btn btn-secondary" style="margin: 5px;"
-                                        (click)="editarNoticia(x.id,x.titulo,x.descripcion,x.fechaCaducidad,x.imagen)"><i
-                                            class="bi bi-pencil"></i></button>
+                                    <button (click)="eliminarNoticia(x.id)" class="btn btn-secondary btnpag"><i
+                                            class="bi bi-trash"></i></button>
+                                    <button class="btn btn-secondary btnpag"
+                                        (click)="editarNoticia(x.id,x.titulo,x.descripcion,x.fechaCaducidad,x.imagen)">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div>
-                    <button (click)="anteriorPag()" class="btn btn-secondary" style="margin: 5px;">Pagina
+                    <button (click)="anteriorPag()" class="btn btn-secondary btnpag">Pagina
                         Anterior</button>
-                    <button (click)="siguientePag()" class="btn btn-secondary" style="margin: 5px;">Pagina
+                    <button (click)="siguientePag()" class="btn btn-secondary btnpag">Pagina
                         Siguiente</button>
                 </div>
             </div>
@@ -66,7 +67,7 @@
                                 <td class="tdbase">{{x.titulo}}</td>
                                 <td class="tdbase">{{x.descripcion}}</td>
                                 <td class="tdbase">{{x.fechaCaducidad}}</td>
-                                <td class="tdbase"><img src={{x.imagen}} alt="img" style="height: 100px;"></td>
+                                <td class="tdbase"><img class="img" src={{x.imagen}} alt="img"></td>
                             </tr>
                         </tbody>
                     </table>

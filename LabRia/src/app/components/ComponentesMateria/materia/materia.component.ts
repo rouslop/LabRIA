@@ -19,6 +19,7 @@ export class MateriaComponent implements OnInit {
   }
   
   eliminarMateria(x: any){
+    alert('Seguro que quiere continuar?');
     this.ngOnInit();
       this.MateriaService.eliminarMateria(x).subscribe(data => {
         console.log(data);

@@ -74,6 +74,7 @@ export class NoticiaComponent implements OnInit {
 }
 
   eliminarNoticia(x: any){ 
+    alert('Seguro que quiere continuar?');
     this.ngOnInit();
     this.getNoticias.eliminarNoticia(x).subscribe(data => {
         console.log(data);
