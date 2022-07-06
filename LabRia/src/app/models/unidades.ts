@@ -1,12 +1,12 @@
 import {Materia} from './materia';
-import {Previa} from './previas';
+import {Previas} from './previas';
 export class Unidades{
-   id: string | undefined;
-   nombre: string | undefined;
-   descripcion: string | undefined;
-   creditos: string | undefined;
-   documento: string | undefined;
-   semestre: string | undefined;
+   id: string ="";
+   nombre: string ="";
+   descripcion: string ="";
+   creditos: string ="";
+   documento: string ="";
+   semestre: string ="";
    materia: Materia | undefined;
-   previas: Unidades[] = [];
+   previas: Previas[] = [];
 }

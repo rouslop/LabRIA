@@ -52,7 +52,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- aca falta toda la lista  -->
+                            <table class="table-dark table1" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
+                                <thead class="thead1">
+                                    <tr class="tabla">
+                                        <td class="tdbase1">Nombre</td>
+                                        <td class="tdbase1">Créditos</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="tabla table1" *ngFor="let x of unidades" style="margin-bottom: 20px;">
+                                        <td class="tdbase">{{x.nombre}}</td>
+                                        <td class="tdbase">{{x.creditos}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </tbody>
                     </table>
                 </div>

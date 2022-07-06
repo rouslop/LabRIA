@@ -45,7 +45,8 @@ export class UnidadesService {
     return this.http.put<Unidades>(url,U);
   }
 
-  agregarPrevia(x:any){
-
+  agregarPrevia(x:any): Observable<Unidades>{
+    let url = environment.apiUrl+"/api/Previas"
+    return this.http.post<Unidades>(url,x);
   }
 }

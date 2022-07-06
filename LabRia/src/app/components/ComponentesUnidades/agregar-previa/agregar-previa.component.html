@@ -1,8 +1,8 @@
 <div class="row justify-content-center" style="margin-left: 30% ;">
     <div>
-        <b style="color : white ;"><u>
-                <h3 style="color: white ;"> Agregar Previa a Curicularcurriular </h3>
-            </u></b>
+        <b style="color : white ;"><u><h3 style="color: white ;"> Agregar Previa a Curicularcurriular </h3></u></b>
+        <br>
+        <b style="color : white ;"><u><h3 style="color: white ;"> {{u.nombre}} </h3></u></b>
     </div>
     <form [formGroup]="formUnidades" (submit)="agregarPrevia()">
         <div classs="d.flex">
@@ -21,8 +21,8 @@
                     </tr>
                     <tr class="tabla">
                         <select formControlName="tipo" size="width: 100%">
-                            <option value="Examen">Examen</option>
-                            <option value="Curso">Curso</option>
+                            <option value="EXAMEN">Examen</option>
+                            <option value="CURSO">Curso</option>
                         </select>
                     </tr>
                 </tbody>

@@ -33,8 +33,7 @@ export class EditarUnidadComponent implements OnInit {
     this.u.nombre =  this.formUnidades.controls["nombre"].value;
     this.u.descripcion =  this.formUnidades.controls["descripcion"].value;
     this.u.creditos =  this.formUnidades.controls["creditos"].value;
-    this.u.previas =this.previascargadas;
-    this.u.documento =this.documento ? this.documento : " ";
+    this.u.documento = this.documento ? this.documento : " ";
     this.service.editarUnidad(this.u).subscribe({
       next: value => console.log(value),
       error: err => { alert('Error al agregar las noticias: ' + err) }
@@ -81,7 +80,7 @@ export class EditarUnidadComponent implements OnInit {
 
   getUnidad(){
     this.service.getUnidad().subscribe({
-      next: value => this.u = value,
+      next: value => {this.u = value,this.documento=value.documento},
       error: err => { alert('Error al cargar las materias: ' + err) }
     }
     );

@@ -20,11 +20,10 @@ export class UnidadComponent implements OnInit {
 
   getUnidad(){
     this.UnidadesSvc.getUnidad().subscribe({
-      next: value => this.unidad = value,
+      next: value => {this.unidad = value},
       error: err => { alert('Error al cargar las materias: ' + err) }
     }
     );
-    this.previas = this.unidad.previas;
   }
 
   eliminarUnidad(id:any){

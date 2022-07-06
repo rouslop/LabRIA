@@ -26,10 +26,15 @@ export class AgregarPreviaComponent implements OnInit {
 
   agregarPrevia() {
     for (let i = 0; i < this.previa.length; i++) {
-      const element = this.previa[i];
-      
+      const element :Previa = this.previa[i];
+        this.service.agregarPrevia(element).subscribe({
+        next: value => console.log(value),
+        error: err => { alert('Error al cargar las materias: ' + err),console.log(err) }
+      }
+      );
     }
-    this.router.navigate(['/unidades']);
+    console.log(this.previa);
+    //this.router.navigate(['/unidades']);
   }
 
 
@@ -68,7 +73,7 @@ export class AgregarPreviaComponent implements OnInit {
       this.previascargadas.push(this.UP);
       auxP.previa=this.UP.id;
       auxP.unidadCurricular=this.u.id;
-      auxP.tipio=this.formUnidades.controls["tipo"].value;
+      auxP.tipo=this.formUnidades.controls["tipo"].value;
       this.previa.push(auxP);
       
     }
