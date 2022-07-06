@@ -19,8 +19,7 @@ import { ModificarDocumentosComponent } from './components/ComponentesDocumento/
 import { InfocarreraComponent } from './components/infocarrera/infocarrera.component';
 import { OplaboralesComponent } from './components/oplaborales/oplaborales.component';
 import { DatosinteresComponent } from './components/datosinteres/datosinteres.component';
-import{AgregarPreviaComponent} from'./components/ComponentesUnidades/agregar-previa/agregar-previa.component'
-
+import{AgregarPreviaComponent} from'./components/ComponentesUnidades/agregar-previa/agregar-previa.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'materia', component: MateriaComponent },
@@ -41,7 +40,7 @@ const routes: Routes = [
   { path: 'infocarrera' , component: InfocarreraComponent},
   { path: 'oportunidadeslaborales' , component: OplaboralesComponent},
   {path: 'datosdeinteres' , component: DatosinteresComponent},
-  { path: 'agregarPrevia' , component:AgregarPreviaComponent}
+  { path: 'agregarPrevia' , component:AgregarPreviaComponent},
 
 ];
 

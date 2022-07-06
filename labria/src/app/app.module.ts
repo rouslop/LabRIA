@@ -30,6 +30,9 @@ import { InfocarreraComponent } from './components/infocarrera/infocarrera.compo
 import { OplaboralesComponent } from './components/oplaborales/oplaborales.component';
 import { DatosinteresComponent } from './components/datosinteres/datosinteres.component';
 import { AgregarPreviaComponent } from './components/ComponentesUnidades/agregar-previa/agregar-previa.component';
+import { NgbdModalConfirm } from'./components/ngbd-modal/ngbd-modal.component';
+import { NgbdModalConfirmAutofocus } from './components/ngbd-modal/ngbd-modal.component';
+import { NgbdModalFocus } from './components/ngbd-modal/ngbd-modal.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,7 @@ import { AgregarPreviaComponent } from './components/ComponentesUnidades/agregar
     InfocarreraComponent,
     OplaboralesComponent,
     DatosinteresComponent,
-    AgregarPreviaComponent,
+    AgregarPreviaComponent
   ],
   imports: [
     ReactiveFormsModule,

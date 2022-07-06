@@ -19,7 +19,10 @@ export class DocumentosComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getDocumentosActivos();
+    this.page = 1;
+    this.offset = 0;
     this.getDocumentosPaginados(0);
+
   }
 
   editarDocumento(id:any, titulo:any, tipo:any, doc: any) {
@@ -35,7 +38,7 @@ export class DocumentosComponent implements OnInit {
 
   getDocumentosPaginados(n: number) {
     this.servicio.getDocsPaginados(n).subscribe({
-      next: value => this.documentos = value.list,
+      next: value => {this.documentos = value.list, this.cantidadPag = value.size/5},
       error: err => { alert('Error al cargar documentos paginados: ' + err) }
     });
     console.log(this.documentos);
