@@ -1,7 +1,7 @@
 <div class="row justify-content-center" style="margin-left: 30% ;">
     <div>
         <b style="color : white ;"><u>
-                <h3 style="color: white ;"> Editar Unidad Curicular </h3>
+                <h3 style="color: white ;"> Agregar Previa a Curicularcurriular </h3>
             </u></b>
     </div>
     <form [formGroup]="formUnidades" (submit)="editarUnidad()">
@@ -26,42 +26,7 @@
                 <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
                 <input hidden (change)="onFileSelected($event)" #fileInput type="file" formControlName="imagen">
                 <span class="file-name">{{selectedFile}}</span>
-            </div>
-        </div>
-        <div classs="d.flex">
-            <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                <thead
-                    style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                    <tr class="tabla" style=" border-color: none;">
-                        <td class="tdbase1">Nombre</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="tabla" *ngFor="let x of previas">
-                        <td class="tdbase">{{x.nombre}}</td>
-                        <button type="button" class="btn btn-secundary" (click)="selecsionarPrevia(x.id)">Selecsionar
-                            Materia</button>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                <thead
-                    style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                    <tr class="tabla" style=" border-color: none;">
-                        <td class="tdbase1">Nombre</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="tabla" *ngFor="let x of previascargadas">
-                        <td class="tdbase">{{x.nombre}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
-            <label class="lab">Tipo examen</label>
-            <br>
-            <input type="checkbox" class="inputs" formControlName="tipo">
+            </div> 
         </div>
         <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
             <button type="submit" class="btn btn-dark btnconf">Confirmar</button>

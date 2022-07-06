@@ -80,4 +80,6 @@ export class NoticiaComponent implements OnInit {
       });
     this.getListNoticias
   }
+  
+  
   }

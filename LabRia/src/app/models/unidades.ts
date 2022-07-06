@@ -8,5 +8,5 @@ export class Unidades{
    documento: string | undefined;
    semestre: string | undefined;
    materia: Materia | undefined;
-   previas: Previa[] | undefined;
+   previas: Unidades[] = [];
 }

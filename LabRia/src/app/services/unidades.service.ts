@@ -30,18 +30,22 @@ export class UnidadesService {
     return this.http.get<Unidades>(url);
   }
 
-  getunaUnidad(x:any){
+  getunaUnidad(x:string): Observable<Unidades>{
     let url = environment.apiUrl+"/api/UnidadesCurriculares/"+x;
     return this.http.get<Unidades>(url);
   }
 
-  eliminarUnidad(): Observable<Unidades>{
-    let url = environment.apiUrl+"/api/UnidadesCurriculares/"+this.unidad;
+  eliminarUnidad(u:any): Observable<Unidades>{
+    let url = environment.apiUrl+"/api/UnidadesCurriculares/"+u;
     return this.http.delete<Unidades>(url);
   }
 
   editarUnidad(U:any): Observable<Unidades>{
     let url = environment.apiUrl+"/api/UnidadesCurriculares/"+this.unidad;
     return this.http.put<Unidades>(url,U);
+  }
+
+  agregarPrevia(x:any){
+
   }
 }

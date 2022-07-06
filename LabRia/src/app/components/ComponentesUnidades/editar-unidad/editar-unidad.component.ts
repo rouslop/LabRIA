@@ -52,13 +52,31 @@ export class EditarUnidadComponent implements OnInit {
   }
 
   selecsionarPrevia(i:any) {
-    this.service.getUnidad().subscribe({
+    this.service.getunaUnidad(i).subscribe({
       next: value => this.UP = value,
       error: err => { alert('Error al cargar las materias: ' + err) }
+    });
+    this.cargarunidad();
+  }
+  cargarunidad(){
+    let esta : boolean = false;
+    let aux : Unidades = new Unidades;
+    if (this.UP.id != this.u.id){
+     for (let i = 0; i < this.previascargadas.length; i++) {
+      aux = this.previascargadas[i];
+      console.log(aux.id);
+      if (aux.id== this.UP.id) {
+          esta=true;
+      }
     }
-    );
-    console.log(this.UP);
-    this.previascargadas.push(this.UP);
+    }else{
+      esta=true;
+    }
+    if((esta == false && this.UP.id != undefined && this.u.id != undefined)){
+        this.previascargadas.push(this.UP);
+      }
+      console.log(this.UP.id);
+      console.log(this.previascargadas);
   }
 
   getUnidad(){

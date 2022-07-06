@@ -29,6 +29,7 @@ import {Spinerinterceptor} from './interceptors/spinerinterceptor';
 import { InfocarreraComponent } from './components/infocarrera/infocarrera.component';
 import { OplaboralesComponent } from './components/oplaborales/oplaborales.component';
 import { DatosinteresComponent } from './components/datosinteres/datosinteres.component';
+import { AgregarPreviaComponent } from './components/ComponentesUnidades/agregar-previa/agregar-previa.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { DatosinteresComponent } from './components/datosinteres/datosinteres.co
     InfocarreraComponent,
     OplaboralesComponent,
     DatosinteresComponent,
+    AgregarPreviaComponent,
   ],
   imports: [
     ReactiveFormsModule,
