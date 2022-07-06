@@ -1,15 +1,13 @@
 <div class="row justify-content-center" style="margin-left: 30% ;">
     <div style="margin-left: 3% ;">
-    <b style="color : white ;"><u>
-            <h3 >Editar noticia</h3>
-        </u></b>
+        <h3 class="tit">Editar noticia</h3>
     </div>
     <div class="row justify-content-center" style="margin-left: 30% ;"></div>
 <div class="divP">
     <form [formGroup]="formNoticia" (submit)="editarNoticia()">
         <div class="col-10">
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
-                <label class="lab">Titulo: </label>
+                <label class="lab">Título: </label>
                 <br>
                 <input type="text" class="inputs" formControlName="titulo" [ngModel]="Noticia.titulo">
             </div>
@@ -26,7 +24,7 @@
             <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
                 <label class="lab">Imagen: </label>
                 <div>
-                    <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                    <button type="button" mat-raised-button (click)="fileInput.click()" class="btn btn-secondary">Choose File</button>
                     <input hidden (change)="onFileSelected($event)" #fileInput type="file" formControlName="imagen">
                     <span class="file-name">{{selectedFile?.name}}</span>
                 </div>
