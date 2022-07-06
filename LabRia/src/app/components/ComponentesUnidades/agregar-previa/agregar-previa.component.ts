@@ -78,9 +78,6 @@ export class AgregarPreviaComponent implements OnInit {
     this.router.navigate(['/unidades']);
   }
 
-
-  
-
   selecsionarPrevia(i: any) {
     this.service.getunaUnidad(i).subscribe({
       next: value => this.cargarunidad(value),
