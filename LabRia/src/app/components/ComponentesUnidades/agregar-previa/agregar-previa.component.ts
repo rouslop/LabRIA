@@ -16,13 +16,54 @@ export class AgregarPreviaComponent implements OnInit {
   previascargadas: Unidades[] = [];
   previa:Previa[] =[];
   u = new Unidades();
-  UP = new Unidades();
   p = new Previa();
   formUnidades = new FormGroup ({
     tipo: new FormControl('',Validators.required),
   })
 
   constructor(public service: UnidadesService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.getUnidad();
+    this.getListPrevias();
+  }
+
+  getUnidad() {
+    this.service.getUnidad().subscribe({
+      next: value => this.u = value,
+      error: err => { alert('Error al cargar las materias: ' + err) }
+    }
+    );
+  }
+
+  getListPrevias() {
+    this.service.getUnidades().subscribe({
+      next: value => this.cargarltsa(value),
+      error: err => { alert('Error al cargar las materias: ' + err) }
+    }
+    );
+  }
+
+  cargarltsa(previas:Unidades[]){
+    let p: Unidades[] = [];
+    let bool :boolean = false;
+    for (let i = 0; i < previas.length; i++) {
+      const e = previas[i];
+      if(e.id != this.u.id){
+        for (let j = 0; j <this.u.previas.length; j) {
+          const f = this.u.previas[j];
+          if(f.previa.id == e.id){
+            bool = true;
+          }
+        }
+        if(bool== false){
+          p.push(e);
+        }else{
+          bool = false;}
+      }
+    }
+    this.previas = p;
+  }
 
   agregarPrevia() {
     for (let i = 0; i < this.previa.length; i++) {
@@ -34,66 +75,47 @@ export class AgregarPreviaComponent implements OnInit {
       );
     }
     console.log(this.previa);
-    //this.router.navigate(['/unidades']);
+    this.router.navigate(['/unidades']);
   }
 
 
-  getListPrevias() {
-    this.service.getUnidades().subscribe({
-      next: value => this.previas = value,
-      error: err => { alert('Error al cargar las materias: ' + err) }
-    }
-    );
-  }
+  
 
   selecsionarPrevia(i: any) {
     this.service.getunaUnidad(i).subscribe({
-      next: value => this.UP = value,
+      next: value => this.cargarunidad(value),
       error: err => { alert('Error al cargar las materias: ' + err) }
     });
-    this.cargarunidad();
   }
 
-  cargarunidad() {
+  cargarunidad(x:Unidades) {
     let esta: boolean = false;
-    let aux: Unidades = new Unidades;
     let auxP: Previa= new Previa;
-    if (this.UP.id != this.u.id) {
-      for (let i = 0; i < this.previascargadas.length; i++) {
-        aux = this.previascargadas[i];
-        console.log(aux.id);
-        if (aux.id == this.UP.id) {
+    if (x.id != this.u.id) {
+      for (let i = 0; i < this.u.previas.length; i++) {
+        const element = this.u.previas[i];
+        if(element.previa.id == x.id){
           esta = true;
         }
-      }
-    } else {
+      }if(esta==false){
+      for (let i = 0; i < this.previascargadas.length; i++) {
+        const element = this.previascargadas[i];
+        if (element.id == x.id) {
+          esta = true;
+        }}}
+      } else {
       esta = true;
     }
-    if ((esta == false && this.UP.id != undefined && this.u.id != undefined)) {
-      this.previascargadas.push(this.UP);
-      auxP.previa=this.UP.id;
+    if ((esta == false && x.id != undefined && this.u.id != undefined)) {
+      this.previascargadas.push(x);
+      auxP.previa=x.id;
       auxP.unidadCurricular=this.u.id;
       auxP.tipo=this.formUnidades.controls["tipo"].value;
       this.previa.push(auxP);
-      
     }
-    console.log(this.UP.id);
-    console.log(auxP);
-    console.log(this.previascargadas);
   }
 
-  getUnidad() {
-    this.service.getUnidad().subscribe({
-      next: value => this.u = value,
-      error: err => { alert('Error al cargar las materias: ' + err) }
-    }
-    );
-  }
-
-  ngOnInit(): void {
-    this.getUnidad();
-    this.getListPrevias();
-  }
+ 
 
 
 }

@@ -11,7 +11,6 @@ import { UnidadesService } from 'src/app/services/unidades.service';
 export class UnidadComponent implements OnInit {
   unidad: Unidades= new Unidades;
   token = localStorage.getItem('token');
-  previas: Unidades []= [];
   constructor(public UnidadesSvc:UnidadesService,private router:Router ) { }
 
   ngOnInit(): void {
@@ -27,12 +26,14 @@ export class UnidadComponent implements OnInit {
   }
 
   eliminarUnidad(id:any){
-    this.UnidadesSvc.eliminarUnidad(id).subscribe({
-      next: value => console.log(value),
-      error: err => { alert('Error al cargar las materias: ' + err) }
+    console.log(this.unidad);
+
+    // this.UnidadesSvc.eliminarUnidad(id).subscribe({
+    //   next: value => console.log(value),
+    //   error: err => { alert('Error al cargar las materias: ' + err) }
       
-    });
-    this.router.navigate(['/unidades']);
+    // });
+    // this.router.navigate(['/unidades']);
   }
 
 }

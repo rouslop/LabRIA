@@ -1,7 +1,7 @@
 import {Materia} from './materia';
 import {Previas} from './previas';
 export class Unidades{
-   id: string ="";
+   id: string | undefined;
    nombre: string ="";
    descripcion: string ="";
    creditos: string ="";
