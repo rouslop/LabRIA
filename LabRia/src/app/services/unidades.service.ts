@@ -49,4 +49,9 @@ export class UnidadesService {
     let url = environment.apiUrl+"/api/Previas"
     return this.http.post<Unidades>(url,x);
   }
+
+  eliminarPrevia(x:any){
+    let url = environment.apiUrl+"/api/Previas/"+x;
+    return this.http.delete<Unidades>(url);  
+  }
 }

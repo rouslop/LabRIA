@@ -25,15 +25,21 @@ export class UnidadComponent implements OnInit {
     );
   }
 
-  eliminarUnidad(id:any){
-    console.log(this.unidad);
+  eliminarPrevia(x:any){
+    this.UnidadesSvc.eliminarPrevia(x).subscribe({
+      next: value => {console.log(value),this.getUnidad();},
+      error: err => {alert("error al eliminar la previa de esta unidad");},
+    }
+    );
+  }
 
-    // this.UnidadesSvc.eliminarUnidad(id).subscribe({
-    //   next: value => console.log(value),
-    //   error: err => { alert('Error al cargar las materias: ' + err) }
+  eliminarUnidad(id:any){
+    this.UnidadesSvc.eliminarUnidad(id).subscribe({
+      next: value => console.log(value),
+      error: err => { alert('Error al cargar las materias: ' + err) }
       
-    // });
-    // this.router.navigate(['/unidades']);
+    });
+    this.router.navigate(['/unidades']);
   }
 
 }

@@ -30,6 +30,7 @@
                 <tr class="tabla" *ngFor="let x of unidad.previas">
                     <td class="tdbase">{{x.previa.nombre}}</td>
                     <td class="tdbase">{{x.tipo}}</td>
+                    <td class="tdbase"><button (click)="eliminarPrevia(x.id)">Elimianr Precia</button></td>
                 </tr>
             </tbody>
         </table>
