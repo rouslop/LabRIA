@@ -58,8 +58,8 @@ h3{
 
 .tit {
     font-family: 'Poppins', sans-serif;
-    text-align: center;
-    font-size: x-large;
+    font-size: xx-large;
+    text-decoration: underline;
 }
 
 tr .tdbtn {
@@ -103,10 +103,7 @@ table {
 }
 
 tr td, th { 
-    border-top-right-radius: 0;               
-    border-top-left-radius: 0; 
-    border-bottom-left-radius: 0; 
-    border-bottom-right-radius: 0; 
+    border-radius: 20px;
 }
 
 thead tr:last-child td:first-child { 
@@ -116,11 +113,8 @@ thead tr:last-child td:last-child {
     border-top-right-radius: 20px; 
 }
 
-tbody tr:last-child td:first-child { 
-    border-bottom-left-radius: 20px ; 
-}
-tbody tr:last-child td:last-child { 
-    border-bottom-right-radius: 20px; 
+tbody{ 
+    border-radius: 20px ; 
 }
 
 .thead1{
@@ -133,9 +127,19 @@ tbody tr:last-child td:last-child {
 
 .table1{
     margin: 0%; 
-    padding: 0%; 
+    padding: 2%; 
     border-radius : 20px;
     margin-bottom: 20px; 
     border-color: none;
     background-color: #151d2f;
+}
+
+.btnsel{
+    margin: 5px;
+}
+
+.op{
+    border-radius: 10px;
+    background-color: darkgrey;
+    color: white;
 }
