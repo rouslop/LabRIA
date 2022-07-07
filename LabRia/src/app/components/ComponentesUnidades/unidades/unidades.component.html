@@ -2,35 +2,53 @@
 <ng-template #thenBlock>
     <!-- ESTA LOGEADPO -->
     <div>
-        <div class="row justify-content-center" style="margin-bottom: 20px;">
-            <div class="col-11">
-                <h2 class="noticiaTitulo">UNIDADES CURRICULARES</h2>
-                <div class="row justify-content-center">
-                    <table class="table-dark table1" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                        <thead class="thead1">
-                            <tr class="tabla">
-                                <td class="tdbase1">Nombre</td>
-                                <td class="tdbase1">Créditos</td>
-                                <td class="tdbase1">
-                                    <button routerLink="/AltaUnidades" class="btn btn-secondary plus">+</button>
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="tabla table1" *ngFor="let x of unidades" style="margin-bottom: 20px;">
-                                <td class="tdbase">{{x.nombre}}</td>
-                                <td class="tdbase">{{x.creditos}}</td>
-                                <td>
-                                  <button class="btn btn-secondary" style="margin: 5px;" (click)="verUnidad(x.id)"><i class="bi bi-eye"></i></button>
-                                  <button class="btn btn-secondary" style="margin: 5px;"(click)="editarUnidad(x.id)"><i class="bi bi-pencil"></i></button>
-                                  <button class="btn btn-secondary" style="margin: 5px;"(click)="agregarPrevia(x.id)"><i class="bi bi-back"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <form [formGroup]="formUnidades" (submit)="selecsionarSemestre()">
+            <div class="row justify-content-center" style="margin-bottom: 20px;">
+                <div class="col-11">
+                    <h2 class="noticiaTitulo">UNIDADES CURRICULARES</h2>
+                    <div class="row justify-content-center">
+                        <table class="table-dark table1" cellspacing="0"
+                            style="margin: 0%; padding: 0% ; border-radius : 20px;">
+                            <thead class="thead1">
+                                <tr class="tabla">
+                                    <td class="tdbase1">Nombre</td>
+                                    <td class="tdbase1">Créditos</td>
+                                    <td class="tdbase1">
+                                        <button routerLink="/AltaUnidades" class="btn btn-secondary plus">+</button>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tabla table1" *ngFor="let x of unidades" style="margin-bottom: 20px;">
+                                    <td class="tdbase">{{x.nombre}}</td>
+                                    <td class="tdbase">{{x.creditos}}</td>
+                                    <td>
+                                        <button class="btn btn-secondary" style="margin: 5px;"
+                                            (click)="verUnidad(x.id)"><i class="bi bi-eye"></i></button>
+                                        <button class="btn btn-secondary" style="margin: 5px;"
+                                            (click)="editarUnidad(x.id)"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn btn-secondary" style="margin: 5px;"
+                                            (click)="agregarPrevia(x.id)"><i class="bi bi-back"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <select formControlName="semestre" size="width: 100%" class="op">
+                                <option value="1">Semestre 1</option>
+                                <option value="2">Semestre 2</option>
+                                <option value="3">Semestre 3</option>
+                                <option value="4">Semestre 4</option>
+                                <option value="5">Semestre 5</option>
+                                <option value="6">Semestre 6</option>
+                            </select>
+                            <button class="btn btn-secondary" style="margin: 5px;" type="submit"
+                                [disabled]="!formUnidades.valid">Selecsionar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </ng-template>
 <ng-template #elseBlock>
@@ -42,32 +60,39 @@
                         <h2 class="noticiaTitulo" style="color:white;">UNIDADES CURRICULARES</h2>
                     </u></b>
                 <div class="row justify-content-center">
-                    <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                        <thead
-                            style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                            <tr class="tabla" style=" border-color: none;">
-                                <td class="tdbase1">Nombre</td>
-                                <td class="tdbase">Descripción</td>
-                                <td class="tdbase">Créditos mínimos</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <table class="table-dark table1" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                                <thead class="thead1">
-                                    <tr class="tabla">
-                                        <td class="tdbase1">Nombre</td>
-                                        <td class="tdbase1">Créditos</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="tabla table1" *ngFor="let x of unidades" style="margin-bottom: 20px;">
-                                        <td class="tdbase">{{x.nombre}}</td>
-                                        <td class="tdbase">{{x.creditos}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </tbody>
-                    </table>
+                    <form [formGroup]="formUnidades" (submit)="selecsionarSemestre()">
+                        <table class="table-dark" cellspacing="0"
+                            style="margin: 0%; padding: 0% ; border-radius : 20px;">
+                            <thead
+                                style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
+                                <tr class="tabla" style=" border-color: none;">
+                                    <td class="tdbase1">Nombre</td>
+                                    <td class="tdbase">Créditos mínimos</td>
+                                    <td class="tdbase1">semestre</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tbody>
+                                <tr class="tabla table1" *ngFor="let x of unidades" style="margin-bottom: 20px;">
+                                    <td class="tdbase">{{x.nombre}}</td>
+                                    <td class="tdbase">{{x.creditos}}</td>
+                                    <td class="tdbase">{{x.semestre}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <select formControlName="semestre" size="width: 100%" class="op">
+                                <option value="1">Semestre 1</option>
+                                <option value="2">Semestre 2</option>
+                                <option value="3">Semestre 3</option>
+                                <option value="4">Semestre 4</option>
+                                <option value="5">Semestre 5</option>
+                                <option value="6">Semestre 6</option>
+                            </select>
+                            <button class="btn btn-secondary" style="margin: 5px;" type="submit"
+                                [disabled]="!formUnidades.valid">Selecsionar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
