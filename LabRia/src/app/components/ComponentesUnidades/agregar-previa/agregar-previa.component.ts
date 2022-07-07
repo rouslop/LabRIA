@@ -24,6 +24,7 @@ export class AgregarPreviaComponent implements OnInit {
   constructor(public service: UnidadesService, private router: Router) { }
 
   ngOnInit(): void {
+    this.previascargadas=[];
     this.getUnidad();
     this.getListPrevias();
   }
@@ -48,6 +49,7 @@ export class AgregarPreviaComponent implements OnInit {
     let p: Unidades[] = [];
     for (let i = 0; i < x.length; i++) {
       if (!this.u.estaEnPrevias(x[i])){
+        console.log(x[i]);
           p.push(x[i]);
         }
     }
