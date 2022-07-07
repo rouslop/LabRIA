@@ -16,9 +16,9 @@ import { DocumentosComponent } from './components/ComponentesDocumento/documento
 import { AltaDocumentosComponent } from './components/ComponentesDocumento/alta-documentos/alta-documentos.component';
 import {EditarUnidadComponent} from'./components/ComponentesUnidades/editar-unidad/editar-unidad.component';
 import { ModificarDocumentosComponent } from './components/ComponentesDocumento/modificar-documentos/modificar-documentos.component';
-import { InfocarreraComponent } from './components/infocarrera/infocarrera.component';
-import { OplaboralesComponent } from './components/oplaborales/oplaborales.component';
-import { DatosinteresComponent } from './components/datosinteres/datosinteres.component';
+import { InfocarreraComponent } from './components/ComponentesDocumento/infocarrera/infocarrera.component';
+import { OplaboralesComponent } from './components/ComponentesDocumento/oplaborales/oplaborales.component';
+import { DatosinteresComponent } from './components/ComponentesDocumento/datosinteres/datosinteres.component';
 import{AgregarPreviaComponent} from'./components/ComponentesUnidades/agregar-previa/agregar-previa.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
