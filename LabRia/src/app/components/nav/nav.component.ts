@@ -19,6 +19,7 @@ export class NavComponent implements OnInit {
       localStorage.clear();
       this.token = localStorage.getItem('token');
       console.log(this.token);
+      this.router.navigate(['/']);
     }
     
     public login(x:Login) {
