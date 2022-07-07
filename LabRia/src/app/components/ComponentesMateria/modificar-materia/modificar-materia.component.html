@@ -1,24 +1,24 @@
-<div class="row justify-content-center" style="margin-left: 30% ;">
-    <div style="margin-left: 3% ;">
+<div class="row justify-content-center text-center col-6">
+    <div class="div1">
         <h3 class="tit">Editar Materia</h3>
     </div>
-    <form [formGroup]="formMateria" (submit)="editarMateria()">
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+    <form [formGroup]="formMateria" (submit)="editarMateria()" class="justify-content-center text-center div2">
+        <div class="row justify-content-center text-center col-4">
             <label class="lab">Nombre :</label>
             <br>
             <input type="text" class="inputs" formControlName="nombre" [ngModel]="materia.nombre">
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
-            <label class="lab">Descripsion :</label>
+        <div class="row justify-content-center text-center col-4">
+            <label class="lab">Descripción :</label>
             <br>
             <input type="text" class="inputs" formControlName="descripcion" [ngModel]="materia.descripcion">
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
-            <label class="lab">Creditos :</label>
+        <div class="row justify-content-center text-center col-4">
+            <label class="lab">Créditos :</label>
             <br>
             <input type="text" class="inputs" formControlName="creditos" [ngModel]="materia.creditosMinimos">
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+        <div class="row justify-content-center text-center col-4">
             <button type="submit" class="btn btn-dark btnconf">Editar Materia</button>
         </div>
     </form>

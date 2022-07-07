@@ -11,7 +11,8 @@ tr .tdbtn {
 
 table { 
     border-radius: 20px;
-    border-collapse: separate; 
+    border-collapse: separate;
+    max-width: 600px; 
 }
 
 .tdbase{
@@ -22,8 +23,7 @@ table {
 
 .tdbase1{
     border-color: none;
-    color: white; 
-    margin: 3%;
+    color: white;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     text-decoration: underline;
@@ -92,9 +92,20 @@ tbody tr:last-child td:last-child {
 }
 
 .table1{
-    margin: 0%; 
+    margin: 2%;
     padding: 0%; 
     border-radius : 20px;
     margin-bottom: 20px; 
     border-color: none;
+}
+
+.op{
+    border-radius: 10px;
+    background-color: darkgrey;
+    color: white;
+}
+
+.divbtn{
+    margin-left: 28%;
+    margin-top: 10px;
 }

@@ -33,7 +33,10 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div>
+                        <h3 class="noticiaTitulo">Filtrar por semestre</h3>
+                    <div class="justify-content-end divbtn">
+                        
+                        <div class="justify-content-end divbtn">
                             <select formControlName="semestre" size="width: 100%" class="op">
                                 <option value="1">Semestre 1</option>
                                 <option value="2">Semestre 2</option>
@@ -43,8 +46,9 @@
                                 <option value="6">Semestre 6</option>
                             </select>
                             <button class="btn btn-secondary" style="margin: 5px;" type="submit"
-                                [disabled]="!formUnidades.valid">Selecsionar</button>
+                                [disabled]="!formUnidades.valid">Seleccionar</button>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -54,33 +58,30 @@
 <ng-template #elseBlock>
     <!-- NO ESTA LOGEADPO -->
     <div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="margin-bottom: 20px;">
             <div class="col-11">
-                <b style="color: white ;"><u>
-                        <h2 class="noticiaTitulo" style="color:white;">UNIDADES CURRICULARES</h2>
-                    </u></b>
+                <h2 class="noticiaTitulo">UNIDADES CURRICULARES</h2>
                 <div class="row justify-content-center">
-                    <form [formGroup]="formUnidades" (submit)="selecsionarSemestre()">
-                        <table class="table-dark" cellspacing="0"
-                            style="margin: 0%; padding: 0% ; border-radius : 20px;">
-                            <thead
-                                style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                                <tr class="tabla" style=" border-color: none;">
-                                    <td class="tdbase1">Nombre</td>
-                                    <td class="tdbase">Créditos mínimos</td>
-                                    <td class="tdbase1">semestre</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <tbody>
-                                <tr class="tabla table1" *ngFor="let x of unidades" style="margin-bottom: 20px;">
-                                    <td class="tdbase">{{x.nombre}}</td>
-                                    <td class="tdbase">{{x.creditos}}</td>
-                                    <td class="tdbase">{{x.semestre}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div>
+                    <table class="table-dark table1" cellspacing="0">
+                        <thead class="thead1">
+                            <tr class="tabla">
+                                <td class="tdbase1">Nombre</td>
+                                <td class="tdbase1">Créditos</td>
+                                <td class="tdbase1">Semestre</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tabla table1" *ngFor="let x of unidades" style="margin-bottom: 20px;">
+                                <td class="tdbase">{{x.nombre}}</td>
+                                <td class="tdbase">{{x.creditos}}</td>
+                                <td class="tdbase">{{x.semestre}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 class="noticiaTitulo">Filtrar por semestre</h3>
+                    <div class="justify-content-end divbtn">
+                        
+                        <div class="justify-content-end divbtn">
                             <select formControlName="semestre" size="width: 100%" class="op">
                                 <option value="1">Semestre 1</option>
                                 <option value="2">Semestre 2</option>
@@ -90,11 +91,11 @@
                                 <option value="6">Semestre 6</option>
                             </select>
                             <button class="btn btn-secondary" style="margin: 5px;" type="submit"
-                                [disabled]="!formUnidades.valid">Selecsionar</button>
+                                [disabled]="!formUnidades.valid">Seleccionar</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
 </ng-template>
