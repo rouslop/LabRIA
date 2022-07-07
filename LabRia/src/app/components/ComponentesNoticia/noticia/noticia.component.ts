@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GetNoticiasService } from '../../../services/get-noticias.service';
 import { Noticia } from '../../../models/noticia';
 import {Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-noticia',
@@ -88,12 +89,32 @@ export class NoticiaComponent implements OnInit {
 }
 
   eliminarNoticia(x: any){ 
-    alert('Acaba de eliminar una noticia');
-    this.ngOnInit();
-    this.getNoticias.eliminarNoticia(x).subscribe(data => {
-        console.log(data);
-      });
-    this.getListNoticias
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+
+    swalWithBootstrapButtons.fire({
+      title: 'Estas seguro?',
+      text: "Esta acsion no se puede revertir!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si    ',
+      cancelButtonText: '   No',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {  
+        alert('Acaba de eliminar una noticia');
+        this.ngOnInit();
+        this.getNoticias.eliminarNoticia(x).subscribe(data => {
+            console.log(data);
+          });
+        this.getListNoticias
+      }
+    })
   }
   
   

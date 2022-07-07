@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Materia } from 'src/app/models/materia';
 import { MateriaService } from 'src/app/services/materia.service';
 import {Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-materia',
@@ -19,12 +20,31 @@ export class MateriaComponent implements OnInit {
   }
   
   eliminarMateria(x: any){
-    alert('Acaba de eliminar una materia');
-    this.ngOnInit();
-      this.MateriaService.eliminarMateria(x).subscribe(data => {
-        console.log(data);
-      });
-    this.ngOnInit();
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+
+    swalWithBootstrapButtons.fire({
+      title: 'Estas seguro?',
+      text: "Esta acsion no se puede revertir!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si    ',
+      cancelButtonText: '   No',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {  
+        this.ngOnInit();
+          this.MateriaService.eliminarMateria(x).subscribe(data => {
+            console.log(data);
+          });
+        this.ngOnInit();
+      }
+    })
   }
 
   editarMateria(i: any ,n: any ,d: any ,c: any){
