@@ -1,29 +1,29 @@
-<div class="row justify-content-center" style="margin-left: 30% ;">
+<div class="row justify-content-center div2">
     <div >
-        <h3 class="tit"> Nueva Unidad Curicular </h3>
+        <h3 class="tit"> Nueva Unidad Curricular </h3>
     </div>
     <form [formGroup]="formUnidades" (submit)="agregarUnidad()">
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+        <div class="row justify-content-center div1">
             <label class="lab">Nombre :</label>
             <br>
             <input type="text" class="inputs" formControlName="nombre">
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+        <div class="row justify-content-center div1">
             <label class="lab">Descripción :</label>
             <br>
             <input type="text" class="inputs" formControlName="descripcion">
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+        <div class="row justify-content-center div1">
             <label class="lab">Créditos :</label>
             <br>
             <input type="text" class="inputs" formControlName="creditos">
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+        <div class="row justify-content-center div1">
             <label class="lab">Semestre :</label>
             <br>
             <input type="number" class="inputs" formControlName="semestre">
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+        <div class="row justify-content-center div1">
             <label class="lab">Documento: </label>
             <div class="divImg">
                 <button type="button" mat-raised-button (click)="fileInput.click()" class="btn btn-secondary">Choose File</button>
@@ -32,22 +32,21 @@
             </div>
         </div>
 
-        <table class="table-dark" cellspacing="0" style="margin-left: 3%; padding: 0% ; border-radius : 20px;">
-            <thead
-                style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                <tr class="tabla" style=" border-color: none;">
+        <table class="table-dark table1 col-4" cellspacing="0">
+            <thead class="thead1">
+                <tr class="tabla">
                     <td class="tdbase1">Nombre</td>
                 </tr>
             </thead>
             <tbody>
                 <tr class="tabla" *ngFor="let x of materias">
-                    <td class="tdbase">{{x.nombre}}</td>
-                    <button type="button" class="btn btn-secondary" (click)="selecsionarMateria(x.id , x.nombre, x.descripcion, x.creditosMinimos)">Seleccionar Materia</button>    
+                    <td class="tdbase col-4">{{x.nombre}}</td>
+                    <button type="button" class="btn btn-secondary btnsel" (click)="selecsionarMateria(x.id , x.nombre, x.descripcion, x.creditosMinimos)">Seleccionar Materia</button>    
                 </tr>
             </tbody>
         </table>
 
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+        <div class="row justify-content-center div1">
             <button type="submit" class="btn btn-dark btnconf">Confirmar</button>
         </div>
     </form>

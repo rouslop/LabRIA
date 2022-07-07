@@ -1,34 +1,32 @@
-<div class="row justify-content-center" style="margin-left: 30% ;">
-    <div>
-        <b style="color : white ;"><u>
-                <h3 style="color: white ;"> Agregar Previa a Curicularcurriular </h3>
-            </u></b>
+<div class="row justify-content-center div2">
+    <div class="justify-center">
+        <h3 class="tit"> Agregar Previatura</h3>
     </div>
     <form [formGroup]="formUnidades" (submit)="editarUnidad()">
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+        <div class="row justify-content-center div1">
             <label class="lab">Nombre :</label>
             <br>
             <input type="text" class="inputs" formControlName="nombre" [ngModel]="u.nombre">
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
-            <label class="lab">Descripsion :</label>
+        <div class="row justify-content-center div1">
+            <label class="lab">Descripción :</label>
             <br>
             <input type="text" class="inputs" formControlName="descripcion" [ngModel]="u.descripcion">
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
-            <label class="lab">Creditos :</label>
+        <div class="row justify-content-center div1">
+            <label class="lab">Créditos :</label>
             <br>
             <input type="text" class="inputs" formControlName="creditos" [ngModel]="u.creditos">
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+        <div class="row justify-content-center div1">
             <label class="lab">Documento: </label>
             <div>
-                <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                <button type="button" mat-raised-button (click)="fileInput.click()" class="btn btn-secondary col-8 btnsel">Choose File</button>
                 <input hidden (change)="onFileSelected($event)" #fileInput type="file" formControlName="imagen">
                 <span class="file-name">{{selectedFile}}</span>
             </div> 
         </div>
-        <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+        <div class="row justify-content-center div1">
             <button type="submit" class="btn btn-dark btnconf">Confirmar</button>
         </div>
     </form>

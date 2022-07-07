@@ -58,6 +58,21 @@ h3{
 
 .tit {
     font-family: 'Poppins', sans-serif;
-    text-align: center;
     font-size: x-large;
+    text-decoration: underline;
+    margin-left: 5%;
+}
+
+.div1{
+    width: 30%; 
+    margin-left: 1%; 
+    margin-bottom: 2%;
+}
+
+.div2{
+    margin-left: 30%;
+}
+
+.btnsel{
+    margin-left: 40px;
 }

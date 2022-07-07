@@ -24,6 +24,10 @@ h3{
     background-color: rgba(64, 70, 75, 0.664);
 }
 
+.btnsel{
+    margin: 5px;
+}
+
 .divP {
     text-align: center;
     justify-content: center;
@@ -67,4 +71,92 @@ h3{
 .divImg{
     margin-left: 55%; 
     margin-bottom: 2%;
+}
+
+tr .tdbtn {
+    border-radius: 20px;
+    background-color: #151d2f;
+}
+.tabla{
+    background-color: #151d2f; 
+    text-align: center; 
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border-color: none;
+}
+
+table { 
+    border-radius: 20px;
+    border-collapse: separate; 
+}
+
+.tdbase{
+    border-color: none;
+    color: white; 
+    margin: 3%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tdbase1{
+    border-color: none;
+    color: white; 
+    margin: 3%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    text-decoration: underline;
+    font-size: large;
+}
+
+.tdbtn{
+    padding: 10px; 
+    margin: 3%; 
+    display: flex; 
+    border-radius: 20px;
+}
+
+tr td, th { 
+    border-top-right-radius: 0;               
+    border-top-left-radius: 0; 
+    border-bottom-left-radius: 0; 
+    border-bottom-right-radius: 0; 
+}
+
+thead tr:last-child td:first-child { 
+    border-top-left-radius: 20px ; 
+}
+thead tr:last-child td:last-child { 
+    border-top-right-radius: 20px; 
+}
+
+tbody tr:last-child td:first-child { 
+    border-bottom-left-radius: 20px ; 
+}
+tbody tr:last-child td:last-child { 
+    border-bottom-right-radius: 20px; 
+}
+
+.thead1{
+    border-color: none; 
+    background-color: #151d2f; 
+    margin: 0%; 
+    padding: 0%;
+
+}
+
+.table1{
+    padding: 2%; 
+    border-radius : 20px;
+    margin-bottom: 20px; 
+    border-color: none;
+    background-color: #151d2f;
+}
+
+.div1{
+    width: 30%; 
+    margin-left: 1%; 
+    margin-bottom: 2%;
+}
+
+.div2{
+    margin-left: 30%;
 }
