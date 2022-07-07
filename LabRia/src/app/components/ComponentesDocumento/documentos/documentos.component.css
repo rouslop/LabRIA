@@ -62,6 +62,7 @@ tbody tr:last-child td:last-child {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     color:white;
+    text-decoration: underline;
 }
 
 .pen{
@@ -92,4 +93,8 @@ tbody tr:last-child td:last-child {
 
 .div1{
     margin-bottom: 20px;
+}
+
+.btn1{
+    margin: 5px;
 }

@@ -4,9 +4,7 @@
     <div>
         <div class="row justify-content-center div1">
             <div class="col-11">
-                <b style="color: white ;"><u>
-                        <h2 class="noticiaTitulo">DOCUMENTOS</h2>
-                    </u></b>
+                <h2 class="noticiaTitulo">DOCUMENTOS</h2>
                 <div class="row justify-content-center">
                     <table class="table-dark table1" cellspacing="0">
                         <thead class="thead1">
@@ -35,9 +33,9 @@
                     </table>
                 </div>
                 <div>
-                    <button (click)="anteriorPag()" class="btn btn-secondary" style="margin: 5px;">Pagina
+                    <button (click)="anteriorPag()" class="btn btn-secondary btn1">Pagina
                         Anterior</button>
-                    <button (click)="siguientePag()" class="btn btn-secondary" style="margin: 5px;">Pagina
+                    <button (click)="siguientePag()" class="btn btn-secondary btn1">Pagina
                         Siguiente</button>
                 </div>
             </div>
@@ -46,5 +44,5 @@
 </ng-template>
 <ng-template #elseBlock>
     <!-- NO ESTA LOGEADPO -->
-
+    <h2 class="noticiaTitulo">NO TIENE PERMISO PARA VER ESTA SECCION</h2>
 </ng-template>

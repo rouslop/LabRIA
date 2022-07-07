@@ -77,14 +77,6 @@ tbody tr:last-child td:last-child {
     text-align: center;
 }
 
-.thead1{
-    border-color: none; 
-    background-color: #151d2f; 
-    border-radius: 20px; 
-    margin: 0%; 
-    padding: 0%;
-}
-
 .noticiaTitulo{
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -102,4 +94,12 @@ tbody tr:last-child td:last-child {
 
 .btndescarga{
     margin: 5px;
+}
+
+.thead1{
+    border-color: none; 
+    background-color: #151d2f; 
+    margin: 0%; 
+    padding: 0%;
+
 }

@@ -1,19 +1,17 @@
-<div class="row justify-content-center" style="margin-left: 30% ;">
-    <div style="margin-left: 3% ;">
-    <b style="color : white ;"><u>
-            <h3 class="tit">Nuevo documento</h3>
-        </u></b>
+<div class="row justify-content-center div1">
+    <div>
+        <h3 class="tit">Nuevo documento</h3>
     </div>
-    <div class="row justify-content-center" style="margin-left: 30% ;"></div>
+    <div class="row justify-content-center div1"></div>
 <div class="divP">
     <form [formGroup]="formDocumento" (submit)="agregarDocumento()">
         <div class="col-10">
-            <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
+            <div class="row justify-content-center div2">
                 <label class="lab">Titulo: </label>
                 <br>
                 <input type="text" class="inputs" formControlName="titulo">
             </div>
-            <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;" >
+            <div class="row justify-content-center div2">
                 <label class="lab">Tipo: </label>
                 <br>
                 <select class="inputs" formControlName="tipo">
@@ -22,7 +20,7 @@
                     <option value="DATOS_DE_INTERES">DATOS_DE_INTERES</option>
                 </select>
             </div>
-            <div class="row justify-content-center" style="width: 30% ; margin-left: 1%; margin-bottom: 2%;">
+            <div class="row justify-content-center div2">
                 <button type="button" class="btn btn-dark" mat-raised-button (click)="fileInput.click()">Choose File</button>
                 <input hidden (change)="onFileSelected($event)" #fileInput type="file" formControlName="documento">
                 <span class="file-name">{{selectedFile?.name}}</span>

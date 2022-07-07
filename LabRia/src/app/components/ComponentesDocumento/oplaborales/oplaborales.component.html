@@ -4,13 +4,13 @@
         <div class="row justify-content-center">
             <table class="table-dark table1" cellspacing="0">
                 <thead class="thead1">
-                    <tr class="tabla" style=" border-color: none;">
+                    <tr class="tabla">
                         <td class="tdbase1">Titulo</td>
                         <td class="tdbase1">Documento PDF</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="tabla" *ngFor="let x of documentos" style="margin-bottom: 20px;">
+                    <tr class="tabla" *ngFor="let x of documentos">
                         <td class="tdbase">{{x.titulo}}</td>
                         <td class="tdbase">
                             <button class="btn btn-secondary btndescarga" download='Documento'
