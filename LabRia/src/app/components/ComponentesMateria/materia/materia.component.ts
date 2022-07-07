@@ -56,9 +56,16 @@ export class MateriaComponent implements OnInit {
   getListMaterias() {
     this.MateriaService.getMaterias().subscribe({
       next: value => this.materias = value,
-      error: err => { alert('Error al cargar las materias: ' + err) }
+      error: err => { this.alert('Error al cargar las materias: ') }
     }
     );
   }
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 
 }

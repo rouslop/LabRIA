@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Unidades} from 'src/app/models/unidades';
 import { UnidadesService } from 'src/app/services/unidades.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-unidades',
@@ -30,7 +31,7 @@ export class UnidadesComponent implements OnInit {
   getListUnidades() {
     this.UnidadesSvc.getUnidades().subscribe({
       next: value => this.unidades = value,
-      error: err => { alert('Error al cargar las materias: ' + err) }
+      error: err => { this.alert('Error al cargar las materias: ' ) }
     }
     );
   }
@@ -40,4 +41,11 @@ export class UnidadesComponent implements OnInit {
     this.router.navigate(['/agregarPrevia']);
   }
 
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Documento } from 'src/app/models/documento';
 import { DocumentosService } from 'src/app/services/documentos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-infocarrera',
@@ -18,7 +19,7 @@ documentos:Documento[] = [];
   getDocumentosActivos() {
     this.servicio.getDocsActivos("INFORMACION_DE_CARRERA").subscribe({
       next: value => this.documentos = value,
-      error: err => { alert('Error al cargar los documentos: ' + err) }
+      error: err => { this.alert('Error al cargar los documentos: ') }
     }
     );
 
@@ -34,4 +35,11 @@ documentos:Documento[] = [];
    return aux;
    }
 
+   alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 }

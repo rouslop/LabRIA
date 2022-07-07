@@ -34,7 +34,7 @@ export class NoticiaComponent implements OnInit {
   getActivas(){
     this.getNoticias.getNoticias().subscribe({
       next: value => {this.noticias = value},
-      error: err => { alert('Error al cargar las noticias: ' + err) }
+      error: err => { this.alert('Error al cargar las noticias: ') }
     }
     );
   }
@@ -61,7 +61,7 @@ export class NoticiaComponent implements OnInit {
   getNoticiaspaginadas(){
     this.getNoticias.getNoticiaspaginadas(this.offset).subscribe({
       next: value => {this.noticias = value.list, this.cantidadPag = value.size/5   },
-      error: err => { alert('Error al cargar las noticias: ' + err) }
+      error: err => { this.alert('Error al cargar las noticias: ' ) }
     }
     );
   }
@@ -69,7 +69,7 @@ export class NoticiaComponent implements OnInit {
   getListNoticias() {
     this.getNoticias.getNoticiaspaginadas(0).subscribe({
       next: value => {this.noticias = value.list, this.cantidadPag = value.size/5; },
-      error: err => { alert('Error al cargar las noticias: ' + err) }
+      error: err => { this.alert('Error al cargar las noticias: ') }
     }
     );
     console.log(this.noticias);
@@ -113,5 +113,12 @@ export class NoticiaComponent implements OnInit {
     })
   }
   
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
   
   }

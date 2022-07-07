@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Previa } from 'src/app/models/previa';
 import { Unidades } from 'src/app/models/unidades';
 import { UnidadesService } from 'src/app/services/unidades.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agregar-previa',
@@ -21,10 +22,10 @@ export class AgregarPreviaComponent implements OnInit {
     tipo: new FormControl('',Validators.required),
   })
 
-  constructor(public service: UnidadesService, private router: Router) { }
+  constructor(public service: UnidadesService, private router: Router) {
+   }
 
   ngOnInit(): void {
-    this.previascargadas=[];
     this.getUnidad();
     this.getListPrevias();
   }
@@ -46,6 +47,11 @@ export class AgregarPreviaComponent implements OnInit {
   }
 
   cargarlitsa(x:Unidades[]){
+    this.service.getUnidad().subscribe({
+      next: value => this.u = value,
+      error: err => { alert('Error al cargar las materias: ' + err) }
+    }
+    );
     let p: Unidades[] = [];
     for (let i = 0; i < x.length; i++) {
       if (!this.u.estaEnPrevias(x[i])){
@@ -84,7 +90,7 @@ export class AgregarPreviaComponent implements OnInit {
     if (x.id != this.u.id) {
       for (let i = 0; i < this.u.previas.length; i++) {
         const element = this.u.previas[i];
-        if(element.previa.id == x.id){
+        if(!this.u.estaEnPrevias(x)){
           esta = true;
           error="esta unidad ya tiene esta previa";
         }
@@ -106,11 +112,17 @@ export class AgregarPreviaComponent implements OnInit {
       auxP.tipo=this.formUnidades.controls["tipo"].value;
       this.previa.push(auxP);
     }else{
-      alert(error);
+      this.alert(error);
     }
   }
 
- 
+ alert(x:string):void{
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: x,
+  })
+ }
 
 
 }

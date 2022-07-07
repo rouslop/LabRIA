@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Noticia } from 'src/app/models/noticia';
 import { Observable, subscribeOn, Subscriber } from 'rxjs';
 import {Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-alta-noticia',
@@ -64,11 +65,18 @@ export class AltaNoticiaComponent implements OnInit {
     n.imagen =this.Imagebase64 ? this.Imagebase64 : " ",
     this.service.addNoticia(n).subscribe({
       next: value => console.log(value),
-      error: err => { alert('Error al agregar las noticias: ' + err) }
+      error: err => { this.alert('Error al agregar las noticias: ') }
     });
     
     this.router.navigate(['/noticia']);
 
   }
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 
 }

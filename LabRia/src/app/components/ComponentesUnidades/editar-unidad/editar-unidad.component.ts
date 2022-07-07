@@ -6,6 +6,7 @@ import { Materia } from 'src/app/models/materia';
 import { Unidades } from 'src/app/models/unidades';
 import { UnidadesService } from 'src/app/services/unidades.service';
 import { MateriaService } from 'src/app/services/materia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-unidad',
@@ -36,7 +37,7 @@ export class EditarUnidadComponent implements OnInit {
     this.u.documento = this.documento ? this.documento : " ";
     this.service.editarUnidad(this.u).subscribe({
       next: value => console.log(value),
-      error: err => { alert('Error al agregar las noticias: ' + err) }
+      error: err => { this.alert('Error al agregar las unidad: ') }
     });
     this.router.navigate(['/unidades']);
   }
@@ -45,7 +46,7 @@ export class EditarUnidadComponent implements OnInit {
   getListPrevias() {
     this.service.getUnidades().subscribe({
       next: value => this.previas = value,
-      error: err => { alert('Error al cargar las materias: ' + err) }
+      error: err => { this.alert('Error al cargar las previas: ') }
     }
     );
   }
@@ -53,7 +54,7 @@ export class EditarUnidadComponent implements OnInit {
   selecsionarPrevia(i:any) {
     this.service.getunaUnidad(i).subscribe({
       next: value => this.UP = value,
-      error: err => { alert('Error al cargar las materias: ' + err) }
+      error: err => { this.alert('Error al cargar las previas: ') }
     });
     this.cargarunidad();
   }
@@ -81,7 +82,7 @@ export class EditarUnidadComponent implements OnInit {
   getUnidad(){
     this.service.getUnidad().subscribe({
       next: value => {this.u = value,this.documento=value.documento},
-      error: err => { alert('Error al cargar las materias: ' + err) }
+      error: err => { this.alert('Error al cargar las unidades: ') }
     }
     );
   }
@@ -119,4 +120,11 @@ export class EditarUnidadComponent implements OnInit {
     }
   }
 
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 }

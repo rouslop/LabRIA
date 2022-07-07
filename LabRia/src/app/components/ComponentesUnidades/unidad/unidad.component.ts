@@ -21,7 +21,7 @@ export class UnidadComponent implements OnInit {
   getUnidad() {
     this.UnidadesSvc.getUnidad().subscribe({
       next: value => { this.unidad = value },
-      error: err => { alert('Error al cargar las materias: ' + err) }
+      error: err => { this.alert('Error al cargar las materias: ') }
     }
     );
   }
@@ -47,7 +47,7 @@ export class UnidadComponent implements OnInit {
       if (result.isConfirmed) {
         this.UnidadesSvc.eliminarPrevia(x).subscribe({
           next: value => { console.log(value), this.getUnidad(); },
-          error: err => { alert("error al eliminar la previa de esta unidad"); },
+          error: err => { this.alert("error al eliminar la previa de esta unidad"); },
         }
         );
       }
@@ -71,12 +71,20 @@ export class UnidadComponent implements OnInit {
       if (result.isConfirmed) {
         this.UnidadesSvc.eliminarUnidad(id).subscribe({
           next: value => console.log(value),
-          error: err => { alert('Error al cargar las materias: ' + err) }
+          error: err => { this.alert('Error al cargar las materias: ') }
 
         });
         this.router.navigate(['/unidades']);
       }
     })
   }
+
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 
 }

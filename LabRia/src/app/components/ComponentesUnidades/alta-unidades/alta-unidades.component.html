@@ -16,7 +16,7 @@
         <div class="row justify-content-center div1">
             <label class="lab">Créditos :</label>
             <br>
-            <input type="text" class="inputs" formControlName="creditos">
+            <input type="number" class="inputs" formControlName="creditos">
         </div>
         <div class="row justify-content-center div1">
             <label class="lab">Semestre :</label>
@@ -47,7 +47,7 @@
         </table>
 
         <div class="row justify-content-center div1">
-            <button type="submit" class="btn btn-dark btnconf">Confirmar</button>
+            <button type="submit" class="btn btn-dark btnconf" [disabled]="!formUnidades.valid">Confirmar</button>
         </div>
     </form>
 </div>

@@ -4,6 +4,7 @@ import { Documento } from 'src/app/models/documento';
 import { Observable, subscribeOn, Subscriber } from 'rxjs';
 import { DocumentosService } from 'src/app/services/documentos.service';
 import {Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-alta-documentos',
@@ -61,10 +62,17 @@ export class AltaDocumentosComponent implements OnInit {
     d.documentoPDF = this.Imagebase64 ? this.Imagebase64 : " ";
     this.servicio.agregarDoc(d).subscribe({
       next: value => console.log(value),
-      error: err => { alert('Error al agregar el documento: ' + err) }
+      error: err => { this.alert('Error al agregar el documento: ') }
     });
     
     this.router.navigate(['/documentos']);
   }
 
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 }

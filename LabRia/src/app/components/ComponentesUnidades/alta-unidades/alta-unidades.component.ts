@@ -6,6 +6,7 @@ import { Materia } from 'src/app/models/materia';
 import { Unidades } from 'src/app/models/unidades';
 import { MateriaService } from 'src/app/services/materia.service';
 import { UnidadesService } from 'src/app/services/unidades.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-alta-unidades',
@@ -22,8 +23,8 @@ export class AltaUnidadesComponent implements OnInit {
   formUnidades = new FormGroup ({
     nombre: new FormControl('',Validators.required),
     descripcion: new FormControl('',Validators.required),
-    creditos: new FormControl('', Validators.required),
-    semestre: new FormControl('', Validators.required),
+    creditos: new FormControl('', [Validators.required,Validators.min(1)]),
+    semestre: new FormControl('', [Validators.required,Validators.min(1),Validators.max(6)]),
     });
 
   constructor( public service: UnidadesService,public MateriaService:MateriaService,private router:Router ) { }
@@ -42,7 +43,7 @@ export class AltaUnidadesComponent implements OnInit {
     this.u.documento =this.documento ? this.documento : " ";
     this.service.addUnidades(this.u).subscribe({
       next: value => console.log(value),
-      error: err => { alert('Error al agregar las noticias: ' + err) }
+      error: err => { this.alert('Error al agregar las unidades: ') }
     });
     this.router.navigate(['/unidades']);
   }
@@ -50,7 +51,7 @@ export class AltaUnidadesComponent implements OnInit {
   getListMaterias() {
     this.MateriaService.getMaterias().subscribe({
       next: value => this.materias = value,
-      error: err => { alert('Error al cargar las materias: ' + err) }
+      error: err => { this.alert('Error al cargar la Unidades: ') }
     }
     );
   }
@@ -91,4 +92,11 @@ export class AltaUnidadesComponent implements OnInit {
     }
   }
 
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 }

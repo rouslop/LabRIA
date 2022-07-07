@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Documento } from 'src/app/models/documento';
 import { DocumentosService } from 'src/app/services/documentos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-oplaborales',
@@ -18,7 +19,7 @@ export class OplaboralesComponent implements OnInit {
   getDocumentosActivos() {
     this.servicio.getDocsActivos("OPORTUNIDADES_LABORALES").subscribe({
       next: value => this.documentos = value,
-      error: err => { alert('Error al cargar los documentos: ' + err) }
+      error: err => { this.alert('Error al cargar los documentos: ') }
     }
     );
 
@@ -33,5 +34,12 @@ export class OplaboralesComponent implements OnInit {
     link.click();
    return aux;
    }
+   alert(x:string):void{
+     Swal.fire({
+       icon: 'error',
+       title: 'Oops...',
+       text: x,
+     })
+    }
 
 }

@@ -3,6 +3,7 @@ import{Materia} from '../../../models/materia';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {MateriaService} from '../../../services/materia.service';
 import {Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modificar-materia',
@@ -30,10 +31,17 @@ export class ModificarMateriaComponent implements OnInit {
     n.creditosMinimos = this.formMateria.controls["creditos"].value;
     this.service.editarMateria(n).subscribe({
       next: value => console.log(value),
-      error: err => { alert('Error al agregar las noticias: ' + err) }
+      error: err => { this.alert('Error al agregar las noticias: ') }
     });
     this.router.navigate(['/materia']);
   }
 
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 
 }

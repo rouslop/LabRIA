@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Documento } from 'src/app/models/documento';
 import { DocumentosService } from 'src/app/services/documentos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-datosinteres',
@@ -19,7 +20,7 @@ export class DatosinteresComponent implements OnInit {
   getDocumentosActivos() {
     this.servicio.getDocsActivos("DATOS_DE_INTERES").subscribe({
       next: value => this.documentos = value,
-      error: err => { alert('Error al cargar los documentos: ' + err) }
+      error: err => { this.alert('Error al cargar los documentos: ') }
     }
     );
 
@@ -33,6 +34,14 @@ export class DatosinteresComponent implements OnInit {
     link.download = `Documento.pdf`
     link.click();
    return aux;
+   }
+   
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
    }
 
 }

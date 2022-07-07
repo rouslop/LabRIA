@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Documento } from 'src/app/models/documento';
 import {Router} from '@angular/router';
 import { DocumentosService } from 'src/app/services/documentos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-documentos',
@@ -39,7 +40,7 @@ export class DocumentosComponent implements OnInit {
   getDocumentosPaginados(n: number) {
     this.servicio.getDocsPaginados(n).subscribe({
       next: value => {this.documentos = value.list, this.cantidadPag = value.size/5},
-      error: err => { alert('Error al cargar documentos paginados: ' + err) }
+      error: err => { this.alert('Error al cargar documentos paginados: ') }
     });
     console.log(this.documentos);
   }
@@ -72,6 +73,14 @@ export class DocumentosComponent implements OnInit {
       }
     }
   }
+  
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 }
 
 

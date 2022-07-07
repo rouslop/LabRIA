@@ -12,7 +12,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="tabla" *ngFor="let x of previas">
+                    <tr class="tabla" *ngFor="let x of previas" >
                         <td class="tdbase">{{x.nombre}}</td>
                         <button type="button" class="btn btn-secondary btnsel" (click)="selecsionarPrevia(x.id)">Seleccionar</button>
                     </tr>
@@ -24,7 +24,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table-dark table1" cellspacing="0">
+            <table class="table-dark table1" cellspacing="0" (cuechange)="getListPrevias()" >
                 <thead class="thead1">
                     <tr class="tabla" style=" border-color: none;">
                         <td class="tdbase1">Nombre</td>

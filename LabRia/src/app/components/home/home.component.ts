@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Noticia } from 'src/app/models/noticia';
 import { GetNoticiasService } from 'src/app/services/get-noticias.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -20,9 +21,16 @@ export class HomeComponent implements OnInit {
   getListNoticias() {
     this.servicioNoticia.getNoticias().subscribe({
       next: value => this.noticias = value,
-      error: err => { alert('Error al cargar las noticias: ' + err) }
+      error: err => { this.alert('Error al cargar las noticias: ') }
     }
     );
   }
 
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 }

@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Documento } from 'src/app/models/documento';
 import { Observable, subscribeOn, Subscriber } from 'rxjs';
 import { DocumentosService } from 'src/app/services/documentos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modificar-documentos',
@@ -65,10 +66,17 @@ export class ModificarDocumentosComponent implements OnInit {
     d.documentoPDF = this.Imagebase64 ? this.Imagebase64 : " ";
     this.servicio.editarDoc(d).subscribe({
       next: value => console.log(value),
-      error: err => { alert('Error al editar el documento: ' + err) }
+      error: err => { this.alert('Error al editar el documento: ' + err) }
     });
     
     this.router.navigate(['/documentos']);
   }
 
+  alert(x:string):void{
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: x,
+    })
+   }
 }
