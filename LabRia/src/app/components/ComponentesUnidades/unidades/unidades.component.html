@@ -13,7 +13,7 @@
                                 <tr class="tabla">
                                     <td class="tdbase1">Nombre</td>
                                     <td class="tdbase1">Créditos</td>
-                                    <td class="tdbase1">
+                                    <td class="tdbase1">Semestre</td>
                                         <button routerLink="/AltaUnidades" class="btn btn-secondary plus">+</button>
                                     </td>
                                 </tr>
@@ -22,6 +22,7 @@
                                 <tr class="tabla table1" *ngFor="let x of unidades" style="margin-bottom: 20px;">
                                     <td class="tdbase">{{x.nombre}}</td>
                                     <td class="tdbase">{{x.creditos}}</td>
+                                    <td class="tdbase">{{x.semestre}}</td>
                                     <td>
                                         <button class="btn btn-secondary" style="margin: 5px;"
                                             (click)="verUnidad(x.id)"><i class="bi bi-eye"></i></button>
