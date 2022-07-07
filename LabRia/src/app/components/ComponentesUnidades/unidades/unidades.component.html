@@ -34,21 +34,21 @@
                             </tbody>
                         </table>
                         <h3 class="noticiaTitulo">Filtrar por semestre</h3>
-                    <div class="justify-content-end divbtn">
-                        
                         <div class="justify-content-end divbtn">
-                            <select formControlName="semestre" size="width: 100%" class="op">
-                                <option value="1">Semestre 1</option>
-                                <option value="2">Semestre 2</option>
-                                <option value="3">Semestre 3</option>
-                                <option value="4">Semestre 4</option>
-                                <option value="5">Semestre 5</option>
-                                <option value="6">Semestre 6</option>
-                            </select>
-                            <button class="btn btn-secondary" style="margin: 5px;" type="submit"
-                                [disabled]="!formUnidades.valid">Seleccionar</button>
+
+                            <div class="justify-content-end divbtn">
+                                <select formControlName="semestre" size="width: 100%" class="op">
+                                    <option value="1">Semestre 1</option>
+                                    <option value="2">Semestre 2</option>
+                                    <option value="3">Semestre 3</option>
+                                    <option value="4">Semestre 4</option>
+                                    <option value="5">Semestre 5</option>
+                                    <option value="6">Semestre 6</option>
+                                </select>
+                                <button class="btn btn-secondary" style="margin: 5px;" type="submit"
+                                    [disabled]="!formUnidades.valid">Seleccionar</button>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                     </table>
                     <h3 class="noticiaTitulo">Filtrar por semestre</h3>
                     <div class="justify-content-end divbtn">
-                        
+
                         <div class="justify-content-end divbtn">
                             <select formControlName="semestre" size="width: 100%" class="op">
                                 <option value="1">Semestre 1</option>
@@ -97,5 +97,5 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </ng-template>
