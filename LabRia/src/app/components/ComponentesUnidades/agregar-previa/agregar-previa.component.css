@@ -61,3 +61,81 @@ h3{
     text-align: center;
     font-size: x-large;
 }
+
+tr .tdbtn {
+    border-radius: 20px;
+    background-color: #151d2f;
+}
+.tabla{
+    background-color: #151d2f; 
+    text-align: center; 
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border-color: none;
+}
+
+table { 
+    border-radius: 20px;
+    border-collapse: separate; 
+}
+
+.tdbase{
+    border-color: none;
+    color: white; 
+    margin: 3%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tdbase1{
+    border-color: none;
+    color: white; 
+    margin: 3%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    text-decoration: underline;
+}
+
+.tdbtn{
+    padding: 10px; 
+    margin: 3%; 
+    display: flex; 
+    border-radius: 20px;
+}
+
+tr td, th { 
+    border-top-right-radius: 0;               
+    border-top-left-radius: 0; 
+    border-bottom-left-radius: 0; 
+    border-bottom-right-radius: 0; 
+}
+
+thead tr:last-child td:first-child { 
+    border-top-left-radius: 20px ; 
+}
+thead tr:last-child td:last-child { 
+    border-top-right-radius: 20px; 
+}
+
+tbody tr:last-child td:first-child { 
+    border-bottom-left-radius: 20px ; 
+}
+tbody tr:last-child td:last-child { 
+    border-bottom-right-radius: 20px; 
+}
+
+.thead1{
+    border-color: none; 
+    background-color: #151d2f; 
+    margin: 0%; 
+    padding: 0%;
+
+}
+
+.table1{
+    margin: 0%; 
+    padding: 0%; 
+    border-radius : 20px;
+    margin-bottom: 20px; 
+    border-color: none;
+    background-color: #151d2f;
+}
