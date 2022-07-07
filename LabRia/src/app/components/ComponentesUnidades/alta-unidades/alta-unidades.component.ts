@@ -23,7 +23,7 @@ export class AltaUnidadesComponent implements OnInit {
   formUnidades = new FormGroup ({
     nombre: new FormControl('',Validators.required),
     descripcion: new FormControl('',Validators.required),
-    creditos: new FormControl('', [Validators.required,Validators.min(1)]),
+    creditos: new FormControl('', [Validators.required,Validators.min(0)]),
     semestre: new FormControl('', [Validators.required,Validators.min(1),Validators.max(6)]),
     });
 
