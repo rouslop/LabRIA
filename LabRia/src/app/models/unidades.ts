@@ -9,4 +9,17 @@ export class Unidades{
    semestre: string ="";
    materia: Materia | undefined;
    previas: Previas[] = [];
+
+   estaEnPrevias(x:Unidades):boolean{
+         if(this.id != x.id){
+            for (let i = 0; i < this.previas.length; i++) {
+               if (this.previas[i].previa.estaEnPrevias(x)) {
+                  return true;
+               }
+            }
+         }else{
+            return true;
+         }
+      return false
+   }
 }

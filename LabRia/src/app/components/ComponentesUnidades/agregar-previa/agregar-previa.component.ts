@@ -44,26 +44,16 @@ export class AgregarPreviaComponent implements OnInit {
     );
   }
 
-  cargarltsa(previas:Unidades[]){
+  cargarltsa(x:Unidades[]){
     let p: Unidades[] = [];
-    let bool :boolean = false;
-    for (let i = 0; i < previas.length; i++) {
-      const e = previas[i];
-      if(e.id != this.u.id){
-        for (let j = 0; j <this.u.previas.length; j) {
-          const f = this.u.previas[j];
-          if(f.previa.id == e.id){
-            bool = true;
-          }
+    for (let i = 0; i < x.length; i++) {
+      if (!this.u.estaEnPrevias(x[i])){
+          p.push(x[i]);
         }
-        if(bool== false){
-          p.push(e);
-        }else{
-          bool = false;}
-      }
     }
     this.previas = p;
   }
+
 
   agregarPrevia() {
     for (let i = 0; i < this.previa.length; i++) {
