@@ -1,12 +1,11 @@
 <div class="row justify-content-center" style="margin-left: 30% ;">
     <div>
-        <b style="color : white ;"><u><h3 style="color: white ;"> Agregar Previa a Curicularcurriular </h3></u></b>
-        <br>
-        <b style="color : white ;"><u><h3 style="color: white ;"> {{u.nombre}} </h3></u></b>
+        <h3 class="tit">Agregar Previatura: </h3>
+        <h3 class="tit"> {{u.nombre}} </h3>
     </div>
     <form [formGroup]="formUnidades" (submit)="agregarPrevia()">
         <div classs="d.flex">
-            <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
+            <table class="table-dark table1" cellspacing="0">
                 <thead
                     style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
                     <tr class="tabla" style=" border-color: none;">
@@ -16,18 +15,17 @@
                 <tbody>
                     <tr class="tabla" *ngFor="let x of previas">
                         <td class="tdbase">{{x.nombre}}</td>
-                        <button type="button" class="btn btn-secundary" (click)="selecsionarPrevia(x.id)">Selecsionar
-                            Materia</button>
+                        <button type="button" class="btn btn-secondary btnsel" (click)="selecsionarPrevia(x.id)">Seleccionar</button>
                     </tr>
                     <tr class="tabla">
-                        <select formControlName="tipo" size="width: 100%">
+                        <select formControlName="tipo" size="width: 100%" class="op">
                             <option value="EXAMEN">Examen</option>
                             <option value="CURSO">Curso</option>
                         </select>
                     </tr>
                 </tbody>
             </table>
-            <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
+            <table class="table-dark table1" cellspacing="0">
                 <thead
                     style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
                     <tr class="tabla" style=" border-color: none;">

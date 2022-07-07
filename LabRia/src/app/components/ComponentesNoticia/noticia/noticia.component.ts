@@ -90,16 +90,12 @@ export class NoticiaComponent implements OnInit {
 
   eliminarNoticia(x: any){ 
     const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger'
-      },
-      buttonsStyling: false
+      buttonsStyling: true
     })
 
     swalWithBootstrapButtons.fire({
-      title: 'Estas seguro?',
-      text: "Esta acsion no se puede revertir!",
+      title: 'Estás seguro?',
+      text: "Esta acción no se puede revertir!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Si    ',

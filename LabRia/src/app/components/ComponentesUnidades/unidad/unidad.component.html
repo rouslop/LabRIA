@@ -1,41 +1,43 @@
-<div style="margin-left: 30%;">
-    <div style="align-items: center;">
+<div class="div1">
+    <div class="justify-center">
         <h1>Nombre: {{unidad.nombre}}</h1>
     </div>
-    <div style="align-items: center;">
-        <p>Creditos: {{unidad.creditos}}</p>
+    <div class="justify-center">
+        <p>Créditos: {{unidad.creditos}}</p>
     </div>
-    <div style="align-items: center;">
-        <p>Descripcion {{unidad.descripcion}}</p>
+    <div class="justify-center">
+        <p>Descripción: {{unidad.descripcion}}</p>
     </div>
-    <div style="align-items: center;">
+    <div class="justify-center">
         <p>Materia</p>
-        <div style="margin-left: 30px;">
+        <div class="div2">
             <p>Nombre:  {{unidad.materia?.nombre}}</p>
-            <p>Descripcion:  {{unidad.materia?.descripcion}}</p>
-            <p>Creditos Minimos  {{unidad.materia?.creditosMinimos}}</p>
+            <p>Descripción:  {{unidad.materia?.descripcion}}</p>
+            <p>Créditos mínimos  {{unidad.materia?.creditosMinimos}}</p>
         </div>
     </div>
     
-    <div style="align-items: center;">
-        <p>Previas</p>
-        <table class="table-dark" cellspacing="0" style="margin: 0%; padding: 0% ; border-radius : 20px;">
-            <thead
-                style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-                <tr class="tabla" style=" border-color: none;">
+    <div class="justify-center">
+        <p class="lista">Lista de previas</p>
+        <table class="table-dark table1" cellspacing="0">
+            <thead class="thead1">
+                <tr class="tabla">
                     <td class="tdbase1">Nombre</td>
+                    <td class="tdbase2"></td>
                 </tr>
             </thead>
-            <tbody>
-                <tr class="tabla" *ngFor="let x of unidad.previas">
+            <tbody class="tabla table1">
+                <tr *ngFor="let x of unidad.previas">
                     <td class="tdbase">{{x.previa.nombre}}</td>
                     <td class="tdbase">{{x.tipo}}</td>
-                    <td class="tdbase"><button (click)="eliminarPrevia(x.id)">Elimianr Precia</button></td>
+                    <td class="tdbase">
+                        <button type="button" class="btn btn-secondary" (click)="eliminarPrevia(x.id)">Eliminar Previa</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div *ngIf="token!=null; ">
-        <button (click)="eliminarUnidad(unidad.id)"> Eliminar Unidad</button>
+        <button class="btn btn-secondary" (click)="eliminarUnidad(unidad.id)"> Eliminar Unidad</button>
     </div>
 </div>
