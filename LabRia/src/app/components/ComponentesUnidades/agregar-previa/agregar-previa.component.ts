@@ -38,13 +38,13 @@ export class AgregarPreviaComponent implements OnInit {
 
   getListPrevias() {
     this.service.getUnidades().subscribe({
-      next: value => this.cargarltsa(value),
+      next: value => this.cargarlitsa(value),
       error: err => { alert('Error al cargar las materias: ' + err) }
     }
     );
   }
 
-  cargarltsa(x:Unidades[]){
+  cargarlitsa(x:Unidades[]){
     let p: Unidades[] = [];
     for (let i = 0; i < x.length; i++) {
       if (!this.u.estaEnPrevias(x[i])){
