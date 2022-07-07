@@ -14,7 +14,8 @@
                                     <td class="tdbase1">Nombre</td>
                                     <td class="tdbase1">Créditos</td>
                                     <td class="tdbase1">Semestre</td>
-                                        <button routerLink="/AltaUnidades" class="btn btn-secondary plus">+</button>
+                                    <td class="tdbase">
+                                    <button routerLink="/AltaUnidades" class="btn btn-secondary plus">+</button>
                                     </td>
                                 </tr>
                             </thead>
@@ -46,8 +47,7 @@
                                     <option value="5">Semestre 5</option>
                                     <option value="6">Semestre 6</option>
                                 </select>
-                                <button class="btn btn-secondary" style="margin: 5px;" type="submit"
-                                    [disabled]="!formUnidades.valid">Seleccionar</button>
+                                <button class="btn btn-secondary" style="margin: 5px;" type="submit">Seleccionar</button>
                             </div>
                         </div>
                     </div>
@@ -60,6 +60,7 @@
     <!-- NO ESTA LOGEADPO -->
     <div>
         <div class="row justify-content-center" style="margin-bottom: 20px;">
+        <form [formGroup]="formUnidades" (submit)="selecsionarSemestre()">
             <div class="col-11">
                 <h2 class="noticiaTitulo">UNIDADES CURRICULARES</h2>
                 <div class="row justify-content-center">
@@ -69,6 +70,7 @@
                                 <td class="tdbase1">Nombre</td>
                                 <td class="tdbase1">Créditos</td>
                                 <td class="tdbase1">Semestre</td>
+                                <td class="tdbase1"></td>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,6 +78,10 @@
                                 <td class="tdbase">{{x.nombre}}</td>
                                 <td class="tdbase">{{x.creditos}}</td>
                                 <td class="tdbase">{{x.semestre}}</td>
+                                <td>
+                                    <button class="btn btn-secondary" style="margin: 5px;" (click)="verUnidad(x.id)"><i
+                                            class="bi bi-eye"></i></button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -91,12 +97,12 @@
                                 <option value="5">Semestre 5</option>
                                 <option value="6">Semestre 6</option>
                             </select>
-                            <button class="btn btn-secondary" style="margin: 5px;" type="submit"
-                                [disabled]="!formUnidades.valid">Seleccionar</button>
+                            <button class="btn btn-secondary" style="margin: 5px;" type="submit">Seleccionar</button>
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </ng-template>

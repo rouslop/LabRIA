@@ -34,7 +34,7 @@
                     <td class="tdbase">{{x.previa.nombre}}</td>
                     <td class="tdbase">{{x.tipo}}</td>
                     <td class="tdbase">
-                        <button type="button" class="btn btn-secondary" (click)="eliminarPrevia(x.id)">Eliminar Previa</button>
+                        <button *ngIf="token != null" type="button" class="btn btn-secondary" (click)="eliminarPrevia(x.id)">Eliminar Previa</button>
                     </td>
                 </tr>
             </tbody>
